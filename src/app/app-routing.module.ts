@@ -15,9 +15,8 @@ const routes: Routes  = [
   {path: Routex.Empty, component : MainComponent},
   {path: Routex.signUp, component : SignUpComponent},
   {path: Routex.logIn, component :  LogInComponent},
-  {path: Routex.aboutUs, component :  AboutUsComponent},
+  {path: Routex.aboutUs, component:AboutUsComponent},
   {path: '**', component : PageNotFoundComponent},
-
 ]
 
 @NgModule({
