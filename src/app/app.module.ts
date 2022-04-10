@@ -1,25 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './header-welcome/header.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MainComponent } from './main/main.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-
-
-import  {MatCardModule}  from '@angular/material/card';
-import  {MatButtonModule}  from '@angular/material/button';
-import  {MatInputModule}  from '@angular/material/input';
-import {ReactiveFormsModule} from "@angular/forms";
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-
+import { HeaderUserComponent } from './header-user/header-user.component';
+import {MatIconModule} from "@angular/material/icon";
+import { FavoriteComponent } from './favorite/favorite.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -31,16 +28,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     SignUpComponent,
     PageNotFoundComponent,
     MainComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    HeaderUserComponent,
+    FavoriteComponent,
+    ProfileComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatInputModule,
-    ReactiveFormsModule
-
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
