@@ -1,0 +1,107 @@
+
+#blue{
+  color: blue;
+}
+body{
+  margin: 0;
+  padding: 0;
+  background-image: url("/../../assets/cafe-interior-design.jpg") ;
+/*  background-color: #395B7E;*/
+  -webkit-background-size: cover;
+  font-weight: bold;
+  font-style: italic;
+  font-family: "Dubai Medium";
+  opacity: 90%;
+}
+
+img{
+  padding-top: 4%;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.wrapper{
+  color: rgb(57, 91, 126);
+  opacity: 90%;
+  width: 800px;
+  height: 500px;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  padding: 4% 30px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  box-shadow: 10px 10px 50px #000;
+  background-color: white;
+  text-align: center;
+  font-size: 18px;
+
+}
+
+.wrapper input {
+  width: 50%;
+  margin-bottom: 20px;
+  opacity: 100%;
+  border: solid 2px rgba(57, 91, 126, 1) ;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+
+.wrapper input[type=text], .wrapper input[type=password]{
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  height: 30px;
+  font-size: 20px;
+  opacity: 1;
+}
+
+.wrapper button {
+  margin: 20px 60px 0;
+  width: 250px;
+  height: 60px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  /*background: #395B7E;*/
+  background-color: rgba(36, 59, 90, 1);
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  opacity: 100%;
+}
+
+
+#yellowP {
+  color: #F0B67F;
+}
+.wrapper input[type=submit]:hover{
+  cursor: pointer;
+}
+.wrapper a {
+   font-size: inherit;
+   text-decoration: none;
+   color: rgb(57, 91, 126);
+}
+
+
+.wrapper a:hover{
+  color: rgb(20, 32, 43);
+}
+
+
+#overlay-area{
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  z-index: -5;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+
