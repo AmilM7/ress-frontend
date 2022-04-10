@@ -1,0 +1,156 @@
+.topimage{
+  height: 500px;
+  width: 100%;
+}
+
+.topimage img{
+  height: 500px;
+  object-fit: cover;
+}
+
+.middle{
+  background-color: white;
+  margin-bottom: 150px;
+}
+
+.intro{
+  background-image: linear-gradient(lightgray,transparent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+  margin-bottom: 200px;
+}
+
+.introwrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro p{
+  color: #395B7E;
+}
+
+.intro img{
+  width: 400px;
+  height: auto;
+  margin-left: 10px;
+}
+
+.intro figcaption{
+  color: #395B7E;
+  letter-spacing: 3px;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.list-group-item{
+  background-color: transparent;
+  text-align: center;
+  border: none;
+}
+
+.message{
+  color: #F0B67F;
+  margin-bottom: 300px;
+}
+
+.message span{
+  color: #395B7E;
+}
+
+.section{
+  text-align: center;
+  color: #395B7E;
+  margin-bottom: 300px;
+}
+
+.section p{
+  margin-bottom: 50px;
+  color: #F0B67F;
+}
+
+.section p span{
+  font-weight: bold;
+  color: #395B7E;
+}
+
+.section li{
+  color: #395B7E;
+}
+
+.section li span{
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.section li i{
+  font-size: 70px;
+}
+
+.section  .flex-fill{
+  transition: 0.2s ease-in;
+}
+
+.section  .flex-fill:hover{
+  background-color: #F0B67F;
+  color: white;
+  transform: scale(0.9);
+  border-radius: 10px;
+}
+
+.info{
+  background-image: url("../../assets/visual-assets/backgrounds/restaurant3.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 150px;
+  box-shadow:inset 0 0 10px #000000;
+  display: flex;
+  justify-content: center;
+}
+
+.card{
+  background-color: rgba(255,255,255, 1);
+  color: #395B7E;
+  padding: 50px;
+  width: 1050px;
+  box-shadow:0 0 50px 0 #000000;
+}
+
+.card-body p{
+  margin-bottom: 50px;
+}
+
+.card span{
+  font-weight: bold;
+}
+
+.bottom{
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(transparent,lightgray);
+  padding-bottom: 150px;
+}
+
+.bottom .homeaboutus{
+  display: flex;
+  width: 1000px;
+  justify-content: space-between;
+}
+
+.homeaboutus p{
+  color: #395B7E;
+  margin-bottom: 30px;
+}
+
+.homeaboutus p span{
+  font-weight: bold;
+}
+
+.homeaboutus img{
+  width: 400px;
+  height: auto;
+  margin-left: 10px;
+}
+
