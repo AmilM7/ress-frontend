@@ -1,107 +1,89 @@
-
-#blue{
-  color: blue;
-}
-body{
-  margin: 0;
-  padding: 0;
-  background-image: url("/../../assets/cafe-interior-design.jpg") ;
-/*  background-color: #395B7E;*/
-  -webkit-background-size: cover;
+.login{
+  background-image: url("/../../assets/restaurant3.jpg");
+  height: 100%;
+  position:fixed;
+  width:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-weight: bold;
-  font-style: italic;
-  font-family: "Dubai Medium";
-  opacity: 90%;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-img{
-  padding-top: 4%;
-  height: 100px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.picturewrap{
+  background-image: linear-gradient(#F0B67F, transparent);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.login img{
+  width: 400px;
+  height: auto;
+}
 
 .wrapper{
-  color: rgb(57, 91, 126);
-  opacity: 90%;
+  background-color: rgba(255, 255, 255, .9);
   width: 800px;
-  height: 500px;
+  height: auto;
   border-radius: 20px;
-  top: 50%;
-  left: 50%;
-  padding: 4% 30px;
-  position: absolute;
-  transform: translate(-50%,-50%);
-  box-sizing: border-box;
   box-shadow: 10px 10px 50px #000;
-  background-color: white;
-  text-align: center;
-  font-size: 18px;
-
-}
-
-.wrapper input {
-  width: 50%;
-  margin-bottom: 20px;
-  opacity: 100%;
-  border: solid 2px rgba(57, 91, 126, 1) ;
-  border-radius: 15px;
-  padding: 5px;
-}
-
-
-.wrapper input[type=text], .wrapper input[type=password]{
-  border-bottom: 1px solid #ddd;
-  outline: none;
-  height: 30px;
   font-size: 20px;
-  opacity: 1;
+  color: rgb(57, 91, 126);
+  display: flex;
+  justify-content: center;
 }
 
-.wrapper button {
-  margin: 20px 60px 0;
-  width: 250px;
-  height: 60px;
-  border-radius: 15px;
-  border: none;
-  outline: none;
-  /*background: #395B7E;*/
-  background-color: rgba(36, 59, 90, 1);
-  color: #fff;
-  font-size: 30px;
-  font-weight: bold;
-  opacity: 100%;
+.wrapper form{
+  padding: 70px;
+  width: 600px;
 }
 
+.wrapper form span{
+  background-color: #F0B67F;
+}
 
-#yellowP {
+.wrapper form span i{
+  color: #395B7E;
+  font-size: 18px;
+}
+
+button{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #395B7E;
+}
+
+button :hover{
+  background-color: white;
+}
+
+p{
+  font-size: 15px;
+  font-weight: lighter;
   color: #F0B67F;
 }
-.wrapper input[type=submit]:hover{
-  cursor: pointer;
-}
-.wrapper a {
-   font-size: inherit;
-   text-decoration: none;
-   color: rgb(57, 91, 126);
+
+p a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #395B7E;
 }
 
-
-.wrapper a:hover{
-  color: rgb(20, 32, 43);
+#emailHelp{
+  font-size: 15px;
+  font-weight: lighter;
+  color: #F0B67F;
 }
-
-
-#overlay-area{
-  position: absolute;
-  background-color: rgba(0,0,0,0.5);
-  z-index: -5;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-}
-

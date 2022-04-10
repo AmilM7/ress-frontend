@@ -11,12 +11,15 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MainComponent } from './main/main.component';
-import { AboutUsComponent } from './about-us/about-us.component';
+
 import { HeaderUserComponent } from './header-user/header-user.component';
 import {MatIconModule} from "@angular/material/icon";
 import { FavoriteComponent } from './favorite/favorite.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import {ReactiveFormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -28,17 +31,18 @@ import { LogoutComponent } from './logout/logout.component';
     SignUpComponent,
     PageNotFoundComponent,
     MainComponent,
-    AboutUsComponent,
     HeaderUserComponent,
     FavoriteComponent,
     ProfileComponent,
-    LogoutComponent
+    LogoutComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
