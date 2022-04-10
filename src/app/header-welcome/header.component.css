@@ -51,5 +51,9 @@ header{
   align-items: center;
   display: flex;
   justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 

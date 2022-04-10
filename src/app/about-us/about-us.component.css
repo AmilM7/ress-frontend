@@ -1,0 +1,30 @@
+img{
+  width: 200px;
+  height: 200px;
+}
+.imgs{
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+h1{
+  text-align: center;
+}
+.person{
+  width: 20%;
+  text-align: center;
+  padding: 20px;
+}
+
+.ress{
+  display: flex;
+  margin: 50px;
+}
+.ress img{
+  width: 50%;
+  height: auto;
+}
+.buttons{
+  padding: 40%;
+  padding-top: 0;
+}
