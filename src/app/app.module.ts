@@ -10,6 +10,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MainComponent } from './main/main.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 import  {MatCardModule}  from '@angular/material/card';
@@ -29,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     LogInComponent,
     SignUpComponent,
     PageNotFoundComponent,
-    MainComponent
+    MainComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
