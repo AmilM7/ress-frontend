@@ -7,20 +7,20 @@
     <div class="wrapper">
       <form [formGroup]="form" (ngSubmit)="submit()" class="text-center">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <label  class="form-label">Email address</label>
           <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope-fill"></i></span>
-            <input type="email" class="form-control text-center" aria-describedby="basic-addon1">
+            <span class="input-group-text" ><i class="bi bi-envelope-fill"></i></span>
+            <input formControlName="email" type="email" class="form-control text-center" [ngClass]="{'is-invalid' : email && email.invalid && email.touched}" aria-describedby="basic-addon1" >
           </div>
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label text-center">Password</label>
           <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
-            <input type="password" class="form-control text-center" aria-describedby="basic-addon1">
+            <span class="input-group-text" ><i class="bi bi-lock-fill"></i></span>
+            <input formControlName="password" type="password" class="form-control text-center" [ngClass]="{'is-invalid' : password && password.invalid && password.touched}" aria-describedby="basic-addon1" >
           </div>
         </div>
-        <button type="submit" class="btn btn-success btn-lg">LOG IN</button>
+        <button [disabled]="form.invalid" type="submit" class="btn btn-success btn-lg">LOG IN</button>
         <p>Don't have an account? <a routerLink="/signup"> Sign up</a> </p>
         <div id="emailHelp" class="form-text">We'll never share your information with anyone else.</div>
       </form>
