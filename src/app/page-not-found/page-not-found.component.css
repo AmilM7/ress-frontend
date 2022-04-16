@@ -6,3 +6,11 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+img{
+  height: 300px;
+  margin: 20px;
+  border-radius: 20px;
+}
+.error h1{
+  color: red;
+}
