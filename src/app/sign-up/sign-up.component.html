@@ -1,67 +1,74 @@
 
-
 <div class="login">
   <div class="picturewrap">
     <img src="/assets/logo2blue.png" alt="Logo">
   </div>
   <div class="center">
     <div class="wrapper">
-      <form  [formGroup]="form" (ngSubmit)="submit()" class="text-center">
+      <form  [formGroup]="form" (ngSubmit)="submit()" class="text-center" >
         <div class="inputfields">
           <div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <label  class="form-label">Email address</label>
               <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope-fill"></i></span>
-                <input type="email" class="form-control text-center" aria-describedby="basic-addon1">
+                <span class="input-group-text" ><i class="bi bi-envelope-fill"></i></span>
+                <input formControlName="email" type="email" class="form-control text-center" [ngClass]="{'is-invalid' : email && email.invalid && email.touched}"
+                       aria-describedby="basic-addon1">
               </div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label text-center">Password</label>
+              <label class="form-label text-center">Password</label>
               <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
-                <input type="password" class="form-control text-center" aria-describedby="basic-addon1">
+                <span class="input-group-text" ><i class="bi bi-lock-fill"></i></span>
+                <input formControlName="password" type="password" formControlName="password" placeholder="At least 8 characters" class="form-control text-center"
+                       [ngClass]="{'is-invalid' : password && password.invalid && password.touched}" aria-describedby="basic-addon1">
               </div>
+              <div class="invalidInput" *ngIf="password && password.invalid && password.touched">At least one lowercase, capital letter and number (more than 8 characters)</div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label text-center">Confirm Password</label>
+              <label  class="form-label text-center">Confirm Password</label>
               <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
-                <input type="password" class="form-control text-center" aria-describedby="basic-addon1">
+                <span class="input-group-text" ><i class="bi bi-lock-fill"></i></span>
+                <input formControlName="confirmPassword" type="password"  class="form-control text-center"
+                       [ngClass]="{'is-invalid' :password && password.touched && confirmPassword && confirmPassword.valid && confirmPassword.touched && checkPassword() }"
+                       aria-describedby="basic-addon1">
               </div>
+              <div class="invalidInput" *ngIf="password && password.touched && confirmPassword && confirmPassword.valid && confirmPassword.touched && checkPassword() ">
+                   Passwords do not match</div>
             </div>
           </div>
           <div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">First Name</label>
+              <label  class="form-label">First Name</label>
               <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
-                <input type="text" class="form-control text-center" aria-describedby="basic-addon1">
+                <span class="input-group-text" ><i class="bi bi-person-fill"></i></span>
+                <input type="text" formControlName="firstName" class="form-control text-center"
+                       [ngClass]="{'is-invalid' :firstName && firstName.invalid && firstName.touched }"aria-describedby="basic-addon1">
               </div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label text-center">Last name</label>
+              <label  class="form-label text-center">Last name</label>
               <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
-                <input type="text" class="form-control text-center" aria-describedby="basic-addon1">
+                <span class="input-group-text" ><i class="bi bi-person-fill"></i></span>
+                <input type="text" formControlName="lastName" class="form-control text-center" [ngClass]="{'is-invalid' :lastName && lastName.invalid && lastName.touched }" aria-describedby="basic-addon1">
               </div>
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label text-center">Phone number</label>
+              <label  class="form-label text-center">Phone number</label>
               <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-telephone-fill"></i></span>
-                <input type="tel" class="form-control text-center" aria-describedby="basic-addon1">
+                <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                <input type="tel" formControlName="phone"  class="form-control text-center" [ngClass]="{'is-invalid' : phone && phone.invalid && phone.touched}"
+                       aria-describedby="basic-addon1">
               </div>
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-success btn-lg">SIGN UP</button>
+        <button  [disabled]="form.invalid || checkPassword()"   type="submit" class="btn btn-success btn-lg">SIGN UP</button>
         <p>Already have an account? <a routerLink="/login" > Log in</a></p>
         <div id="emailHelp" class="form-text">We'll never share your information with anyone else.</div>
       </form>
     </div>
   </div>
 </div>
-
 
 <router-outlet></router-outlet>

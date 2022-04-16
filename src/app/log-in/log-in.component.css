@@ -87,3 +87,9 @@ p a{
   font-weight: lighter;
   color: #F0B67F;
 }
+
+.invalidInput{
+  color: red;
+  font-size: 12px
+}
+
