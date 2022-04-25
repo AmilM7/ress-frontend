@@ -6,3 +6,7 @@ export interface Person {
   password:string;
   confirmPassword:string;
 }
+
+
+
+

@@ -19,6 +19,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {RestaurantServices} from "./services/restaurant.services";
+import {RestaurantResolver} from "./resolvers/restaurant.resolver";
 
 
 @NgModule({
@@ -36,15 +40,20 @@ import {ReactiveFormsModule} from "@angular/forms";
     ProfileComponent,
     LogoutComponent,
     AboutUsComponent,
+    UserDashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    RestaurantServices,
+    RestaurantResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
