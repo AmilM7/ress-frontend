@@ -15,13 +15,16 @@ import  {AboutUsComponent} from "./about-us/about-us.component";
 import {UserDashboardComponent} from "./user-dashboard/user-dashboard.component";
 import {ResolverResponse} from "./constants/resolver-response.constants";
 import {RestaurantResolver} from "./resolvers/restaurant.resolver";
-
+import {RestaurantLogInComponent} from "./restaurant-log-in/restaurant-log-in.component";
+import {RestaurantSignUpComponent} from "./restaurant-sign-up/restaurant-sign-up.component";
 
 
 const routes: Routes  = [
   {path: Routex.empty, component : MainComponent},
   {path: Routex.signUp, component : SignUpComponent},
   {path: Routex.logIn, component :  LogInComponent},
+  {path: Routex.restaurantLogIn, component : RestaurantLogInComponent},
+  {path: Routex.restaurantSignUp, component : RestaurantSignUpComponent},
   {path: Routex.favorite, component: FavoriteComponent},
   {path: Routex.profile, component: ProfileComponent},
   {path: Routex.logout, component:LogoutComponent},
@@ -34,7 +37,6 @@ const routes: Routes  = [
     }}
   ]},
   {path: '**', component : PageNotFoundComponent},
-
 ]
 
 @NgModule({

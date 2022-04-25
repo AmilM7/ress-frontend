@@ -9,4 +9,6 @@ export class Routex {
   public static separator = "/";
   public static user = 'user';
   public static userDashboard = 'userDashboard';
+  public static restaurantLogIn = 'restaurantLogIn';
+  public static restaurantSignUp = 'restaurantSignUp';
 }

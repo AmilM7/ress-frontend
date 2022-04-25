@@ -23,6 +23,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {RestaurantServices} from "./services/restaurant.services";
 import {RestaurantResolver} from "./resolvers/restaurant.resolver";
+import { RestaurantLogInComponent } from './restaurant-log-in/restaurant-log-in.component';
+import { RestaurantSignUpComponent } from './restaurant-sign-up/restaurant-sign-up.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import {RestaurantResolver} from "./resolvers/restaurant.resolver";
     LogoutComponent,
     AboutUsComponent,
     UserDashboardComponent,
+    RestaurantLogInComponent,
+    RestaurantSignUpComponent,
   ],
   imports: [
     BrowserModule,

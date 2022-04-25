@@ -1,0 +1,95 @@
+.login{
+  background-image: url("/../../assets/restaurant3.jpg");
+  height: 100%;
+  position:fixed;
+  width:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.picturewrap{
+  background-image: linear-gradient(#F0B67F, transparent);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login img{
+  width: 400px;
+  height: auto;
+}
+
+.wrapper{
+  background-color: rgba(255, 255, 255, .9);
+  width: 800px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 10px 10px 50px #000;
+  font-size: 20px;
+  color: rgb(57, 91, 126);
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper form{
+  padding: 70px;
+  width: 600px;
+}
+
+.wrapper form span{
+  background-color: #F0B67F;
+}
+
+.wrapper form span i{
+  color: #395B7E;
+  font-size: 18px;
+}
+
+button{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #395B7E;
+}
+
+button :hover{
+  background-color: white;
+}
+
+p{
+  font-size: 15px;
+  font-weight: lighter;
+  color: #F0B67F;
+}
+
+p a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #395B7E;
+}
+
+#emailHelp{
+  font-size: 15px;
+  font-weight: lighter;
+  color: #F0B67F;
+}
+
+.invalidInput{
+  color: red;
+  font-size: 12px
+}
+
