@@ -4,23 +4,22 @@ import {ActivatedRoute} from "@angular/router";
 import {ResolverResponse} from "../constants/resolver-response.constants";
 
 @Component({
-  selector: 'app-user-dashboard',
-  templateUrl: './user-dashboard.component.html',
-  styleUrls: ['./user-dashboard.component.css']
+  selector: 'app-restaurant',
+  templateUrl: './restaurant.component.html',
+  styleUrls: ['./restaurant.component.css']
 })
-export class UserDashboardComponent implements OnInit {
+export class RestaurantComponent implements OnInit {
 
 
-  public restaurants: Restaurant[] = [];
+  public restaurant: Restaurant | undefined;
 
   constructor(private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
-      this.restaurants = response[ResolverResponse.restaurants];
-    });
+      this.restaurant = response[ResolverResponse.restaurant];
+    })
   }
-
-
 }
+
