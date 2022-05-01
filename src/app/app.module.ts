@@ -27,6 +27,8 @@ import { RestaurantLogInComponent } from './restaurant-log-in/restaurant-log-in.
 import { RestaurantSignUpComponent } from './restaurant-sign-up/restaurant-sign-up.component';
 import { HeaderUserDashboardComponent } from './header-user-dashboard/header-user-dashboard.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
+import { LoginOptionComponent } from './login-option/login-option.component';
+import { RegistrationOptionComponent } from './registration-option/registration-option.component';
 
 
 @NgModule({
@@ -49,6 +51,8 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
     RestaurantSignUpComponent,
     HeaderUserDashboardComponent,
     RestaurantComponent,
+    LoginOptionComponent,
+    RegistrationOptionComponent,
 
   ],
   imports: [

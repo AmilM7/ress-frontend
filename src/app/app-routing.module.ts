@@ -19,6 +19,8 @@ import {RestaurantLogInComponent} from "./restaurant-log-in/restaurant-log-in.co
 import {RestaurantSignUpComponent} from "./restaurant-sign-up/restaurant-sign-up.component";
 import {RestaurantComponent} from "./restaurant/restaurant.component";
 import {RestaurantResolver} from "./resolvers/restaurant.resolver";
+import {LoginOptionComponent} from "./login-option/login-option.component";
+import {RegistrationOptionComponent} from "./registration-option/registration-option.component";
 
 
 const routes: Routes = [
@@ -31,6 +33,8 @@ const routes: Routes = [
   {path: Routex.profile, component: ProfileComponent},
   {path: Routex.logout, component: LogoutComponent},
   {path: Routex.aboutUs, component: AboutUsComponent},
+  {path: Routex.logInOption, component: LoginOptionComponent},
+  {path: Routex.signUpOption, component: RegistrationOptionComponent},
   {
     path: Routex.user,
     children: [
