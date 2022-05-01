@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {Route, Router, RouterModule, Routes} from "@angular/router";
 import {HeaderComponent} from "./header-welcome/header.component";
 import {FooterComponent} from "./footer/footer.component";
@@ -11,32 +11,44 @@ import {Routex} from "./constants/constants";
 import {FavoriteComponent} from "./favorite/favorite.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {LogoutComponent} from "./logout/logout.component";
-import  {AboutUsComponent} from "./about-us/about-us.component";
+import {AboutUsComponent} from "./about-us/about-us.component";
 import {UserDashboardComponent} from "./user-dashboard/user-dashboard.component";
 import {ResolverResponse} from "./constants/resolver-response.constants";
-import {RestaurantResolver} from "./resolvers/restaurant.resolver";
+import {RestaurantsResolver} from "./resolvers/restaurants.resolver";
 import {RestaurantLogInComponent} from "./restaurant-log-in/restaurant-log-in.component";
 import {RestaurantSignUpComponent} from "./restaurant-sign-up/restaurant-sign-up.component";
+import {RestaurantComponent} from "./restaurant/restaurant.component";
+import {RestaurantResolver} from "./resolvers/restaurant.resolver";
 
 
-const routes: Routes  = [
-  {path: Routex.empty, component : MainComponent},
-  {path: Routex.signUp, component : SignUpComponent},
-  {path: Routex.logIn, component :  LogInComponent},
-  {path: Routex.restaurantLogIn, component : RestaurantLogInComponent},
-  {path: Routex.restaurantSignUp, component : RestaurantSignUpComponent},
+const routes: Routes = [
+  {path: Routex.empty, component: MainComponent},
+  {path: Routex.signUp, component: SignUpComponent},
+  {path: Routex.logIn, component: LogInComponent},
+  {path: Routex.restaurantLogIn, component: RestaurantLogInComponent},
+  {path: Routex.restaurantSignUp, component: RestaurantSignUpComponent},
   {path: Routex.favorite, component: FavoriteComponent},
   {path: Routex.profile, component: ProfileComponent},
-  {path: Routex.logout, component:LogoutComponent},
-  {path: Routex.aboutUs, component:AboutUsComponent},
-  {path: Routex.user,
-  children: [
-    {path: Routex.userDashboard, component: UserDashboardComponent,
-    resolve: {
-      [ResolverResponse.restaurants]: RestaurantResolver,
-    }}
-  ]},
-  {path: '**', component : PageNotFoundComponent},
+  {path: Routex.logout, component: LogoutComponent},
+  {path: Routex.aboutUs, component: AboutUsComponent},
+  {
+    path: Routex.user,
+    children: [
+      {
+        path: Routex.userDashboard, component: UserDashboardComponent,
+        resolve: {
+          [ResolverResponse.restaurants]: RestaurantsResolver,
+        }
+      },
+      {
+        path: Routex.restaurant, component: RestaurantComponent,
+        resolve: {
+          [ResolverResponse.restaurant]: RestaurantResolver,
+        }
+      }
+    ]
+  },
+  {path: '**', component: PageNotFoundComponent},
 ]
 
 @NgModule({
@@ -45,4 +57,5 @@ const routes: Routes  = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

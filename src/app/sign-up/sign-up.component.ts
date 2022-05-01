@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder, Validator, Validators} from "@angular/forms";
 import {Person} from "../models/person";
 
@@ -11,7 +11,9 @@ import {Person} from "../models/person";
 export class SignUpComponent implements OnInit {
   public form!: FormGroup;
   person: Person | undefined;
-  constructor(private  formBuilder : FormBuilder) { }
+
+  constructor(private formBuilder: FormBuilder) {
+  }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -24,19 +26,19 @@ export class SignUpComponent implements OnInit {
     })
   }
 
-  checkPassword (): boolean{
-     return this.form.value.password!=this.form.value.confirmPassword;
+  checkPassword(): boolean {
+    return this.form.value.password != this.form.value.confirmPassword;
   }
 
-  get firstName(){
+  get firstName() {
     return this.form.get('firstName');
   }
 
-  get lastName(){
+  get lastName() {
     return this.form.get('lastName');
   }
 
-  get email(){
+  get email() {
     return this.form.get('email');
   }
 

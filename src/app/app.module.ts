@@ -22,10 +22,11 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {RestaurantServices} from "./services/restaurant.services";
-import {RestaurantResolver} from "./resolvers/restaurant.resolver";
+import {RestaurantsResolver} from "./resolvers/restaurants.resolver";
 import { RestaurantLogInComponent } from './restaurant-log-in/restaurant-log-in.component';
 import { RestaurantSignUpComponent } from './restaurant-sign-up/restaurant-sign-up.component';
 import { HeaderUserDashboardComponent } from './header-user-dashboard/header-user-dashboard.component';
+import { RestaurantComponent } from './restaurant/restaurant.component';
 
 
 @NgModule({
@@ -47,6 +48,8 @@ import { HeaderUserDashboardComponent } from './header-user-dashboard/header-use
     RestaurantLogInComponent,
     RestaurantSignUpComponent,
     HeaderUserDashboardComponent,
+    RestaurantComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,7 @@ import { HeaderUserDashboardComponent } from './header-user-dashboard/header-use
   ],
   providers: [
     RestaurantServices,
-    RestaurantResolver
+    RestaurantsResolver
   ],
   bootstrap: [AppComponent]
 })
