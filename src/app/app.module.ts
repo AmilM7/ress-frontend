@@ -26,6 +26,8 @@ import {RestaurantsResolver} from "./resolvers/restaurants.resolver";
 import { RestaurantLogInComponent } from './restaurant-log-in/restaurant-log-in.component';
 import { RestaurantSignUpComponent } from './restaurant-sign-up/restaurant-sign-up.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
+import { LoginOptionComponent } from './login-option/login-option.component';
+import { RegistrationOptionComponent } from './registration-option/registration-option.component';
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
     RestaurantLogInComponent,
     RestaurantSignUpComponent,
     RestaurantComponent,
+    LoginOptionComponent,
+    RegistrationOptionComponent,
   ],
   imports: [
     BrowserModule,
