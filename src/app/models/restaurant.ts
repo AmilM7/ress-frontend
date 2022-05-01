@@ -6,7 +6,7 @@ export interface Restaurant {
   location:string;
   numOfAvailGuests: number;
   numOfAvailTables:number;
-  ressDescription:string;
+  description:string;
   contactNum:string;
   startHour:string;
   endHour:string;
@@ -14,6 +14,7 @@ export interface Restaurant {
   contactManager:string;
   type:Type;
   password:string;
+  confirmPassword:string;
 }
 
 
