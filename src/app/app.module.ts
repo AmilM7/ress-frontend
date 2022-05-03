@@ -23,9 +23,13 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {RestaurantServices} from "./services/restaurant.services";
 import {RestaurantsResolver} from "./resolvers/restaurants.resolver";
+import {AdminService} from "./services/admin.service";
+import {AdminsResolver} from "./resolvers/admins.resolver";
 import { RestaurantLogInComponent } from './restaurant-log-in/restaurant-log-in.component';
 import { RestaurantSignUpComponent } from './restaurant-sign-up/restaurant-sign-up.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
+import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.component";
+import {SingleUserComponent} from "./single-user/single-user.component";
 
 
 @NgModule({
@@ -47,6 +51,8 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
     RestaurantLogInComponent,
     RestaurantSignUpComponent,
     RestaurantComponent,
+    AdminDashboardComponent,
+    SingleUserComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,9 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
   ],
   providers: [
     RestaurantServices,
-    RestaurantsResolver
+    RestaurantsResolver,
+    AdminService,
+    AdminsResolver
   ],
   bootstrap: [AppComponent]
 })

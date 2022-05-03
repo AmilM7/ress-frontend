@@ -19,6 +19,10 @@ import {RestaurantLogInComponent} from "./restaurant-log-in/restaurant-log-in.co
 import {RestaurantSignUpComponent} from "./restaurant-sign-up/restaurant-sign-up.component";
 import {RestaurantComponent} from "./restaurant/restaurant.component";
 import {RestaurantResolver} from "./resolvers/restaurant.resolver";
+import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.component";
+import {AdminsResolver} from "./resolvers/admins.resolver";
+import {SingleUserComponent} from "./single-user/single-user.component";
+import { SingleUserResolver} from "./resolvers/singleUser.resolver";
 
 
 const routes: Routes = [
@@ -44,6 +48,23 @@ const routes: Routes = [
         path: Routex.restaurant, component: RestaurantComponent,
         resolve: {
           [ResolverResponse.restaurant]: RestaurantResolver,
+        }
+      }
+    ]
+  },
+  {
+    path: Routex.admins,
+    children: [
+      {
+        path: Routex.adminDashboard, component: AdminDashboardComponent,
+        resolve: {
+          [ResolverResponse.admins]: AdminsResolver,
+        }
+      },
+      {
+        path: Routex.singleUser, component: SingleUserComponent,
+        resolve: {
+          [ResolverResponse.singleUser]: SingleUserResolver,
         }
       }
     ]
