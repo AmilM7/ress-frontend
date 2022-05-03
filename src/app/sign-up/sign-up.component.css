@@ -1,7 +1,7 @@
 .login{
   background-image: url("/../../assets/restaurant3.jpg");
   height: 100%;
-  position:fixed;
+  position: fixed;
   width:100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: scroll;
 }
 
 .picturewrap{

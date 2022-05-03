@@ -28,8 +28,13 @@ import {AdminsResolver} from "./resolvers/admins.resolver";
 import { RestaurantLogInComponent } from './restaurant-log-in/restaurant-log-in.component';
 import { RestaurantSignUpComponent } from './restaurant-sign-up/restaurant-sign-up.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
+
 import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.component";
 import {SingleUserComponent} from "./single-user/single-user.component";
+
+import { LoginOptionComponent } from './login-option/login-option.component';
+import { RegistrationOptionComponent } from './registration-option/registration-option.component';
+
 
 
 @NgModule({
@@ -51,8 +56,13 @@ import {SingleUserComponent} from "./single-user/single-user.component";
     RestaurantLogInComponent,
     RestaurantSignUpComponent,
     RestaurantComponent,
+
     AdminDashboardComponent,
-    SingleUserComponent
+    SingleUserComponent,
+
+    LoginOptionComponent,
+    RegistrationOptionComponent
+
   ],
   imports: [
     BrowserModule,
