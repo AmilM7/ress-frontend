@@ -28,6 +28,10 @@ import {AdminsResolver} from "./resolvers/admins.resolver";
 import { RestaurantLogInComponent } from './restaurant-log-in/restaurant-log-in.component';
 import { RestaurantSignUpComponent } from './restaurant-sign-up/restaurant-sign-up.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
+import { EventsComponent } from './events/events.component';
+
+import {EventServices} from "./services/event.services";
+import {EventsResolver} from "./resolvers/events.resolver";
 
 import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.component";
 import {SingleUserComponent} from "./single-user/single-user.component";
@@ -57,11 +61,15 @@ import { RegistrationOptionComponent } from './registration-option/registration-
     RestaurantSignUpComponent,
     RestaurantComponent,
 
+    EventsComponent,
+
+
     AdminDashboardComponent,
     SingleUserComponent,
 
     LoginOptionComponent,
     RegistrationOptionComponent
+
 
   ],
   imports: [
@@ -75,8 +83,13 @@ import { RegistrationOptionComponent } from './registration-option/registration-
   providers: [
     RestaurantServices,
     RestaurantsResolver,
+
+    EventServices,
+    EventsResolver
+
     AdminService,
     AdminsResolver
+
   ],
   bootstrap: [AppComponent]
 })

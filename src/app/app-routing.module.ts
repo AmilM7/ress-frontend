@@ -19,6 +19,9 @@ import {RestaurantLogInComponent} from "./restaurant-log-in/restaurant-log-in.co
 import {RestaurantSignUpComponent} from "./restaurant-sign-up/restaurant-sign-up.component";
 import {RestaurantComponent} from "./restaurant/restaurant.component";
 import {RestaurantResolver} from "./resolvers/restaurant.resolver";
+import {EventsComponent} from "./events/events.component";
+import {EventsResolver} from "./resolvers/events.resolver";
+
 
 import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.component";
 import {AdminsResolver} from "./resolvers/admins.resolver";
@@ -40,8 +43,13 @@ const routes: Routes = [
   {path: Routex.profile, component: ProfileComponent},
   {path: Routex.logout, component: LogoutComponent},
   {path: Routex.aboutUs, component: AboutUsComponent},
+
+  {path: Routex.events, component: EventsComponent},
+
+
   {path: Routex.logInOption, component: LoginOptionComponent},
   {path: Routex.signUpOption, component: RegistrationOptionComponent},
+
   {
     path: Routex.user,
     children: [
@@ -59,6 +67,22 @@ const routes: Routes = [
       }
     ]
   },
+
+
+
+  {
+    path: Routex.events,
+    children: [
+      {
+        path: Routex.eventDashboard, component: EventsComponent,
+        resolve: {
+          [ResolverResponse.events]: EventsResolver,
+        }
+      },
+    ]
+  },
+
+
   {
     path: Routex.admins,
     children: [
@@ -76,6 +100,7 @@ const routes: Routes = [
       }
     ]
   },
+
   {path: '**', component: PageNotFoundComponent},
 ]
 
