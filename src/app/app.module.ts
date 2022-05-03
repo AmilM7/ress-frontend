@@ -38,6 +38,9 @@ import {SingleUserComponent} from "./single-user/single-user.component";
 
 import { LoginOptionComponent } from './login-option/login-option.component';
 import { RegistrationOptionComponent } from './registration-option/registration-option.component';
+import { ReservationsComponent } from './reservations/reservations.component';
+import {ReservationServices} from "./services/reservation.service";
+import {ReservationsResolver} from "./resolvers/reservations.resolver";
 
 
 
@@ -68,7 +71,8 @@ import { RegistrationOptionComponent } from './registration-option/registration-
     SingleUserComponent,
 
     LoginOptionComponent,
-    RegistrationOptionComponent
+    RegistrationOptionComponent,
+    ReservationsComponent
 
 
   ],
@@ -85,10 +89,13 @@ import { RegistrationOptionComponent } from './registration-option/registration-
     RestaurantsResolver,
 
     EventServices,
-    EventsResolver
+    EventsResolver,
 
     AdminService,
-    AdminsResolver
+    AdminsResolver,
+
+    ReservationServices,
+    ReservationsResolver
 
   ],
   bootstrap: [AppComponent]
