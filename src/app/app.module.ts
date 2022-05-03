@@ -27,6 +27,7 @@ import {AdminService} from "./services/admin.service";
 import {AdminsResolver} from "./resolvers/admins.resolver";
 import { RestaurantLogInComponent } from './restaurant-log-in/restaurant-log-in.component';
 import { RestaurantSignUpComponent } from './restaurant-sign-up/restaurant-sign-up.component';
+import { HeaderUserDashboardComponent } from './header-user-dashboard/header-user-dashboard.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 import { EventsComponent } from './events/events.component';
 
@@ -62,6 +63,7 @@ import {ReservationsResolver} from "./resolvers/reservations.resolver";
     UserDashboardComponent,
     RestaurantLogInComponent,
     RestaurantSignUpComponent,
+    HeaderUserDashboardComponent,
     RestaurantComponent,
 
     EventsComponent,
@@ -73,6 +75,7 @@ import {ReservationsResolver} from "./resolvers/reservations.resolver";
     LoginOptionComponent,
     RegistrationOptionComponent,
     ReservationsComponent
+
 
 
   ],
