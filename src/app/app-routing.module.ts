@@ -23,6 +23,15 @@ import {EventsComponent} from "./events/events.component";
 import {EventsResolver} from "./resolvers/events.resolver";
 
 
+import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.component";
+import {AdminsResolver} from "./resolvers/admins.resolver";
+import {SingleUserComponent} from "./single-user/single-user.component";
+import { SingleUserResolver} from "./resolvers/singleUser.resolver";
+
+import {LoginOptionComponent} from "./login-option/login-option.component";
+import {RegistrationOptionComponent} from "./registration-option/registration-option.component";
+
+
 
 const routes: Routes = [
   {path: Routex.empty, component: MainComponent},
@@ -34,7 +43,12 @@ const routes: Routes = [
   {path: Routex.profile, component: ProfileComponent},
   {path: Routex.logout, component: LogoutComponent},
   {path: Routex.aboutUs, component: AboutUsComponent},
+
   {path: Routex.events, component: EventsComponent},
+
+
+  {path: Routex.logInOption, component: LoginOptionComponent},
+  {path: Routex.signUpOption, component: RegistrationOptionComponent},
 
   {
     path: Routex.user,
@@ -55,6 +69,7 @@ const routes: Routes = [
   },
 
 
+
   {
     path: Routex.events,
     children: [
@@ -64,6 +79,25 @@ const routes: Routes = [
           [ResolverResponse.events]: EventsResolver,
         }
       },
+    ]
+  },
+
+
+  {
+    path: Routex.admins,
+    children: [
+      {
+        path: Routex.adminDashboard, component: AdminDashboardComponent,
+        resolve: {
+          [ResolverResponse.admins]: AdminsResolver,
+        }
+      },
+      {
+        path: Routex.singleUser, component: SingleUserComponent,
+        resolve: {
+          [ResolverResponse.singleUser]: SingleUserResolver,
+        }
+      }
     ]
   },
 
