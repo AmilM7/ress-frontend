@@ -26,6 +26,10 @@ import {RestaurantsResolver} from "./resolvers/restaurants.resolver";
 import { RestaurantLogInComponent } from './restaurant-log-in/restaurant-log-in.component';
 import { RestaurantSignUpComponent } from './restaurant-sign-up/restaurant-sign-up.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
+import { EventsComponent } from './events/events.component';
+
+import {EventServices} from "./services/event.services";
+import {EventsResolver} from "./resolvers/events.resolver";
 
 
 @NgModule({
@@ -47,6 +51,8 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
     RestaurantLogInComponent,
     RestaurantSignUpComponent,
     RestaurantComponent,
+    EventsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,9 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
   ],
   providers: [
     RestaurantServices,
-    RestaurantsResolver
+    RestaurantsResolver,
+    EventServices,
+    EventsResolver
   ],
   bootstrap: [AppComponent]
 })
