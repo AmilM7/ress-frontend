@@ -30,6 +30,8 @@ import { SingleUserResolver} from "./resolvers/singleUser.resolver";
 
 import {LoginOptionComponent} from "./login-option/login-option.component";
 import {RegistrationOptionComponent} from "./registration-option/registration-option.component";
+import {ReservationsResolver} from "./resolvers/reservations.resolver";
+import {ReservationsComponent} from "./reservations/reservations.component";
 
 
 
@@ -46,6 +48,7 @@ const routes: Routes = [
 
   {path: Routex.events, component: EventsComponent},
 
+  {path: Routex.reservations, component: ReservationsComponent},
 
   {path: Routex.logInOption, component: LoginOptionComponent},
   {path: Routex.signUpOption, component: RegistrationOptionComponent},
@@ -99,6 +102,19 @@ const routes: Routes = [
         }
       }
     ]
+  },
+
+  {
+    path: Routex.restaurantDashboard,
+    children:[
+      {
+      path: Routex.reservations,
+      component: ReservationsComponent,
+      resolve: {
+      [ResolverResponse.reservations]: ReservationsResolver,
+    }
+  }
+  ]
   },
 
   {path: '**', component: PageNotFoundComponent},

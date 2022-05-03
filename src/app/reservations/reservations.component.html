@@ -1,0 +1,12 @@
+<p>Reservations:</p>
+
+<div *ngFor="let reservation of reservations">
+  <p> ID: {{reservation.id}}</p>
+  <p> Number of guests: {{reservation.numberOfGuests}}</p>
+  <p> Time: {{reservation.time}}</p>
+  <p> Day: {{reservation.day}}</p>
+  <p> Table ID: {{reservation.tableId}}</p>
+  <p> User first name: {{reservation.userFirstName}}</p>
+  <p> User last name: {{reservation.userLastName}}</p>
+  <br><br><br>
+</div>

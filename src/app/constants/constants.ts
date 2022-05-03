@@ -10,20 +10,16 @@ export class Routex {
   public static logout = 'logout';
   public static separator = "/";
   public static user = 'user';
-
-    public static userDashboard = 'userDashboard';
+  public static userDashboard = 'userDashboard';
   public static restaurantLogIn = 'restaurantLogIn';
   public static restaurantSignUp = 'restaurantSignUp';
-  public static restaurant = ':id';
   public static eventDashboard = 'eventDashboard';
   public static events = 'events';
-
   public static admins = 'admins';
-  public static userDashboard = 'userDashboard';
+  public static reservations = 'reservations';
   public static adminDashboard = 'adminDashboard';
-  public static restaurantLogIn = 'restaurantLogIn';
-  public static restaurantSignUp = 'restaurantSignUp';
   public static restaurant = ':id';
   public static singleUser = ':id';
+  public static restaurantDashboard = 'restaurantDashboard';
 
 }
