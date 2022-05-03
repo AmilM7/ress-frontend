@@ -23,12 +23,26 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {RestaurantServices} from "./services/restaurant.services";
 import {RestaurantsResolver} from "./resolvers/restaurants.resolver";
+import {AdminService} from "./services/admin.service";
+import {AdminsResolver} from "./resolvers/admins.resolver";
 import { RestaurantLogInComponent } from './restaurant-log-in/restaurant-log-in.component';
 import { RestaurantSignUpComponent } from './restaurant-sign-up/restaurant-sign-up.component';
 import { HeaderUserDashboardComponent } from './header-user-dashboard/header-user-dashboard.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
+import { EventsComponent } from './events/events.component';
+
+import {EventServices} from "./services/event.services";
+import {EventsResolver} from "./resolvers/events.resolver";
+
+import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.component";
+import {SingleUserComponent} from "./single-user/single-user.component";
+
 import { LoginOptionComponent } from './login-option/login-option.component';
 import { RegistrationOptionComponent } from './registration-option/registration-option.component';
+import { ReservationsComponent } from './reservations/reservations.component';
+import {ReservationServices} from "./services/reservation.service";
+import {ReservationsResolver} from "./resolvers/reservations.resolver";
+
 
 
 @NgModule({
@@ -51,8 +65,18 @@ import { RegistrationOptionComponent } from './registration-option/registration-
     RestaurantSignUpComponent,
     HeaderUserDashboardComponent,
     RestaurantComponent,
+
+    EventsComponent,
+
+
+    AdminDashboardComponent,
+    SingleUserComponent,
+
     LoginOptionComponent,
     RegistrationOptionComponent,
+    ReservationsComponent
+
+
 
   ],
   imports: [
@@ -65,7 +89,17 @@ import { RegistrationOptionComponent } from './registration-option/registration-
   ],
   providers: [
     RestaurantServices,
-    RestaurantsResolver
+    RestaurantsResolver,
+
+    EventServices,
+    EventsResolver,
+
+    AdminService,
+    AdminsResolver,
+
+    ReservationServices,
+    ReservationsResolver
+
   ],
   bootstrap: [AppComponent]
 })

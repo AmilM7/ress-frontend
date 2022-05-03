@@ -5,6 +5,8 @@ export interface Restaurant {
   name: string;
   location: string;
   numOfAvailGuests: number;
+  description: string;
+  confirmPassword: string;
   numOfAvailTables: number;
   ressDescription: string;
   contactNum: string;
