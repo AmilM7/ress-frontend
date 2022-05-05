@@ -1,0 +1,21 @@
+.mainwrap{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main{
+  width: 1300px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reservations-group{
+  padding: 20px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}

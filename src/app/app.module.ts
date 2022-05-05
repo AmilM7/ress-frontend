@@ -42,6 +42,11 @@ import { RegistrationOptionComponent } from './registration-option/registration-
 import { ReservationsComponent } from './reservations/reservations.component';
 import {ReservationServices} from "./services/reservation.service";
 import {ReservationsResolver} from "./resolvers/reservations.resolver";
+import { RestaurantDashboardComponent } from './restaurant-dashboard/restaurant-dashboard.component';
+import { HeaderRestaurantDashboardComponent } from './header-restaurant-dashboard/header-restaurant-dashboard.component';
+import { ReservationsApprovedComponent } from './reservations-approved/reservations-approved.component';
+import { ReservationsDeniedComponent } from './reservations-denied/reservations-denied.component';
+import { ReservationsPendingComponent } from './reservations-pending/reservations-pending.component';
 
 
 
@@ -74,7 +79,12 @@ import {ReservationsResolver} from "./resolvers/reservations.resolver";
 
     LoginOptionComponent,
     RegistrationOptionComponent,
-    ReservationsComponent
+    ReservationsComponent,
+    RestaurantDashboardComponent,
+    HeaderRestaurantDashboardComponent,
+    ReservationsApprovedComponent,
+    ReservationsDeniedComponent,
+    ReservationsPendingComponent
 
 
 
