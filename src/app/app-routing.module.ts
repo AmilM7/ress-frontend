@@ -33,6 +33,7 @@ import {RegistrationOptionComponent} from "./registration-option/registration-op
 import {ReservationsResolver} from "./resolvers/reservations.resolver";
 import {ReservationsComponent} from "./reservations/reservations.component";
 import {RestaurantDashboardComponent} from "./restaurant-dashboard/restaurant-dashboard.component";
+import {ReservationsApprovedComponent} from "./reservations-approved/reservations-approved.component";
 
 
 
@@ -46,15 +47,18 @@ const routes: Routes = [
   {path: Routex.profile, component: ProfileComponent},
   {path: Routex.logout, component: LogoutComponent},
   {path: Routex.aboutUs, component: AboutUsComponent},
-
   {path: Routex.events, component: EventsComponent},
-
   {path: Routex.reservations, component: ReservationsComponent},
-
   {path: Routex.logInOption, component: LoginOptionComponent},
   {path: Routex.signUpOption, component: RegistrationOptionComponent},
 
-  {path: Routex.restaurantDashboard, component: RestaurantDashboardComponent},
+  {
+    path: Routex.restaurantDashboard,
+    component: RestaurantDashboardComponent,
+    resolve: {
+      [ResolverResponse.reservations]: ReservationsResolver,
+    }
+  },
 
   {
     path: Routex.user,
@@ -115,10 +119,11 @@ const routes: Routes = [
       component: ReservationsComponent,
       resolve: {
       [ResolverResponse.reservations]: ReservationsResolver,
-    }
-  }
+        }
+      }
   ]
   },
+
 
   {path: '**', component: PageNotFoundComponent},
 ]

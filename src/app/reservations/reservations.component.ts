@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Reservation} from "../models/reservation";
 import {ActivatedRoute} from "@angular/router";
 import {ResolverResponse} from "../constants/resolver-response.constants";
@@ -19,5 +19,4 @@ export class ReservationsComponent implements OnInit {
       this.reservations = response[ResolverResponse.reservations];
     });
   }
-
 }

@@ -1,24 +1,77 @@
 <app-header-restaurant-dashboard></app-header-restaurant-dashboard>
 
+<div class="wrap">
+  <div class="introwrap">
+    <div class="intro">
+      <img src="../../assets/restaurant1.jpg" alt="profile">
+      <div class="info">
+        <p><span>Account information</span></p>
+        <hr>
+        <p><span>Object type:</span> type from db</p>
+        <p><span>Name:</span> name from db</p>
+        <p><span>Location:</span> location from db</p>
+        <p><span>Contact:</span> contact from db</p>
+      </div>
+    </div>
+    <button><i class="bi bi-gear-fill"></i> Edit profile</button>
+  </div>
+</div>
+
 <div class="mainwrap">
   <div class="main">
 
     <div class="reservations-group">
       <h5 style="color: #395B7E">Pending reservations</h5>
       <hr>
-      <app-reservations-pending></app-reservations-pending>
+      <div *ngFor="let reservation of reservations">
+        <div *ngIf="reservation.approval=='pending'">
+          <p> ID: {{reservation.id}}</p>
+          <p> Number of guests: {{reservation.numberOfGuests}}</p>
+          <p> Time: {{reservation.time}}</p>
+          <p> Day: {{reservation.day}}</p>
+          <p> Table ID: {{reservation.tableId}}</p>
+          <p> User first name: {{reservation.userFirstName}}</p>
+          <p> User last name: {{reservation.userLastName}}</p>
+          <p> Approval status: {{reservation.approval}}</p>
+          <br><br><br>
+        </div>
+      </div>
     </div>
 
     <div class="reservations-group">
       <h5 style="color: #04AA6D">Approved reservations <i class="bi bi-check"></i></h5>
       <hr>
-      <app-reservations-approved></app-reservations-approved>
+      <div *ngFor="let reservation of reservations">
+        <div *ngIf="reservation.approval=='approved'">
+          <p> ID: {{reservation.id}}</p>
+          <p> Number of guests: {{reservation.numberOfGuests}}</p>
+          <p> Time: {{reservation.time}}</p>
+          <p> Day: {{reservation.day}}</p>
+          <p> Table ID: {{reservation.tableId}}</p>
+          <p> User first name: {{reservation.userFirstName}}</p>
+          <p> User last name: {{reservation.userLastName}}</p>
+          <p> Approval status: {{reservation.approval}}</p>
+          <br><br><br>
+        </div>
+      </div>
     </div>
 
     <div class="reservations-group">
       <h5 style="color: red">Denied reservations <i class="bi bi-x"></i></h5>
       <hr>
-      <app-reservations-denied></app-reservations-denied>
+      <div *ngFor="let reservation of reservations">
+        <div *ngIf="reservation.approval=='denied'">
+          <p> ID: {{reservation.id}}</p>
+          <p> Number of guests: {{reservation.numberOfGuests}}</p>
+          <p> Time: {{reservation.time}}</p>
+          <p> Day: {{reservation.day}}</p>
+          <p> Table ID: {{reservation.tableId}}</p>
+          <p> User first name: {{reservation.userFirstName}}</p>
+          <p> User last name: {{reservation.userLastName}}</p>
+          <p> Approval status: {{reservation.approval}}</p>
+          <br><br><br>
+        </div>
+      </div>
     </div>
 
   </div>
