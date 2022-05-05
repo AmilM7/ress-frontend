@@ -26,7 +26,7 @@
               <div class="invalidInput" *ngIf="password && password.invalid && password.touched">At least one lowercase, capital letter and number (more than 8 characters)</div>
             </div>
             <div class="mb-3">
-              <label  class="form-label text-center">Confirm Password</label>
+              <label class="form-label text-center">Confirm Password</label>
               <div class="input-group mb-3">
                 <span class="input-group-text" ><i class="bi bi-lock-fill"></i></span>
                 <input formControlName="confirmPassword" type="password"  class="form-control text-center"
@@ -36,13 +36,36 @@
               <div class="invalidInput" *ngIf="password && password.touched && confirmPassword && confirmPassword.valid && confirmPassword.touched && checkPassword() ">
                 Passwords do not match</div>
             </div>
+            <div class="mb-3">
+              <label  class="form-label">Starting hours</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text" ><i class="bi bi-clock-fill"></i></span>
+                <input type="text" formControlName="startHour" class="form-control text-center"
+                       [ngClass]="{'is-invalid' :startHour && startHour.invalid && startHour.touched }"aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label  class="form-label">Maximal number of guests</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text" ><i class="bi bi-people"></i></span>
+                <input type="number" formControlName="numOfAvailGuests" class="form-control text-center"
+                       [ngClass]="{'is-invalid' :numOfAvailGuests && numOfAvailGuests.invalid && numOfAvailGuests.touched }"aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="mb-3">
+              <select>
+                <option value="0">Select type:</option>
+                <option value="1">Restaurant</option>
+                <option value="2">Club</option>
+              </select>
+            </div>
           </div>
           <div>
             <div class="mb-3">
               <label  class="form-label">Restaurant name</label>
               <div class="input-group mb-3">
                 <span class="input-group-text" ><i class="bi bi-person-fill"></i></span>
-                <input type="text" formControlName="firstName" class="form-control text-center"
+                <input type="text" formControlName="name" class="form-control text-center"
                        [ngClass]="{'is-invalid' :name && name.invalid && name.touched }">
               </div>
             </div>
@@ -50,14 +73,14 @@
               <label  class="form-label text-center">Location</label>
               <div class="input-group mb-3">
                 <span class="input-group-text" ><i class="bi bi-geo-alt-fill"></i></span>
-                <input type="text" formControlName="lastName" class="form-control text-center" [ngClass]="{'is-invalid' :location && location.invalid && location.touched }" aria-describedby="basic-addon1">
+                <input type="text" formControlName="location" class="form-control text-center" [ngClass]="{'is-invalid' :location && location.invalid && location.touched }" aria-describedby="basic-addon1">
               </div>
             </div>
             <div class="mb-3">
               <label  class="form-label text-center">Contact number</label>
               <div class="input-group mb-3">
                 <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                <input type="tel" formControlName="phone"  class="form-control text-center" [ngClass]="{'is-invalid' : contactNum && contactNum.invalid && contactNum.touched}"
+                <input type="tel" formControlName="contactNum"  class="form-control text-center" [ngClass]="{'is-invalid' : contactNum && contactNum.invalid && contactNum.touched}"
                        aria-describedby="basic-addon1">
               </div>
             </div>
@@ -65,49 +88,26 @@
               <label  class="form-label text-center">Manager number</label>
               <div class="input-group mb-3">
                 <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                <input type="tel" formControlName="phone"  class="form-control text-center" [ngClass]="{'is-invalid' : contactManager && contactManager.invalid && contactManager.touched}"
+                <input type="tel" formControlName="contactManager"  class="form-control text-center" [ngClass]="{'is-invalid' : contactManager && contactManager.invalid && contactManager.touched}"
                        aria-describedby="basic-addon1">
-              </div>
-            </div>
-            <div class="mb-3">
-              <label  class="form-label">Starting hours</label>
-              <div class="input-group mb-3">
-                <span class="input-group-text" ><i class="bi bi-clock-fill"></i></span>
-                <input type="text" formControlName="firstName" class="form-control text-center"
-                       [ngClass]="{'is-invalid' :startHour && startHour.invalid && startHour.touched }"aria-describedby="basic-addon1">
               </div>
             </div>
             <div class="mb-3">
               <label  class="form-label">Ending hours</label>
               <div class="input-group mb-3">
                 <span class="input-group-text" ><i class="bi bi-clock-fill"></i></span>
-                <input type="text" formControlName="firstName" class="form-control text-center"
+                <input type="text" formControlName="endHour" class="form-control text-center"
                        [ngClass]="{'is-invalid' :endHour && endHour.invalid && endHour.touched }"aria-describedby="basic-addon1">
-              </div>
-            </div>
-            <div class="mb-3">
-              <label  class="form-label">Maximal number of guests</label>
-              <div class="input-group mb-3">
-                <span class="input-group-text" ><i class="bi bi-people"></i></span>
-                <input type="number" formControlName="firstName" class="form-control text-center"
-                       [ngClass]="{'is-invalid' :numOfAvailGuests && numOfAvailGuests.invalid && numOfAvailGuests.touched }"aria-describedby="basic-addon1">
               </div>
             </div>
             <div class="mb-3">
               <label  class="form-label">Maximal number of tables</label>
               <div class="input-group mb-3">
                 <span class="input-group-text" ><i class="bi bi-123"></i></span>
-                <input type="number" formControlName="firstName" class="form-control text-center"
+                <input type="number" formControlName="numOfAvailTables" class="form-control text-center"
                        [ngClass]="{'is-invalid' :numOfAvailTables && numOfAvailTables.invalid && numOfAvailTables.touched }"aria-describedby="basic-addon1">
               </div>
             </div>
-            <div class="mb-3">
-              <label class="form-label text-center" >Select type:</label>
-              <select>
-                <option value="restaurant">Restaurant</option>
-                <option value="club">Club</option>
-              </select>
-              </div>
             </div>
           </div>
         <button  [disabled]="form.invalid || checkPassword()"  type="submit" class="btn btn-success btn-lg">SIGN UP</button>
