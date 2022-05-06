@@ -1,5 +1,5 @@
 .wrap{
-  background-color: lightgray;
+  background-image: linear-gradient(#5381b9,#395B7E);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@
 
 .intro{
   display: flex;
-  color: #395B7E;
+  color: white;
 }
 
 .intro img{
@@ -38,15 +38,15 @@
 .custom-button{
   height: 50px;
   padding: 0 20px;
-  color: white;
+  color: #395B7E;
   border: none;
   border-radius: 10px;
-  background-color: #395B7E;
+  background-color: lightgray;
   transition: 0.2s ease-in;
 }
 
 .custom-button:hover{
-  background-color: #5381b9;
+  background-color: white;
 }
 
 .custom-button-2{
