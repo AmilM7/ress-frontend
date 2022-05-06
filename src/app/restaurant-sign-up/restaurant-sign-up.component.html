@@ -40,7 +40,7 @@
               <label  class="form-label">Starting hours</label>
               <div class="input-group mb-3">
                 <span class="input-group-text" ><i class="bi bi-clock-fill"></i></span>
-                <input type="text" formControlName="startHour" class="form-control text-center"
+                <input type="text" formControlName="startHour" class="form-control text-center" id="24h" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"
                        [ngClass]="{'is-invalid' :startHour && startHour.invalid && startHour.touched }"aria-describedby="basic-addon1">
               </div>
             </div>
@@ -80,7 +80,8 @@
               <label  class="form-label text-center">Contact number</label>
               <div class="input-group mb-3">
                 <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                <input type="tel" formControlName="contactNum"  class="form-control text-center" [ngClass]="{'is-invalid' : contactNum && contactNum.invalid && contactNum.touched}"
+                <input type="tel" formControlName="contactNum"  class="form-control text-center" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                       [ngClass]="{'is-invalid' : contactNum && contactNum.invalid && contactNum.touched}"
                        aria-describedby="basic-addon1">
               </div>
             </div>
@@ -88,7 +89,8 @@
               <label  class="form-label text-center">Manager number</label>
               <div class="input-group mb-3">
                 <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                <input type="tel" formControlName="contactManager"  class="form-control text-center" [ngClass]="{'is-invalid' : contactManager && contactManager.invalid && contactManager.touched}"
+                <input type="tel" formControlName="contactManager"  class="form-control text-center" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                       [ngClass]="{'is-invalid' : contactManager && contactManager.invalid && contactManager.touched}"
                        aria-describedby="basic-addon1">
               </div>
             </div>
@@ -96,7 +98,7 @@
               <label  class="form-label">Ending hours</label>
               <div class="input-group mb-3">
                 <span class="input-group-text" ><i class="bi bi-clock-fill"></i></span>
-                <input type="text" formControlName="endHour" class="form-control text-center"
+                <input type="text" formControlName="endHour" class="form-control text-center" id="24h" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"
                        [ngClass]="{'is-invalid' :endHour && endHour.invalid && endHour.touched }"aria-describedby="basic-addon1">
               </div>
             </div>
