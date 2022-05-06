@@ -13,7 +13,7 @@
         <p><span>Contact:</span> contact from db</p>
       </div>
     </div>
-    <button><i class="bi bi-gear-fill"></i> Edit profile</button>
+    <button class="custom-button"><i class="bi bi-gear-fill"></i> Edit profile</button>
   </div>
 </div>
 
@@ -23,53 +23,87 @@
     <div class="reservations-group">
       <h5 style="color: #395B7E">Pending reservations</h5>
       <hr>
-      <div *ngFor="let reservation of reservations">
-        <div *ngIf="reservation.approval=='pending'">
-          <p> ID: {{reservation.id}}</p>
-          <p> Number of guests: {{reservation.numberOfGuests}}</p>
-          <p> Time: {{reservation.time}}</p>
-          <p> Day: {{reservation.day}}</p>
-          <p> Table ID: {{reservation.tableId}}</p>
-          <p> User first name: {{reservation.userFirstName}}</p>
-          <p> User last name: {{reservation.userLastName}}</p>
-          <p> Approval status: {{reservation.approval}}</p>
-          <br><br><br>
+      <div *ngFor="let reservation of reservations" class="reservation-wrap">
+        <div *ngIf="reservation.approval=='pending'" class="reservation-block">
+          <div class="user-profile">
+            <img src="../../assets/amar.jpg" alt="amar">
+            <button class="custom-button-2">View user profie</button>
+          </div>
+          <div>
+            <p> <span>Username:</span> {{reservation.userFirstName}} {{reservation.userLastName}}</p>
+            <p> <span>Time:</span> {{reservation.time}}</p>
+            <p> <span>Day:</span> {{reservation.day}}</p>
+            <p> <span>Number of guests:</span> {{reservation.numberOfGuests}}</p>
+            <p> <span>Table ID:</span> {{reservation.tableId}}</p>
+          </div>
+          <div class="confirmation">
+            <div style="width: 200px">
+              <p> <span>ID:</span> {{reservation.id}}</p>
+              <p> <span>Approval status:</span> <br> <span style="color: #F0B67F!important; text-transform: uppercase"> {{reservation.approval}}</span></p>
+            </div>
+            <div class="confirmation-buttons">
+              <button class="btn-success btn" (click)="doApprove(reservation.id)">Approve</button>
+              <button class="btn-danger btn" (click)="doDeny(reservation.id)">Deny</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="reservations-group">
-      <h5 style="color: #04AA6D">Approved reservations <i class="bi bi-check"></i></h5>
+      <h5 style="color: #04AA6D">Approved reservations </h5>
       <hr>
-      <div *ngFor="let reservation of reservations">
-        <div *ngIf="reservation.approval=='approved'">
-          <p> ID: {{reservation.id}}</p>
-          <p> Number of guests: {{reservation.numberOfGuests}}</p>
-          <p> Time: {{reservation.time}}</p>
-          <p> Day: {{reservation.day}}</p>
-          <p> Table ID: {{reservation.tableId}}</p>
-          <p> User first name: {{reservation.userFirstName}}</p>
-          <p> User last name: {{reservation.userLastName}}</p>
-          <p> Approval status: {{reservation.approval}}</p>
-          <br><br><br>
+      <div *ngFor="let reservation of reservations" class="reservation-wrap">
+        <div *ngIf="reservation.approval=='approved'" class="reservation-block">
+          <div class="user-profile">
+            <img src="../../assets/amil.jpg" alt="amil">
+            <button class="custom-button-2">View user profie</button>
+          </div>
+          <div>
+            <p> <span>Username:</span> {{reservation.userFirstName}} {{reservation.userLastName}}</p>
+            <p> <span>Time:</span> {{reservation.time}}</p>
+            <p> <span>Day:</span> {{reservation.day}}</p>
+            <p> <span>Number of guests:</span> {{reservation.numberOfGuests}}</p>
+            <p> <span>Table ID:</span> {{reservation.tableId}}</p>
+          </div>
+          <div class="confirmation">
+            <div style="width: 200px">
+              <p> <span>ID:</span> {{reservation.id}}</p>
+              <p> <span>Approval status:</span> <br> <span style="color: #3e8e41!important; text-transform: uppercase"> {{reservation.approval}}</span></p>
+            </div>
+            <div class="confirmation-buttons-1">
+              <button class="btn-danger btn" (click)="doDeny(reservation.id)">Deny</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="reservations-group">
-      <h5 style="color: red">Denied reservations <i class="bi bi-x"></i></h5>
+      <h5 style="color: red">Denied reservations</h5>
       <hr>
-      <div *ngFor="let reservation of reservations">
-        <div *ngIf="reservation.approval=='denied'">
-          <p> ID: {{reservation.id}}</p>
-          <p> Number of guests: {{reservation.numberOfGuests}}</p>
-          <p> Time: {{reservation.time}}</p>
-          <p> Day: {{reservation.day}}</p>
-          <p> Table ID: {{reservation.tableId}}</p>
-          <p> User first name: {{reservation.userFirstName}}</p>
-          <p> User last name: {{reservation.userLastName}}</p>
-          <p> Approval status: {{reservation.approval}}</p>
-          <br><br><br>
+      <div *ngFor="let reservation of reservations" class="reservation-wrap">
+        <div *ngIf="reservation.approval=='denied'" class="reservation-block">
+          <div class="user-profile">
+            <img src="../../assets/amar.jpg" alt="amar">
+            <button class="custom-button-2">View user profie</button>
+          </div>
+          <div>
+            <p> <span>Username:</span> {{reservation.userFirstName}} {{reservation.userLastName}}</p>
+            <p> <span>Time:</span> {{reservation.time}}</p>
+            <p> <span>Day:</span> {{reservation.day}}</p>
+            <p> <span>Number of guests:</span> {{reservation.numberOfGuests}}</p>
+            <p> <span>Table ID:</span> {{reservation.tableId}}</p>
+          </div>
+          <div class="confirmation">
+            <div style="width: 200px">
+              <p> <span>Reservation ID:</span> {{reservation.id}}</p>
+              <p> <span>Approval status:</span> <br> <span style="color: red!important; text-transform: uppercase"> {{reservation.approval}}</span></p>
+            </div>
+            <div class="confirmation-buttons-1">
+              <button class="btn-success btn" (click)="doApprove(reservation.id)">Approve</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

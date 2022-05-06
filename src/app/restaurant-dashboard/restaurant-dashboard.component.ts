@@ -20,4 +20,15 @@ export class RestaurantDashboardComponent implements OnInit {
     });
   }
 
+  doApprove(id: string):void {
+    for (let reservation of this.reservations){
+      if (id == reservation.id) reservation.approval='approved';
+    }
+  }
+
+  doDeny(id: string): void {
+    for (let reservation of this.reservations){
+      if (id == reservation.id) reservation.approval='denied';
+    }
+  }
 }
