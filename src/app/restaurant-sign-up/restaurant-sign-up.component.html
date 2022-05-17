@@ -55,8 +55,8 @@
             <div class="mb-3">
               <select>
                 <option value="0">Select type:</option>
-                <option value="1">Restaurant</option>
-                <option value="2">Club</option>
+                <option value="restaurant">Restaurant</option>
+                <option value="club">Club</option>
               </select>
             </div>
           </div>
@@ -112,7 +112,7 @@
             </div>
             </div>
           </div>
-        <button  [disabled]="form.invalid || checkPassword()"  type="submit" class="btn btn-success btn-lg">SIGN UP</button>
+        <button    type="submit" class="btn btn-success btn-lg">SIGN UP</button>
         <p>Already have an account? <a routerLink="/restaurantLogIn" > Log in</a></p>
         <div id="emailHelp" class="form-text">We'll never share your information with anyone else.</div>
       </form>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Restaurant} from "../models/restaurant";
+import {RestaurantServices} from "../services/restaurant.services";
+
 
 @Component({
   selector: 'app-restaurant-sign-up',
@@ -11,7 +13,10 @@ export class RestaurantSignUpComponent implements OnInit {
   public form!: FormGroup;
   restaurant: Restaurant | undefined;
 
-  constructor(private  formBuilder : FormBuilder) { }
+  constructor(private  formBuilder : FormBuilder,
+              private restaurantService: RestaurantServices) {
+
+  }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -83,8 +88,24 @@ export class RestaurantSignUpComponent implements OnInit {
 
 
   submit(): void {
+     this.saveItem(this.form.value);
     /*will be added*/
     this.form.reset();
   }
 
+  saveItem (restaurant: Restaurant): void {
+    this.restaurantService.create(restaurant);
+  }
+
+ /* saveItem(item: Item): void {
+    if (this.isEditing) {
+      const existingIndex = this.items.findIndex(i => i[ItemProperty.id] === item[ItemProperty.id]);
+      this.items.splice(existingIndex, 1, item);
+      this.router.navigate([Route.ITEMS]);
+    } else {
+      this.itemService.create(item).subscribe(value => {
+        this.router.navigate([Route.ITEMS]);
+      });
+    }
+  }*/
 }
