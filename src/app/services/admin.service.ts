@@ -3,10 +3,11 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Person} from "../models/person";
 import {PersonDto} from "../models/dtos/person.dto";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class AdminService {
-  private readonly baseUrl:string  = 'http://localhost:8080/admin';
+  private readonly baseUrl:string  =  environment.backendUrl + '/admin';
 
   constructor(private http:HttpClient) {
   }
