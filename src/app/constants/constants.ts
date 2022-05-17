@@ -21,5 +21,4 @@ export class Routex {
   public static restaurant = ':id';
   public static singleUser = ':id';
   public static restaurantDashboard = 'restaurantDashboard';
-
 }

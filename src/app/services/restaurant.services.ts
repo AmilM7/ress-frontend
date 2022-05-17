@@ -16,6 +16,10 @@ export class RestaurantServices {
   getRestaurant(id:string): Observable<Restaurant>{
     return this.http.get<Restaurant>(`${this.baseUrl}/${id}`);
   }
+
+  create(restaurant: Restaurant):Observable<Restaurant> {
+    return  this.http.post<Restaurant>(`${this.baseUrl}`, restaurant);
+  }
 }
 
 
