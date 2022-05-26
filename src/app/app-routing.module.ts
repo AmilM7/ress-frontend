@@ -32,6 +32,7 @@ import {LoginOptionComponent} from "./login-option/login-option.component";
 import {RegistrationOptionComponent} from "./registration-option/registration-option.component";
 import {ReservationsResolver} from "./resolvers/reservations.resolver";
 import {ReservationsComponent} from "./reservations/reservations.component";
+import {AdminLoginComponent} from "./admin-login/admin-login.component";
 
 
 
@@ -47,7 +48,7 @@ const routes: Routes = [
   {path: Routex.aboutUs, component: AboutUsComponent},
 
   {path: Routex.events, component: EventsComponent},
-
+  {path: Routex.adminlogin, component: AdminLoginComponent},
   {path: Routex.reservations, component: ReservationsComponent},
 
   {path: Routex.logInOption, component: LoginOptionComponent},

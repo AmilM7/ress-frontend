@@ -5,4 +5,5 @@ export class ResolverResponse {
   public static admins = 'admin';
   public static singleUser = 'single user';
   public static reservations = 'reservations';
+  public static adminlogin = 'adminlogin';
 }
