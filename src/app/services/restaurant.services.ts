@@ -2,10 +2,11 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Restaurant} from "../models/restaurant";
 import {Observable} from "rxjs";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class RestaurantServices {
-  private readonly baseUrl:string  = 'http://localhost:8080/restaurants';
+  private readonly baseUrl:string  = environment.backendUrl + '/restaurants';
 
   constructor(private http:HttpClient) {
   }
@@ -15,6 +16,10 @@ export class RestaurantServices {
 
   getRestaurant(id:string): Observable<Restaurant>{
     return this.http.get<Restaurant>(`${this.baseUrl}/${id}`);
+  }
+
+  create(restaurant: Restaurant):Observable<Restaurant> {
+    return  this.http.post<Restaurant>(`${this.baseUrl}`, restaurant);
   }
 }
 

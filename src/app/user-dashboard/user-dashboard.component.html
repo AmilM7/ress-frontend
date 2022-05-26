@@ -1,10 +1,40 @@
-<div *ngFor="let restaurant of restaurants">
-
-  <p> ID: {{restaurant.id}}</p>
-  <p> Name: {{restaurant.name}}</p>
-  <p> Location: {{restaurant.location}}</p>
-  <p> Contact: {{restaurant.contactNum}}</p>
-  <br><br><br>
+<app-header-user-dashboard></app-header-user-dashboard>
+<div class="firstOne">
+  <h2>Welcome User</h2>
+  <div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping"><i class="bi bi-search"></i></span>
+    <input type="text" class="form-control" placeholder="Desired restaurant" aria-label="Username" aria-describedby="addon-wrapping">
+  </div>
+  <h2 class="secondh2">Please tell us where you would like to go...</h2>
 </div>
+
+<h2>Most popular restaurants</h2>
+
+<div class="secondOne">
+  <div>
+      <h4>Name</h4>
+      <button class="firstButton">Reserve</button>
+  </div>
+
+  <div>
+    <h4>Name</h4>
+    <button>Reserve</button>
+  </div>
+
+  <div>
+    <h4>Name</h4>
+    <button>Reserve</button>
+  </div>
+</div>
+
+<h2 class="secondH2">Ress spotlight</h2>
+<div class="thirdOne">
+  <h4>Name</h4>
+  <p>//description//</p>
+
+</div>
+
+<app-footer></app-footer>
+
 
 
