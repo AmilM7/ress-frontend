@@ -42,6 +42,7 @@ import { RegistrationOptionComponent } from './registration-option/registration-
 import { ReservationsComponent } from './reservations/reservations.component';
 import {ReservationServices} from "./services/reservation.service";
 import {ReservationsResolver} from "./resolvers/reservations.resolver";
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 
 
@@ -74,7 +75,8 @@ import {ReservationsResolver} from "./resolvers/reservations.resolver";
 
     LoginOptionComponent,
     RegistrationOptionComponent,
-    ReservationsComponent
+    ReservationsComponent,
+    AdminLoginComponent
 
 
 
