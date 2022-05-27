@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Restaurant} from "../models/restaurant";
+import {RestaurantServices} from "../services/restaurant.services";
+
 
 @Component({
   selector: 'app-restaurant-sign-up',
@@ -11,7 +13,10 @@ export class RestaurantSignUpComponent implements OnInit {
   public form!: FormGroup;
   restaurant: Restaurant | undefined;
 
-  constructor(private  formBuilder : FormBuilder) { }
+  constructor(private  formBuilder : FormBuilder,
+              private restaurantService: RestaurantServices) {
+
+  }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -20,11 +25,11 @@ export class RestaurantSignUpComponent implements OnInit {
       numOfAvailGuests: [this.restaurant?.numOfAvailGuests || '', [Validators.required, Validators.max(9)]],
       numOfAvailTables: [this.restaurant?.numOfAvailTables || '', [Validators.required, Validators.max(15)]],
       description: [this.restaurant?.description || '', [Validators.required,]],
-      contactNum: [this.restaurant?.contactNum || '', Validators.required, Validators.pattern("[0-9\\s]{6,19}")],
-      startHour:[this.restaurant?.startHour||'', Validators.required, Validators.pattern(/^0([0-6][0-9]|70):[0-5][0-9]$/)],
-      endHour:[this.restaurant?.endHour||'', Validators.required, Validators.pattern(/^0([0-6][0-9]|70):[0-5][0-9]$/)],
+      contactNum: [this.restaurant?.contactNum || '', Validators.required],
+      startHour:[this.restaurant?.startHour||'', Validators.required],
+      endHour:[this.restaurant?.endHour||'', Validators.required],
       email: [this.restaurant?.email || '', [Validators.required, Validators.email]],
-      contactManager:[this.restaurant?.contactManager||'', Validators.required,Validators.pattern("[0-9\\s]{6,19}")],
+      contactManager:[this.restaurant?.contactManager||'', Validators.required],
       type: [this.restaurant?.type || '', Validators.required],
       password: [this.restaurant?.password || '', [Validators.required, Validators.pattern("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")]],
       confirmPassword: [this.restaurant?.confirmPassword || '', Validators.required]
@@ -83,8 +88,24 @@ export class RestaurantSignUpComponent implements OnInit {
 
 
   submit(): void {
+     this.saveItem(this.form.value);
     /*will be added*/
     this.form.reset();
   }
 
+  saveItem (restaurant: Restaurant): void {
+    this.restaurantService.create(restaurant);
+  }
+
+ /* saveItem(item: Item): void {
+    if (this.isEditing) {
+      const existingIndex = this.items.findIndex(i => i[ItemProperty.id] === item[ItemProperty.id]);
+      this.items.splice(existingIndex, 1, item);
+      this.router.navigate([Route.ITEMS]);
+    } else {
+      this.itemService.create(item).subscribe(value => {
+        this.router.navigate([Route.ITEMS]);
+      });
+    }
+  }*/
 }

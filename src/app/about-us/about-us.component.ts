@@ -10,22 +10,22 @@ export class AboutUsComponent {
   public people = [
     {
       name: "Mirza",
-      description: "Developer",
+      description: " BackEnd Developer",
       image: '../assets/mirza.png'
     },
     {
       name: "Amar",
-      description: "Developer",
+      description: "FrontEnd Developer",
       image: '../assets/amar.jpg'
     },
     {
       name: "Irfan",
-      description: "Developer",
+      description: "FrontEnd Developer",
       image: '../assets/irfan.jpg'
     },
     {
       name: "Amil",
-      description: "Developer",
+      description: "BackEnd Developer",
       image: '../assets/amil.jpg'
     },
   ]

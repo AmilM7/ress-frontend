@@ -1,8 +1,4 @@
-th {
-  text-align: right;
-}
 .login{
-  background-image: url("/../../assets/restaurant2.jpg");
   height: 100%;
   position:fixed;
   width:100%;
@@ -14,7 +10,6 @@ th {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: scroll;
 }
 
 .picturewrap{
@@ -44,7 +39,7 @@ th {
   height: auto;
   border-radius: 20px;
   box-shadow: 10px 10px 50px #000;
-  font-size: 18px;
+  font-size: 20px;
   color: rgb(57, 91, 126);
   display: flex;
   justify-content: center;
@@ -52,13 +47,7 @@ th {
 
 .wrapper form{
   padding: 70px;
-  width: 800px;
-}
-
-.wrapper form .inputfields{
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-evenly;
+  width: 600px;
 }
 
 .wrapper form span{
@@ -100,53 +89,6 @@ p a{
 
 .invalidInput{
   color: red;
-  font-size: 15px;
-  width: 300px;
-}
-.custom-select {
-  position: relative;
+  font-size: 12px
 }
 
-.custom-select select {
-  display: none;
-}
-
-.select-selected {
-  background-color: #395B7E;
-}
-
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
-}
-.select-items div,.select-selected {
-  color: #ffffff;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-}
-.select-items {
-  position: absolute;
-  background-color: DodgerBlue;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-.select-hide {
-  display: none;
-}
-.select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
-}
