@@ -16,7 +16,6 @@ export class Routex {
   public static eventDashboard = 'eventDashboard';
   public static events = 'events';
   public static admins = 'admins';
-  public static reservations = 'reservations';
   public static adminDashboard = 'adminDashboard';
   public static restaurant = ':id';
   public static singleUser = ':id';

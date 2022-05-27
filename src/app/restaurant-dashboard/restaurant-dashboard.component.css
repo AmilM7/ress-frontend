@@ -1,0 +1,143 @@
+.wrap{
+  background-image: linear-gradient(#5381b9,#395B7E);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.introwrap{
+  width: 1300px;
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.intro{
+  display: flex;
+  color: white;
+}
+
+.intro img{
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  margin-right: 50px;
+}
+
+.intro .info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info span{
+  font-weight: bold;
+}
+
+.custom-button{
+  height: 50px;
+  padding: 0 20px;
+  color: #395B7E;
+  border: none;
+  border-radius: 10px;
+  background-color: lightgray;
+  transition: 0.2s ease-in;
+}
+
+.custom-button:hover{
+  background-color: white;
+}
+
+.custom-button-2{
+  height: 40px;
+  padding: 0 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: #395B7E;
+  transition: 0.2s ease-in;
+}
+
+.custom-button-2:hover{
+  background-color: #5381b9;
+}
+
+.mainwrap{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main{
+  width: 1300px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reservations-group{
+  padding: 20px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.reservation-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+.reservation-block{
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  width: 1300px;
+  justify-content: space-between;
+  color: #395B7E;
+}
+
+.reservation-block span{
+  font-weight: bold;
+}
+
+.confirmation{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.confirmation-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirmation-buttons-1{
+  display: flex;
+  justify-content: center;
+}
+
+.confirmation-buttons-1 button{
+  width: 100%;
+}
+
+.confirmation-buttons button{
+  width: 90px;
+}
+
+.user-profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-profile img{
+  height: 150px;
+  width: 160px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}

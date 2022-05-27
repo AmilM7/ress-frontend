@@ -6,4 +6,5 @@ export interface Reservation{
   day: string;
   userFirstName: string;
   userLastName: string;
+  approval: string;
 }

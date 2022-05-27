@@ -1,8 +1,5 @@
 import {NgModule} from '@angular/core';
 import {Route, Router, RouterModule, Routes} from "@angular/router";
-import {HeaderComponent} from "./header-welcome/header.component";
-import {FooterComponent} from "./footer/footer.component";
-import {HomepageComponent} from "./homepage/homepage.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {SignUpComponent} from "./sign-up/sign-up.component";
 import {LogInComponent} from "./log-in/log-in.component";
@@ -21,19 +18,14 @@ import {RestaurantComponent} from "./restaurant/restaurant.component";
 import {RestaurantResolver} from "./resolvers/restaurant.resolver";
 import {EventsComponent} from "./events/events.component";
 import {EventsResolver} from "./resolvers/events.resolver";
-
-
 import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.component";
 import {AdminsResolver} from "./resolvers/admins.resolver";
 import {SingleUserComponent} from "./single-user/single-user.component";
 import { SingleUserResolver} from "./resolvers/singleUser.resolver";
-
 import {LoginOptionComponent} from "./login-option/login-option.component";
 import {RegistrationOptionComponent} from "./registration-option/registration-option.component";
 import {ReservationsResolver} from "./resolvers/reservations.resolver";
-import {ReservationsComponent} from "./reservations/reservations.component";
-import {AdminLoginComponent} from "./admin-login/admin-login.component";
-
+import {RestaurantDashboardComponent} from "./restaurant-dashboard/restaurant-dashboard.component";
 
 
 const routes: Routes = [
@@ -46,11 +38,7 @@ const routes: Routes = [
   {path: Routex.profile, component: ProfileComponent},
   {path: Routex.logout, component: LogoutComponent},
   {path: Routex.aboutUs, component: AboutUsComponent},
-
   {path: Routex.events, component: EventsComponent},
-  {path: Routex.adminlogin, component: AdminLoginComponent},
-  {path: Routex.reservations, component: ReservationsComponent},
-
   {path: Routex.logInOption, component: LoginOptionComponent},
   {path: Routex.signUpOption, component: RegistrationOptionComponent},
 
@@ -109,8 +97,8 @@ const routes: Routes = [
     path: Routex.restaurantDashboard,
     children:[
       {
-      path: Routex.reservations,
-      component: ReservationsComponent,
+      path: Routex.empty,
+      component: RestaurantDashboardComponent,
       resolve: {
       [ResolverResponse.reservations]: ReservationsResolver,
     }
