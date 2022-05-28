@@ -36,6 +36,7 @@ import {AdminLoginComponent} from "./admin-login/admin-login.component";
 
 
 
+
 const routes: Routes = [
   {path: Routex.empty, component: MainComponent},
   {path: Routex.signUp, component: SignUpComponent},
