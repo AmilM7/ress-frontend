@@ -150,3 +150,8 @@ p a{
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+.mb-4{
+  width: 93%;
+  margin: 0 auto;
+}

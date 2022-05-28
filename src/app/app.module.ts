@@ -38,6 +38,7 @@ import {ReservationServices} from "./services/reservation.service";
 import {ReservationsResolver} from "./resolvers/reservations.resolver";
 import {RestaurantDashboardComponent} from "./restaurant-dashboard/restaurant-dashboard.component";
 import {HeaderRestaurantDashboardComponent} from "./header-restaurant-dashboard/header-restaurant-dashboard.component";
+import {AdminLoginComponent} from "./admin-login/admin-login.component";
 
 
 
@@ -67,7 +68,8 @@ import {HeaderRestaurantDashboardComponent} from "./header-restaurant-dashboard/
     AdminDashboardComponent,
     SingleUserComponent,
     LoginOptionComponent,
-    RegistrationOptionComponent
+    RegistrationOptionComponent,
+    AdminLoginComponent
 
 
 
