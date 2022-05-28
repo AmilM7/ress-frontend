@@ -28,6 +28,7 @@ import {ReservationsResolver} from "./resolvers/reservations.resolver";
 import {RestaurantDashboardComponent} from "./restaurant-dashboard/restaurant-dashboard.component";
 
 
+
 const routes: Routes = [
   {path: Routex.empty, component: MainComponent},
   {path: Routex.signUp, component: SignUpComponent},
