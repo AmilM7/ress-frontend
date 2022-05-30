@@ -27,6 +27,8 @@ import {RegistrationOptionComponent} from "./registration-option/registration-op
 import {ReservationsResolver} from "./resolvers/reservations.resolver";
 import {RestaurantDashboardComponent} from "./restaurant-dashboard/restaurant-dashboard.component";
 import {AdminLoginComponent} from "./admin-login/admin-login.component";
+import {RestaurantsNotAcceptedResolver} from "./resolvers/restaurantsNotAccepted.resolver";
+
 
 
 
@@ -64,8 +66,6 @@ const routes: Routes = [
     ]
   },
 
-
-
   {
     path: Routex.events,
     children: [
@@ -86,6 +86,7 @@ const routes: Routes = [
         path: Routex.adminDashboard, component: AdminDashboardComponent,
         resolve: {
           [ResolverResponse.admins]: AdminsResolver,
+          [ResolverResponse.notAccepted]: RestaurantsNotAcceptedResolver,
         }
       },
       {

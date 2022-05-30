@@ -18,6 +18,10 @@ export class RestaurantServices {
     return this.http.get<Restaurant>(`${this.baseUrl}/${id}`);
   }
 
+  getRestaurantsNotAccepted(): Observable<Restaurant[]>{
+    return this.http.get<Restaurant[]>(this.baseUrl + "/notAccepted");
+  }
+
   create(restaurant: Restaurant):Observable<Restaurant> {
     return  this.http.post<Restaurant>(`${this.baseUrl}`, restaurant);
   }
