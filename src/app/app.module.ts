@@ -39,6 +39,7 @@ import {ReservationsResolver} from "./resolvers/reservations.resolver";
 import {RestaurantDashboardComponent} from "./restaurant-dashboard/restaurant-dashboard.component";
 import {HeaderRestaurantDashboardComponent} from "./header-restaurant-dashboard/header-restaurant-dashboard.component";
 import {AdminLoginComponent} from "./admin-login/admin-login.component";
+import { AdminDashboardHeaderComponent } from './admin-dashboard-header/admin-dashboard-header.component';
 
 
 
@@ -69,7 +70,8 @@ import {AdminLoginComponent} from "./admin-login/admin-login.component";
     SingleUserComponent,
     LoginOptionComponent,
     RegistrationOptionComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    AdminDashboardHeaderComponent
 
 
 
