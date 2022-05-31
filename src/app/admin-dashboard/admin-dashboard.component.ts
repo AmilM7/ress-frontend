@@ -31,4 +31,16 @@ export class AdminDashboardComponent implements OnInit {
 
   }
 
+  doApprove():void {
+    for (let restaurant of this.restaurants){
+      console.log("works")
+    }
+  }
+
+  doDeny(): void {
+    for (let reservation of this.restaurants){
+      console.log("works")
+    }
+  }
+
 }
