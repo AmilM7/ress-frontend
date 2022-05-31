@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Reservation} from "../models/reservation";
 import {ActivatedRoute} from "@angular/router";
 import {ResolverResponse} from "../constants/resolver-response.constants";
+import {ReservationServices} from "../services/reservation.service";
+
 
 @Component({
   selector: 'app-restaurant-dashboard',
@@ -12,7 +14,7 @@ export class RestaurantDashboardComponent implements OnInit {
 
   public reservations: Reservation[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, public reservationServices: ReservationServices) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
@@ -22,13 +24,24 @@ export class RestaurantDashboardComponent implements OnInit {
 
   doApprove(id: string):void {
     for (let reservation of this.reservations){
-      if (id == reservation.id) reservation.approval='approved';
+      if (id == reservation.id) {
+        reservation.approval = 'approved';
+        this.reservationServices.updateReservationApproved(reservation, id).subscribe(value => {
+
+        });
+      }
     }
   }
 
   doDeny(id: string): void {
-    for (let reservation of this.reservations){
-      if (id == reservation.id) reservation.approval='denied';
+    for (let reservation of this.reservations) {
+      if (id == reservation.id) {
+        reservation.approval = 'denied';
+        this.reservationServices.updateReservationDenied(reservation, id).subscribe(value => {
+
+        });
+      }
     }
+
   }
 }

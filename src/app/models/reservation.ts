@@ -4,7 +4,8 @@ export interface Reservation{
   time: string;
   tableId: string;
   day: string;
-  userFirstName: string;
-  userLastName: string;
+  date: Date;
+  userId: string;
+  restaurantId: string;
   approval: string;
 }

@@ -15,4 +15,12 @@ export class ReservationServices {
     return this.http.get<Reservation[]>(this.baseUrl);
   }
 
+  public updateReservationApproved(reservation: Reservation, id: string): Observable<Reservation>{
+    return this.http.put<Reservation>(`${this.baseUrl}/update/${id}`,reservation);
+  }
+
+  public updateReservationDenied(reservation: Reservation, id: string): Observable<Reservation>{
+    return this.http.put<Reservation>(`${this.baseUrl}/update2/${id}`,reservation);
+  }
+
 }
