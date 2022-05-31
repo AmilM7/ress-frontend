@@ -24,10 +24,10 @@
           <div class="confirmation">
             <div class="confirmation-buttons">
               <div class="confirmation-buttons-1">
-                <button class="btn-success btn" (click)="doApprove()">Approve</button>
+                <button class="btn-success btn" (click)="doApprove(restaurant)">Approve</button>
               </div>
               <div class="confirmation-buttons-1">
-                <button class="btn-danger btn" (click)="doDeny()">Deny</button>
+                <button class="btn-danger btn" (click)="doDeny(restaurant.email)">Deny</button>
               </div>
             </div>
           </div>

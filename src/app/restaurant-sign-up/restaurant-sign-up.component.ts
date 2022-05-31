@@ -36,7 +36,8 @@ export class RestaurantSignUpComponent implements OnInit {
       contactManager: [this.restaurant?.contactManager || '', Validators.required],
       type: [this.restaurant?.type || '', Validators.required],
       password: [this.restaurant?.password || '', [Validators.required, Validators.pattern("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")]],
-      confirmPassword: [this.restaurant?.confirmPassword || '', Validators.required]
+      confirmPassword: [this.restaurant?.confirmPassword || '', Validators.required],
+      id:[]
 
     })
   }
