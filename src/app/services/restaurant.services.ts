@@ -25,6 +25,15 @@ export class RestaurantServices {
   create(restaurant: Restaurant):Observable<Restaurant> {
     return  this.http.post<Restaurant>(`${this.baseUrl}`, restaurant);
   }
+
+  updateIsAcceptedToTrue(email:string, restaurant:Restaurant): Observable<Restaurant>{
+    return this.http.put<Restaurant>(`${this.baseUrl}/update/${email}`,restaurant );
+  }
+
+  deleteRestaurant(email:string):Observable<void>{
+    return this.http.delete<void>(`${this.baseUrl}/delete/${email}`)
+  }
+
 }
 
 

@@ -17,7 +17,8 @@ export class AdminDashboardComponent implements OnInit {
 
   public restaurants: Restaurant[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute,
+              private restaurantService: RestaurantServices) { }
 
   ngOnInit(): void {
 
@@ -31,16 +32,16 @@ export class AdminDashboardComponent implements OnInit {
 
   }
 
-  doApprove():void {
-    for (let restaurant of this.restaurants){
-      console.log("works")
-    }
+  doApprove(restaurant:Restaurant):void {
+    this.restaurantService.updateIsAcceptedToTrue(restaurant.email, restaurant).subscribe(value => {
+      window.location.reload();
+    });
   }
 
-  doDeny(): void {
-    for (let reservation of this.restaurants){
-      console.log("works")
-    }
+  doDeny(email: string): void {
+    this.restaurantService.deleteRestaurant(email).subscribe(value => {
+      window.location.reload();
+    });
   }
 
 }
