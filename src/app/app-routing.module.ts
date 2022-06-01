@@ -28,6 +28,7 @@ import {ReservationsResolver} from "./resolvers/reservations.resolver";
 import {RestaurantDashboardComponent} from "./restaurant-dashboard/restaurant-dashboard.component";
 import {AdminLoginComponent} from "./admin-login/admin-login.component";
 import {RestaurantsNotAcceptedResolver} from "./resolvers/restaurantsNotAccepted.resolver";
+import {ReservationFormComponent} from "./reservation-form/reservation-form.component";
 
 
 
@@ -48,6 +49,7 @@ const routes: Routes = [
   {path: Routex.signUpOption, component: RegistrationOptionComponent},
   {path: Routex.adminlogin, component: AdminLoginComponent},
 
+
   {
     path: Routex.user,
     children: [
@@ -57,6 +59,7 @@ const routes: Routes = [
           [ResolverResponse.restaurants]: RestaurantsResolver,
         }
       },
+      {path: Routex.reservationForm, component: ReservationFormComponent},
       {
         path: Routex.restaurant, component: RestaurantComponent,
         resolve: {
