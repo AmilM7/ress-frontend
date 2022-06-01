@@ -7,4 +7,5 @@ export class ResolverResponse {
   public static reservations = 'reservations';
   public static adminlogin = 'adminlogin';
   public static notAccepted = "notAccepted";
+  public static reservationsOfUser = "reservationsOfuser";
 }

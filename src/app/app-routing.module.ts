@@ -29,9 +29,8 @@ import {RestaurantDashboardComponent} from "./restaurant-dashboard/restaurant-da
 import {AdminLoginComponent} from "./admin-login/admin-login.component";
 import {RestaurantsNotAcceptedResolver} from "./resolvers/restaurantsNotAccepted.resolver";
 import {ReservationFormComponent} from "./reservation-form/reservation-form.component";
-
-
-
+import {ReservationsOfUserComponent} from "./reservations-of-user/reservations-of-user.component";
+import {ReservationsResolverOfUser} from "./resolvers/reservation-of-user.resolver";
 
 
 const routes: Routes = [
@@ -54,6 +53,12 @@ const routes: Routes = [
     path: Routex.user,
     children: [
       {
+        path: Routex.reservationsOfUser, component: ReservationsOfUserComponent,
+        resolve: {
+          [ResolverResponse.reservationsOfUser]: ReservationsResolverOfUser,
+        }
+      },
+      {
         path: Routex.userDashboard, component: UserDashboardComponent,
         resolve: {
           [ResolverResponse.restaurants]: RestaurantsResolver,
@@ -65,10 +70,15 @@ const routes: Routes = [
         resolve: {
           [ResolverResponse.restaurant]: RestaurantResolver,
         }
-      }
+      },
     ]
   },
-
+  {
+    path: Routex.reservationsOfUser, component: ReservationsOfUserComponent,
+    resolve: {
+      [ResolverResponse.reservationsOfUser]: ReservationsResolverOfUser,
+    }
+  },
   {
     path: Routex.events,
     children: [
