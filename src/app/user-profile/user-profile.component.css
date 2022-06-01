@@ -1,9 +1,9 @@
 .userprofile {
-  background-color: #F0B67F;
+  background-image: linear-gradient(#e7c6ab,#F0B67F);
   display: flex;
   justify-content: center;
   padding: 40px;
-  height: 130px;
+  height: 250px;
 }
 
 .wrap{
