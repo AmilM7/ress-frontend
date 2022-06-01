@@ -71,6 +71,7 @@ const routes: Routes = [
           [ResolverResponse.restaurant]: RestaurantResolver,
         }
       },
+
     ]
   },
   {
