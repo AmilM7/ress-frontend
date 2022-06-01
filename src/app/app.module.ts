@@ -42,8 +42,8 @@ import {AdminLoginComponent} from "./admin-login/admin-login.component";
 import { AdminDashboardHeaderComponent } from './admin-dashboard-header/admin-dashboard-header.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { RestaurantProfileComponent } from './restaurant-profile/restaurant-profile.component';
-
-
+import { ReservationFormComponent } from './reservation-form/reservation-form.component';
+import { ReservationsOfUserComponent } from './reservations-of-user/reservations-of-user.component';
 
 @NgModule({
   declarations: [
@@ -76,8 +76,8 @@ import { RestaurantProfileComponent } from './restaurant-profile/restaurant-prof
     AdminDashboardHeaderComponent,
     UserProfileComponent,
     RestaurantProfileComponent
-
-
+    ReservationFormComponent,
+    ReservationsOfUserComponent,
 
   ],
   imports: [

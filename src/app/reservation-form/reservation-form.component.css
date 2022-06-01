@@ -1,0 +1,137 @@
+
+.reserve{
+  background-image: url("/../../assets/restaurant4.jpg");
+  height: 100%;
+  position:fixed;
+  width:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+
+.picturewrap{
+  background-image: linear-gradient(#F0B67F, transparent);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reserve img{
+  width: 400px;
+  height: auto;
+}
+
+.wrapper{
+  background-color: rgba(255, 255, 255, .9);
+  width: 800px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 10px 10px 50px #000;
+  font-size: 18px;
+  color: rgb(57, 91, 126);
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper form{
+  padding: 70px;
+  width: 800px;
+}
+
+.wrapper form .inputfields{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+
+.wrapper form span{
+  background-color: #F0B67F;
+}
+
+.wrapper form span i{
+  color: #395B7E;
+  font-size: 18px;
+}
+
+button{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #395B7E;
+}
+
+button :hover{
+  background-color: white;
+}
+
+.invalidInput{
+  color: red;
+  font-size: 15px;
+  width: 300px;
+}
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  display: none;
+}
+
+.select-selected {
+  background-color: #395B7E;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mb-4{
+  width: 93%;
+  margin: 0 auto;
+}

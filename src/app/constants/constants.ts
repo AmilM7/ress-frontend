@@ -2,6 +2,7 @@ export class Routex {
   public static empty = '';
   public static signUp = 'signup';
   public static logIn = 'login';
+  public static reservationForm = 'reservationForm'
   public static logInOption = 'loginOption'
   public static signUpOption = 'signupOption'
   public static aboutUs = 'aboutus';
@@ -23,4 +24,6 @@ export class Routex {
   public static adminlogin = 'amarirfanamilmirza';
   public static userProfile = 'userProfile';
   public static restaurantProfile = 'restaurantProfile'
+  public static reservationsOfUser = "userReservations"
+
 }
