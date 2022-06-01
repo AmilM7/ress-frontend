@@ -22,4 +22,5 @@ export class Routex {
   public static singleUser = ':id';
   public static restaurantDashboard = 'restaurantDashboard';
   public static adminlogin = 'amarirfanamilmirza';
+  public static reservationsOfUser = "userReservations"
 }
