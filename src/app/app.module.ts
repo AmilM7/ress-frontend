@@ -40,6 +40,8 @@ import {RestaurantDashboardComponent} from "./restaurant-dashboard/restaurant-da
 import {HeaderRestaurantDashboardComponent} from "./header-restaurant-dashboard/header-restaurant-dashboard.component";
 import {AdminLoginComponent} from "./admin-login/admin-login.component";
 import { AdminDashboardHeaderComponent } from './admin-dashboard-header/admin-dashboard-header.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { RestaurantProfileComponent } from './restaurant-profile/restaurant-profile.component';
 
 
 
@@ -71,7 +73,9 @@ import { AdminDashboardHeaderComponent } from './admin-dashboard-header/admin-da
     LoginOptionComponent,
     RegistrationOptionComponent,
     AdminLoginComponent,
-    AdminDashboardHeaderComponent
+    AdminDashboardHeaderComponent,
+    UserProfileComponent,
+    RestaurantProfileComponent
 
 
 

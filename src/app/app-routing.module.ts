@@ -28,6 +28,8 @@ import {ReservationsResolver} from "./resolvers/reservations.resolver";
 import {RestaurantDashboardComponent} from "./restaurant-dashboard/restaurant-dashboard.component";
 import {AdminLoginComponent} from "./admin-login/admin-login.component";
 import {RestaurantsNotAcceptedResolver} from "./resolvers/restaurantsNotAccepted.resolver";
+import {UserProfileComponent} from "./user-profile/user-profile.component";
+import {RestaurantProfileComponent} from "./restaurant-profile/restaurant-profile.component";
 
 
 
@@ -47,6 +49,7 @@ const routes: Routes = [
   {path: Routex.logInOption, component: LoginOptionComponent},
   {path: Routex.signUpOption, component: RegistrationOptionComponent},
   {path: Routex.adminlogin, component: AdminLoginComponent},
+  {path: Routex.restaurantProfile, component: RestaurantProfileComponent},
 
   {
     path: Routex.user,
@@ -109,6 +112,19 @@ const routes: Routes = [
     }
   }
   ]
+  },
+
+  {
+    path: Routex.userProfile,
+    children:[
+      {
+        path: Routex.empty,
+        component: UserProfileComponent,
+        resolve: {
+          [ResolverResponse.reservations]: ReservationsResolver,
+        }
+      }
+    ]
   },
 
   {path: '**', component: PageNotFoundComponent},
