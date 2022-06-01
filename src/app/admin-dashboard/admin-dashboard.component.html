@@ -1,5 +1,40 @@
-<div *ngFor="let admin of admins">
-  <p> First name: {{admin.firstName}}</p>
-  <p> Email: {{admin.email}}</p>
-  <p> Contact: {{admin.phone}}</p>
+<app-admin-dashboard-header></app-admin-dashboard-header>
+
+<div class="mainwrap">
+  <div class="main">
+
+    <div class="restaurants-group">
+      <h4 style="color: #395B7E">List of unapproved restaurants</h4>
+      <hr>
+      <div *ngFor="let restaurant of restaurants" class="restaurant-wrap">
+        <div class="restaurant-block">
+
+          <div>
+            <p> <span>Restaurant name:</span> {{restaurant.name}}</p>
+            <p> <span>Restaurant description:</span> {{restaurant.ressDescription}}</p>
+            <p> <span>Contact:</span> {{restaurant.contactNum}}</p>
+            <p> <span>Restaurant email:</span> {{restaurant.email}}</p>
+            <p> <span>Restaurant location:</span> {{restaurant.location}}</p>
+            <p> <span>Manager contact:</span> {{restaurant.contactManager}}</p>
+            <p> <span>Number of available guests:</span> {{restaurant.numOfAvailGuests}}</p>
+            <p> <span>Number of tables:</span> {{restaurant.numOfAvailTables}}</p>
+            <p> <span>Restaurant starting hours:</span> {{restaurant.startHour}}</p>
+            <p> <span>Restaurant ending hours:</span> {{restaurant.endHour}}</p>
+          </div>
+          <div class="confirmation">
+            <div class="confirmation-buttons">
+              <div class="confirmation-buttons-1">
+                <button class="btn-success btn" (click)="doApprove(restaurant)">Approve</button>
+              </div>
+              <div class="confirmation-buttons-1">
+                <button class="btn-danger btn" (click)="doDeny(restaurant.email)">Deny</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </div>
+</div>
+

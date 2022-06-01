@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Person} from "../models/person";
 import {ResolverResponse} from "../constants/resolver-response.constants";
+import {Restaurant} from "../models/restaurant";
+import {RestaurantServices} from "../services/restaurant.services";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -12,11 +15,32 @@ export class AdminDashboardComponent implements OnInit {
 
   public admins : Person[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  public restaurants: Restaurant[] = [];
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private restaurantService: RestaurantServices) { }
 
   ngOnInit(): void {
+
+    this.activatedRoute.data.subscribe((response: any) => {
+      this.restaurants = response[ResolverResponse.notAccepted];
+    });
+
     this.activatedRoute.data.subscribe((response: any) => {
       this.admins = response[ResolverResponse.admins];
+    });
+
+  }
+
+  doApprove(restaurant:Restaurant):void {
+    this.restaurantService.updateIsAcceptedToTrue(restaurant.email, restaurant).subscribe(value => {
+      window.location.reload();
+    });
+  }
+
+  doDeny(email: string): void {
+    this.restaurantService.deleteRestaurant(email).subscribe(value => {
+      window.location.reload();
     });
   }
 

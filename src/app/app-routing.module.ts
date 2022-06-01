@@ -26,6 +26,11 @@ import {LoginOptionComponent} from "./login-option/login-option.component";
 import {RegistrationOptionComponent} from "./registration-option/registration-option.component";
 import {ReservationsResolver} from "./resolvers/reservations.resolver";
 import {RestaurantDashboardComponent} from "./restaurant-dashboard/restaurant-dashboard.component";
+import {AdminLoginComponent} from "./admin-login/admin-login.component";
+import {RestaurantsNotAcceptedResolver} from "./resolvers/restaurantsNotAccepted.resolver";
+
+
+
 
 
 const routes: Routes = [
@@ -41,6 +46,7 @@ const routes: Routes = [
   {path: Routex.events, component: EventsComponent},
   {path: Routex.logInOption, component: LoginOptionComponent},
   {path: Routex.signUpOption, component: RegistrationOptionComponent},
+  {path: Routex.adminlogin, component: AdminLoginComponent},
 
   {
     path: Routex.user,
@@ -59,8 +65,6 @@ const routes: Routes = [
       }
     ]
   },
-
-
 
   {
     path: Routex.events,
@@ -82,6 +86,7 @@ const routes: Routes = [
         path: Routex.adminDashboard, component: AdminDashboardComponent,
         resolve: {
           [ResolverResponse.admins]: AdminsResolver,
+          [ResolverResponse.notAccepted]: RestaurantsNotAcceptedResolver,
         }
       },
       {
