@@ -75,7 +75,7 @@ import { ReservationsOfUserComponent } from './reservations-of-user/reservations
     AdminLoginComponent,
     AdminDashboardHeaderComponent,
     UserProfileComponent,
-    RestaurantProfileComponent
+    RestaurantProfileComponent,
     ReservationFormComponent,
     ReservationsOfUserComponent,
 
