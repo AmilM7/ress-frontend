@@ -1,19 +1,19 @@
 <app-header-user-dashboard></app-header-user-dashboard>
 
-<div class="userprofile" *ngFor="let user of users">
+<div class="userprofile" *ngFor="let admin of admins">
   <div class="wrap">
     <div class="userwrap">
       <div class="profile">
-        <img src="../../assets/amar.jpg" alt="user-image">
-        <div *ngIf="user.firstName=='Amil'" class="name">
-          <h3>{{user.firstName}}</h3>
-          <h3>{{user.lastName}}</h3>
+        <img src="../../assets/amil.jpg" alt="user-image">
+        <div class="name" *ngIf="admin.firstName=='Amil'">
+          <h3>{{admin.firstName}} {{admin.lastName}}</h3>
         </div>
       </div>
       <div class="info">
-        <p>email</p>
-        <p>phone</p>
-        <p>aboutme</p>
+        <p>Basic contact information:</p>
+        <hr>
+        <p>E-mail: {{admin.email}}</p>
+        <p>Contact number: {{admin.phone}}</p>
       </div>
     </div>
 

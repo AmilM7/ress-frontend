@@ -49,7 +49,6 @@ const routes: Routes = [
   {path: Routex.logInOption, component: LoginOptionComponent},
   {path: Routex.signUpOption, component: RegistrationOptionComponent},
   {path: Routex.adminlogin, component: AdminLoginComponent},
-  {path: Routex.restaurantProfile, component: RestaurantProfileComponent},
 
   {
     path: Routex.user,
@@ -122,6 +121,21 @@ const routes: Routes = [
         component: UserProfileComponent,
         resolve: {
           [ResolverResponse.reservations]: ReservationsResolver,
+          [ResolverResponse.admins]: AdminsResolver,
+        }
+      }
+    ]
+  },
+
+  {
+    path: Routex.restaurantProfile,
+    children:[
+      {
+        path: Routex.empty,
+        component: RestaurantProfileComponent,
+        resolve: {
+          [ResolverResponse.reservations]: ReservationsResolver,
+          [ResolverResponse.restaurants]: RestaurantsResolver,
         }
       }
     ]

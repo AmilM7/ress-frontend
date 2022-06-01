@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Reservation} from "../models/reservation";
 import {ActivatedRoute} from "@angular/router";
 import {ResolverResponse} from "../constants/resolver-response.constants";
-import {PersonInterface} from "../models/interfaces/person.interface";
+import {Person} from "../models/person";
 
 @Component({
   selector: 'app-user-profile',
@@ -12,17 +12,15 @@ import {PersonInterface} from "../models/interfaces/person.interface";
 export class UserProfileComponent implements OnInit {
 
   public reservations: Reservation[] = [];
-  public users: PersonInterface[] = [];
+  public admins: Person[] = [];
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
       this.reservations = response[ResolverResponse.reservations];
+      this.admins = response[ResolverResponse.admins]
     });
 
-    this.activatedRoute.data.subscribe((response: any) => {
-      this.users = response[ResolverResponse.admins]
-    });
   }
 }
