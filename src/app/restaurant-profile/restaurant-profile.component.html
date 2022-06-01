@@ -1,0 +1,57 @@
+<app-header-restaurant-dashboard></app-header-restaurant-dashboard>
+
+<div class="restaurantprofile" *ngFor="let restaurant of restaurants">
+  <div class="wrap">
+    <div class="restaurantwrap">
+      <div class="top-description">
+        <div class="profile">
+          <img src="../../assets/restaurant1.jpg" alt="restaurant-image">
+          <div class="name" *ngIf="restaurant.name=='Začin'">
+            <h3>{{restaurant.name}}</h3>
+          </div>
+        </div>
+        <div class="info">
+          <p>Basic contact information:</p>
+          <hr>
+          <p>E-mail: {{restaurant.email}}</p>
+          <p>Contact number: {{restaurant.contactNum}}</p>
+        </div>
+      </div>
+      <div class="bottom-description">
+        <p>About {{restaurant.type}}</p>
+        <hr>
+        <p>Location: {{restaurant.location}}</p>
+        <p>Working hours: {{restaurant.startHour}}-{{restaurant.endHour}}</p>
+        <p>Number of available tables: {{restaurant.numOfAvailTables}}</p>
+        <p>Description: {{restaurant.ressDescription}}</p>
+      </div>
+    </div>
+
+
+    <div class="previous-reservations">
+      <div class="reservations-group" style="background-color: rgba(57,91,126,0.2)">
+        <h5 style="color: #395B7E">Previous Reservations </h5>
+        <hr>
+        <div *ngFor="let reservation of reservations" class="reservation-wrap">
+          <div *ngIf="reservation.approval=='approved'" class="reservation-block">
+            <div>
+              <p> <span>UserID:</span> {{reservation.userId}}</p>
+              <p> <span>RestaurantID:</span> {{reservation.restaurantId}}</p>
+              <p> <span>Time:</span> {{reservation.time}}</p>
+              <p> <span>Date:</span> {{reservation.date}}</p>
+              <p> <span>Number of guests:</span> {{reservation.numberOfGuests}}</p>
+              <p> <span>Table ID:</span> {{reservation.tableId}}</p>
+            </div>
+            <div class="confirmation">
+              <div style="width: 200px">
+                <p> <span>Reservation ID:</span> {{reservation.id}}</p>
+                <p> <span>Approval status:</span> <br> <span style="color: #3e8e41!important; text-transform: uppercase"> {{reservation.approval}}</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

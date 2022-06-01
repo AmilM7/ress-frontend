@@ -28,10 +28,11 @@ import {ReservationsResolver} from "./resolvers/reservations.resolver";
 import {RestaurantDashboardComponent} from "./restaurant-dashboard/restaurant-dashboard.component";
 import {AdminLoginComponent} from "./admin-login/admin-login.component";
 import {RestaurantsNotAcceptedResolver} from "./resolvers/restaurantsNotAccepted.resolver";
+import {UserProfileComponent} from "./user-profile/user-profile.component";
+import {RestaurantProfileComponent} from "./restaurant-profile/restaurant-profile.component";
 import {ReservationFormComponent} from "./reservation-form/reservation-form.component";
 import {ReservationsOfUserComponent} from "./reservations-of-user/reservations-of-user.component";
 import {ReservationsResolverOfUser} from "./resolvers/reservation-of-user.resolver";
-
 
 const routes: Routes = [
   {path: Routex.empty, component: MainComponent},
@@ -123,6 +124,34 @@ const routes: Routes = [
     }
   }
   ]
+  },
+
+  {
+    path: Routex.userProfile,
+    children:[
+      {
+        path: Routex.empty,
+        component: UserProfileComponent,
+        resolve: {
+          [ResolverResponse.reservations]: ReservationsResolver,
+          [ResolverResponse.admins]: AdminsResolver,
+        }
+      }
+    ]
+  },
+
+  {
+    path: Routex.restaurantProfile,
+    children:[
+      {
+        path: Routex.empty,
+        component: RestaurantProfileComponent,
+        resolve: {
+          [ResolverResponse.reservations]: ReservationsResolver,
+          [ResolverResponse.restaurants]: RestaurantsResolver,
+        }
+      }
+    ]
   },
 
   {path: '**', component: PageNotFoundComponent},
