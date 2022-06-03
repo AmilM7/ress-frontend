@@ -27,7 +27,7 @@
                    [ngClass]="{'is-invalid' : time && time.invalid && time.touched}" aria-describedby="basic-addon1" >
           </div>
         </div>
-        <button [disabled]="form.invalid" type="submit" class="btn btn-success btn-lg">RESERVE</button>
+        <button routerLink="/successPage" [disabled]="form.invalid" type="submit" class="btn btn-success btn-lg">RESERVE</button>
       </form>
     </div>
   </div>

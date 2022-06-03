@@ -7,6 +7,7 @@ export class Routex {
   public static signUpOption = 'signupOption'
   public static aboutUs = 'aboutus';
   public static profile = 'profile';
+  public static successPage = 'successPage';
   public static favorite = 'favorite';
   public static logout = 'logout';
   public static separator = "/";
