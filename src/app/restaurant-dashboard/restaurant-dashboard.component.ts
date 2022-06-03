@@ -3,6 +3,7 @@ import {Reservation} from "../models/reservation";
 import {ActivatedRoute} from "@angular/router";
 import {ResolverResponse} from "../constants/resolver-response.constants";
 import {ReservationServices} from "../services/reservation.service";
+import {Restaurant} from "../models/restaurant";
 
 
 @Component({
@@ -13,12 +14,14 @@ import {ReservationServices} from "../services/reservation.service";
 export class RestaurantDashboardComponent implements OnInit {
 
   public reservations: Reservation[] = [];
+  public restaurants: Restaurant[] = [];
 
   constructor(private activatedRoute: ActivatedRoute, public reservationServices: ReservationServices) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
       this.reservations = response[ResolverResponse.reservations];
+      this.restaurants = response[ResolverResponse.restaurants];
     });
   }
 

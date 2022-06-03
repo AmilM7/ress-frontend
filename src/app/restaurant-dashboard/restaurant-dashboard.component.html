@@ -1,21 +1,22 @@
 <app-header-restaurant-dashboard></app-header-restaurant-dashboard>
 
 <div class="wrap">
-  <div class="introwrap">
+  <div class="introwrap" *ngFor="let restaurant of restaurants">
     <div class="intro">
       <img src="../../assets/restaurant1.jpg" alt="profile">
-      <div class="info">
+      <div class="info" *ngIf="restaurant.email=='zacin@gmail.com'">
         <p><span>Account information</span></p>
         <hr>
-        <p><span>Object type:</span> type from db</p>
-        <p><span>Name:</span> name from db</p>
-        <p><span>Location:</span> location from db</p>
-        <p><span>Contact:</span> contact from db</p>
+        <p><span>Object type:</span> {{restaurant.type}}</p>
+        <p><span>Name:</span> {{restaurant.name}}</p>
+        <p><span>Location:</span> {{restaurant.location}}</p>
+        <p><span>Contact:</span> {{restaurant.contactNum}}</p>
       </div>
     </div>
     <button class="custom-button" routerLink="/restaurantProfile"><i class="bi bi-gear-fill"></i> Edit profile</button>
   </div>
 </div>
+
 
 <div class="mainwrap">
   <div class="main">
