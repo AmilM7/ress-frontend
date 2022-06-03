@@ -1,11 +1,12 @@
 <app-header-user-dashboard></app-header-user-dashboard>
 
-<div class="userprofile" *ngFor="let admin of admins">
-  <div class="wrap">
+<div *ngFor="let admin of admins">
+<div class="userprofile" *ngIf="admin.id=='1'">
+  <div class="wrap" >
     <div class="userwrap">
       <div class="profile">
         <img src="../../assets/amil.jpg" alt="user-image">
-        <div class="name" *ngIf="admin.firstName=='Amil'">
+        <div class="name">
           <h3>{{admin.firstName}} {{admin.lastName}}</h3>
         </div>
       </div>
@@ -15,6 +16,40 @@
         <p>E-mail: {{admin.email}}</p>
         <p>Contact number: {{admin.phone}}</p>
       </div>
+    </div>
+
+    <div class="update-profile">
+      <h5>Make changes to your profile</h5>
+      <div class="form-text" style="color: red">Email and password must be enterd every time!</div>
+      <hr>
+      <form [formGroup]="form" (ngSubmit)="submit(admin.id)">
+        <div class="mustinput">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">E-mail address:</label>
+            <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" [ngClass]="{'is-invalid' : emailupdate && emailupdate.invalid && emailupdate.touched}" aria-describedby="basic-addon1" placeholder="{{admin.email}}">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password:</label>
+            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" [ngClass]="{'is-invalid' : passwordupdate && passwordupdate.invalid && passwordupdate.touched}" aria-describedby="basic-addon1">
+            <div id="emailHelp" class="form-text" style="color: #F0B67F;">At least one lowercase, capital letter and number (more than 8 characters)</div>
+          </div>
+        </div>
+        <div class="inputvalues">
+          <div class="mb-3">
+            <label for="exampleInputFname" class="form-label">First name:</label>
+            <input formControlName="fname" type="fname" class="form-control" id="exampleInputFname" placeholder="{{admin.firstName}}">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputLname" class="form-label">Last name:</label>
+            <input formControlName="lname" type="lname" class="form-control" id="exampleInputLname" placeholder="{{admin.lastName}}">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputContact" class="form-label">Contact number:</label>
+            <input formControlName="phone" type="phone" class="form-control" id="exampleInputContact" placeholder="{{admin.phone}}">
+          </div>
+          <button [disabled]="form.invalid" type="submit" class="btn btn-success">Update profile</button>
+        </div>
+      </form>
     </div>
 
 
@@ -44,4 +79,4 @@
     </div>
   </div>
 </div>
-
+</div>

@@ -49,6 +49,35 @@
   text-align: right;
 }
 
+.update-profile{
+  width: 800px;
+  padding: 20px 40px;
+  margin-bottom: 30px;
+  color: #395B7E;
+}
+
+.update-profile h5{
+  margin-bottom: 20px;
+}
+
+.update-profile input{
+  background-color: rgba(240,182,127,0.2);
+  color: #395B7E;
+  border-radius: 10px;
+  border-color: #F0B67F;
+}
+
+.mustinput{
+  background-color: whitesmoke;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px 0;
+}
+
+.inputvalues{
+  padding: 0 20px;
+}
+
 .reservations-group{
   padding: 20px;
   margin-bottom: 50px;

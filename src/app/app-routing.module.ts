@@ -121,6 +121,7 @@ const routes: Routes = [
       component: RestaurantDashboardComponent,
       resolve: {
       [ResolverResponse.reservations]: ReservationsResolver,
+        [ResolverResponse.restaurants]: RestaurantsResolver,
     }
   }
   ]

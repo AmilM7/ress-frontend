@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {Person} from "../models/person";
 import {PersonDto} from "../models/dtos/person.dto";
 import {environment} from "../../environments/environment";
+import {Reservation} from "../models/reservation";
 
 @Injectable()
 export class AdminService {
@@ -21,5 +22,9 @@ export class AdminService {
 
   create(user: PersonDto): Observable<PersonDto> {
     return this.http.post<PersonDto>(`${this.baseUrl}`, user);
+  }
+
+  public updateUser(user: Person, id: string): Observable<Person>{
+    return this.http.put<Person>(`${this.baseUrl}/update/${id}`,user);
   }
 }
