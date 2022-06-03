@@ -33,6 +33,7 @@ import {RestaurantProfileComponent} from "./restaurant-profile/restaurant-profil
 import {ReservationFormComponent} from "./reservation-form/reservation-form.component";
 import {ReservationsOfUserComponent} from "./reservations-of-user/reservations-of-user.component";
 import {ReservationsResolverOfUser} from "./resolvers/reservation-of-user.resolver";
+import {SuccessPageComponent} from "./success-page/success-page.component";
 
 const routes: Routes = [
   {path: Routex.empty, component: MainComponent},
@@ -48,6 +49,7 @@ const routes: Routes = [
   {path: Routex.logInOption, component: LoginOptionComponent},
   {path: Routex.signUpOption, component: RegistrationOptionComponent},
   {path: Routex.adminlogin, component: AdminLoginComponent},
+  {path: Routex.successPage, component: SuccessPageComponent},
 
 
   {

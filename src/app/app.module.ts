@@ -44,6 +44,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { RestaurantProfileComponent } from './restaurant-profile/restaurant-profile.component';
 import { ReservationFormComponent } from './reservation-form/reservation-form.component';
 import { ReservationsOfUserComponent } from './reservations-of-user/reservations-of-user.component';
+import { SuccessPageComponent } from './success-page/success-page.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { ReservationsOfUserComponent } from './reservations-of-user/reservations
     RestaurantProfileComponent,
     ReservationFormComponent,
     ReservationsOfUserComponent,
+    SuccessPageComponent,
 
   ],
   imports: [
