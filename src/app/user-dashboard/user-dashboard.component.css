@@ -19,10 +19,26 @@
 }
 .secondh2{
   font-size: 20px;
+
 }
+
+ul{
+  width: 395px;
+  margin-left: 20px;
+  border-radius: 0 0 10px 10px;
+  border: thin solid #e7c6ab;
+  position: absolute;
+
+}
+
+.searchInput:hover ul{
+display: block;
+}
+
+
 h2{
   color: #395B7E;
-  margin: 50px 0 30px 40px;
+
 }
 .secondOne{
   display: flex;

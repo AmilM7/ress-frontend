@@ -6,31 +6,40 @@ import {environment} from "../../environments/environment";
 
 @Injectable()
 export class RestaurantServices {
-  private readonly baseUrl:string  = environment.backendUrl + '/restaurants';
+  private readonly baseUrl: string = environment.backendUrl + '/restaurants';
 
-  constructor(private http:HttpClient) {
+  constructor(private http: HttpClient) {
   }
-  public getRestaurants():Observable<Restaurant[]> {
+
+  public getRestaurants(): Observable<Restaurant[]> {
     return this.http.get<Restaurant[]>(this.baseUrl);
   }
 
-  getRestaurant(id:string): Observable<Restaurant>{
+  getRestaurant(id: string): Observable<Restaurant> {
     return this.http.get<Restaurant>(`${this.baseUrl}/${id}`);
   }
 
-  getRestaurantsNotAccepted(): Observable<Restaurant[]>{
+  getRestaurantsNotAccepted(): Observable<Restaurant[]> {
     return this.http.get<Restaurant[]>(this.baseUrl + "/notAccepted");
   }
 
-  create(restaurant: Restaurant):Observable<Restaurant> {
-    return  this.http.post<Restaurant>(`${this.baseUrl}`, restaurant);
+  getMostlyReserved(): Observable<Restaurant[]> {
+    return this.http.get<Restaurant[]>(this.baseUrl + "/mostlyReserved");
   }
 
-  updateIsAcceptedToTrue(email:string, restaurant:Restaurant): Observable<Restaurant>{
-    return this.http.put<Restaurant>(`${this.baseUrl}/update/${email}`,restaurant );
+  getSuggestedRestaurants(): Observable<Restaurant[]> {
+    return this.http.get<Restaurant[]>(this.baseUrl + "/suggested");
   }
 
-  deleteRestaurant(email:string):Observable<void>{
+  create(restaurant: Restaurant): Observable<Restaurant> {
+    return this.http.post<Restaurant>(`${this.baseUrl}`, restaurant);
+  }
+
+  updateIsAcceptedToTrue(email: string, restaurant: Restaurant): Observable<Restaurant> {
+    return this.http.put<Restaurant>(`${this.baseUrl}/update/${email}`, restaurant);
+  }
+
+  deleteRestaurant(email: string): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/delete/${email}`)
   }
 

@@ -18,7 +18,6 @@ export class ReservationsOfUserComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
       this.reservations = response[ResolverResponse.reservationsOfUser];
-
     });
   }
 }
