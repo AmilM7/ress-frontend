@@ -34,6 +34,8 @@ import {ReservationFormComponent} from "./reservation-form/reservation-form.comp
 import {ReservationsOfUserComponent} from "./reservations-of-user/reservations-of-user.component";
 import {ReservationsResolverOfUser} from "./resolvers/reservation-of-user.resolver";
 import {SuccessPageComponent} from "./success-page/success-page.component";
+import {MostlyReservedRestaurantsResolver} from "./resolvers/mostlyReservedRestaurants.resolver";
+import {SuggestedRestaurantsResolver} from "./resolvers/suggestedRestaurants.resolver.";
 
 const routes: Routes = [
   {path: Routex.empty, component: MainComponent},
@@ -51,7 +53,6 @@ const routes: Routes = [
   {path: Routex.adminlogin, component: AdminLoginComponent},
   {path: Routex.successPage, component: SuccessPageComponent},
 
-
   {
     path: Routex.user,
     children: [
@@ -65,6 +66,8 @@ const routes: Routes = [
         path: Routex.userDashboard, component: UserDashboardComponent,
         resolve: {
           [ResolverResponse.restaurants]: RestaurantsResolver,
+          [ResolverResponse.mostlyReservedRestaurants]: MostlyReservedRestaurantsResolver,
+          [ResolverResponse.suggestedRestaurants]: SuggestedRestaurantsResolver,
         }
       },
       {path: Routex.reservationForm, component: ReservationFormComponent},

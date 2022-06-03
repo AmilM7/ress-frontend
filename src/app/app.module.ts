@@ -16,7 +16,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {RestaurantServices} from "./services/restaurant.services";
@@ -45,6 +45,8 @@ import { RestaurantProfileComponent } from './restaurant-profile/restaurant-prof
 import { ReservationFormComponent } from './reservation-form/reservation-form.component';
 import { ReservationsOfUserComponent } from './reservations-of-user/reservations-of-user.component';
 import { SuccessPageComponent } from './success-page/success-page.component';
+import {FilterPipe} from "./pipes/filter.pipe";
+
 
 @NgModule({
   declarations: [
@@ -80,6 +82,7 @@ import { SuccessPageComponent } from './success-page/success-page.component';
     ReservationFormComponent,
     ReservationsOfUserComponent,
     SuccessPageComponent,
+    FilterPipe
 
   ],
   imports: [
@@ -88,7 +91,8 @@ import { SuccessPageComponent } from './success-page/success-page.component';
     MatToolbarModule,
     MatIconModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [
     RestaurantServices,

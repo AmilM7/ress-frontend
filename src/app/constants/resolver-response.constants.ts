@@ -8,4 +8,6 @@ export class ResolverResponse {
   public static adminlogin = 'adminlogin';
   public static notAccepted = "notAccepted";
   public static reservationsOfUser = "reservationsOfuser";
+  public static mostlyReservedRestaurants = 'mostlyReservedRestaurants';
+  public static suggestedRestaurants = 'suggestedRestaurants'
 }

@@ -1,30 +1,29 @@
 <app-header-user-dashboard></app-header-user-dashboard>
 <div class="firstOne">
-  <h2>Welcome User</h2>
+  <h2>Welcome!</h2>
+  <div>
   <div class="input-group flex-nowrap">
     <span class="input-group-text" id="addon-wrapping"><i class="bi bi-search"></i></span>
-    <input type="text" class="form-control" placeholder="Desired restaurant" aria-label="Username" aria-describedby="addon-wrapping">
+    <input type="text" class="form-control searchInput" placeholder="Desired restaurant"
+           aria-label="Username" aria-describedby="addon-wrapping" [(ngModel)]="searchText" >
+
   </div>
+    <ul  *ngIf="isChecked()" class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let restaurantName of namesOfRestaurants | appFilter: searchText">
+        {{restaurantName}}
+      </li>
+    </ul>
+  </div>
+
+
   <h2 class="secondh2">Please tell us where you would like to go...</h2>
 </div>
 
-<h2>Most popular restaurants</h2>
 
 
-<div class="secondOne">
+<div *ngFor="let restaurant of topThreeMosltyReservedRestaurants" class="secondOne">
   <div>
-      <h4>Name</h4>
-      <button class="firstButton">Reserve</button>
-  </div>
-
-  <div>
-    <h4>Name</h4>
-    <button>Reserve</button>
-  </div>
-
-  <div>
-    <h4>Name</h4>
-    <button>Reserve</button>
+      <h4>Name: {{restaurant.email}}</h4> <!--Ja sam ovdje samo pokazao kako se uzimaju tri najvise rezervisana-->
   </div>
 </div>
 
