@@ -34,13 +34,20 @@ export class AdminDashboardComponent implements OnInit {
 
   doApprove(restaurant:Restaurant):void {
     this.restaurantService.updateIsAcceptedToTrue(restaurant.email, restaurant).subscribe(value => {
-      window.location.reload();
+        const index = this.restaurants.indexOf(restaurant);
+        if(index !== -1) {
+          this.restaurants.splice(index,1);
+        }
     });
+
   }
 
-  doDeny(email: string): void {
+  doDeny(email: string, restaurant:Restaurant): void {
     this.restaurantService.deleteRestaurant(email).subscribe(value => {
-      window.location.reload();
+      const index = this.restaurants.indexOf(restaurant);
+      if(index !== -1) {
+        this.restaurants.splice(index,1);
+      }
     });
   }
 

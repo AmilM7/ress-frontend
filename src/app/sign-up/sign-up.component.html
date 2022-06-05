@@ -57,7 +57,8 @@
               <label  class="form-label text-center">Phone number</label>
               <div class="input-group mb-3">
                 <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                <input type="tel" formControlName="phone"  class="form-control text-center" [ngClass]="{'is-invalid' : phone && phone.invalid && phone.touched}"
+                <input type="tel" formControlName="phone"  class="form-control text-center"  placeholder="Format: NNN-NNN-NNN" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+                       [ngClass]="{'is-invalid' : phone && phone.invalid && phone.touched}"
                        aria-describedby="basic-addon1">
               </div>
             </div>
