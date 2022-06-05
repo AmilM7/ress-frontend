@@ -27,6 +27,14 @@
                    [ngClass]="{'is-invalid' : time && time.invalid && time.touched}" aria-describedby="basic-addon1" >
           </div>
         </div>
+        <div class="mb-3">
+          <label class="form-label text-center">Description</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" ><i class="bi bi-clock"></i></span>
+            <input formControlName="description" type="text" class="form-control text-center"
+                   [ngClass]="{'is-invalid' : description && description.invalid && description.touched}" aria-describedby="basic-addon1" >
+          </div>
+        </div>
         <button routerLink="/successPage" [disabled]="form.invalid" type="submit" class="btn btn-success btn-lg">RESERVE</button>
       </form>
     </div>

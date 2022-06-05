@@ -19,7 +19,8 @@ export class ReservationFormComponent implements OnInit {
     this.form = this.formBuilder.group({
       numberOfGuests: [this.reservation?.numberOfGuests || '', [Validators.required, Validators.max(50)]],
       date: [this.reservation?.date || '', [Validators.required]],
-      time: [this.reservation?.time || '', [Validators.required]]
+      time: [this.reservation?.time || '', [Validators.required]],
+      description: [this.reservation?.description || '', [Validators.required]],
     })
   }
 
@@ -33,6 +34,10 @@ export class ReservationFormComponent implements OnInit {
 
   get time(){
     return this.form.get('time');
+  }
+
+  get description(){
+    return this.form.get('description');
   }
 
   submit(): void {
