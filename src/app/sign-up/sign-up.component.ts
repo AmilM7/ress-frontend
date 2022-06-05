@@ -73,7 +73,7 @@ export class SignUpComponent implements OnInit {
     };
 
     this.adminService.create(person).subscribe(value => {
-
+      this.router.navigate([Routex.logIn]);
     });
     this.form.reset();
   }

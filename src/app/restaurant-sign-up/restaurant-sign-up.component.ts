@@ -6,6 +6,8 @@ import {Person} from "../models/person";
 import {PersonDto} from "../models/dtos/person.dto";
 import {RestaurantDto} from "../models/dtos/restaurant.dto";
 import {Type} from "../models/type.enum";
+import {Routex} from "../constants/constants";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -18,7 +20,8 @@ export class RestaurantSignUpComponent implements OnInit {
   restaurant: Restaurant | undefined;
 
   constructor(private formBuilder: FormBuilder,
-              private restaurantService: RestaurantServices) {
+              private restaurantService: RestaurantServices,
+              private router: Router,) {
 
   }
 
@@ -118,7 +121,7 @@ export class RestaurantSignUpComponent implements OnInit {
     }
 
     this.restaurantService.create(facility).subscribe(value => {
-
+      this.router.navigate([Routex.restaurantLogIn]);
     })
     this.form.reset();
   }
