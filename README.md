@@ -14,7 +14,7 @@ In order to install Angular CLI, run the following command: npm install -g @angu
   
  **Run the application**
  
- After clonning this repository, run the command: npm install or npm i
+ After clonning this repository, run the command: npm install or npm i\
  In order to run application on the browser, run the following command: ng serve\
  If command is compiled succesfully, navigate to http://localhost:4200/ on browser.\
  Run command ng serve --open which does the same thing, but automatically opens http://localhost:4200/ on browser.
