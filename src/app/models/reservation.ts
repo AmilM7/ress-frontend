@@ -8,4 +8,5 @@ export interface Reservation{
   userId: string;
   restaurantId: string;
   approval: string;
+  description: string;
 }
