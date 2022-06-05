@@ -52,25 +52,24 @@ const routes: Routes = [
   {path: Routex.signUpOption, component: RegistrationOptionComponent},
   {path: Routex.adminlogin, component: AdminLoginComponent},
   {path: Routex.successPage, component: SuccessPageComponent},
-
+  {
+    path: Routex.reservationsOfUser, component: ReservationsOfUserComponent,
+    resolve: {
+      [ResolverResponse.reservationsOfUser]: ReservationsResolverOfUser,
+    }
+  },
+  {
+    path: Routex.userDashboard, component: UserDashboardComponent,
+    resolve: {
+      [ResolverResponse.restaurants]: RestaurantsResolver,
+      [ResolverResponse.mostlyReservedRestaurants]: MostlyReservedRestaurantsResolver,
+      [ResolverResponse.suggestedRestaurants]: SuggestedRestaurantsResolver,
+    }
+  },
+  {path: Routex.reservationForm, component: ReservationFormComponent},
   {
     path: Routex.user,
     children: [
-      {
-        path: Routex.reservationsOfUser, component: ReservationsOfUserComponent,
-        resolve: {
-          [ResolverResponse.reservationsOfUser]: ReservationsResolverOfUser,
-        }
-      },
-      {
-        path: Routex.userDashboard, component: UserDashboardComponent,
-        resolve: {
-          [ResolverResponse.restaurants]: RestaurantsResolver,
-          [ResolverResponse.mostlyReservedRestaurants]: MostlyReservedRestaurantsResolver,
-          [ResolverResponse.suggestedRestaurants]: SuggestedRestaurantsResolver,
-        }
-      },
-      {path: Routex.reservationForm, component: ReservationFormComponent},
       {
         path: Routex.restaurant, component: RestaurantComponent,
         resolve: {
@@ -97,18 +96,9 @@ const routes: Routes = [
       },
     ]
   },
-
-
   {
     path: Routex.admins,
     children: [
-      {
-        path: Routex.adminDashboard, component: AdminDashboardComponent,
-        resolve: {
-          [ResolverResponse.admins]: AdminsResolver,
-          [ResolverResponse.notAccepted]: RestaurantsNotAcceptedResolver,
-        }
-      },
       {
         path: Routex.singleUser, component: SingleUserComponent,
         resolve: {
@@ -117,7 +107,13 @@ const routes: Routes = [
       }
     ]
   },
-
+  {
+    path: Routex.adminDashboard, component: AdminDashboardComponent,
+    resolve: {
+      [ResolverResponse.admins]: AdminsResolver,
+      [ResolverResponse.notAccepted]: RestaurantsNotAcceptedResolver,
+    }
+  },
   {
     path: Routex.restaurantDashboard,
     children:[
@@ -131,7 +127,6 @@ const routes: Routes = [
   }
   ]
   },
-
   {
     path: Routex.userProfile,
     children:[
@@ -145,7 +140,6 @@ const routes: Routes = [
       }
     ]
   },
-
   {
     path: Routex.restaurantProfile,
     children:[
@@ -159,7 +153,6 @@ const routes: Routes = [
       }
     ]
   },
-
   {path: '**', component: PageNotFoundComponent},
 ]
 
