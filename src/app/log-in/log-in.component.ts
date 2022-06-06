@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validator, FormBuilder, Validators} from "@angular/forms";
 import {Person} from "../models/person";
+import {AuthService} from "../services/auth.services";
+import {Router} from "@angular/router";
+import {Routex} from "../constants/constants";
 
 
 @Component({
@@ -12,7 +15,9 @@ export class LogInComponent implements OnInit {
   public form!: FormGroup;
   person: Person | undefined;
 
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(private formBuilder : FormBuilder,
+              private authService: AuthService,
+              private router: Router,) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -30,7 +35,13 @@ export class LogInComponent implements OnInit {
   }
 
   submit(): void {
-    console.log(this.form.value.email);
+    if (this.form!.valid) {
+      this.authService.logIn({ ...this.form!.value }).subscribe(() => {
+        this.router.navigate([Routex.userDashboard]);
+
+      });
+    }
     this.form.reset();
+
   }
 }
