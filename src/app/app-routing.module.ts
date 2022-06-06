@@ -36,6 +36,7 @@ import {ReservationsResolverOfUser} from "./resolvers/reservation-of-user.resolv
 import {SuccessPageComponent} from "./success-page/success-page.component";
 import {MostlyReservedRestaurantsResolver} from "./resolvers/mostlyReservedRestaurants.resolver";
 import {SuggestedRestaurantsResolver} from "./resolvers/suggestedRestaurants.resolver.";
+import {AuthorizedGuard} from "./guards/authorized.guard";
 
 const routes: Routes = [
   {path: Routex.empty, component: MainComponent},
@@ -43,23 +44,29 @@ const routes: Routes = [
   {path: Routex.logIn, component: LogInComponent},
   {path: Routex.restaurantLogIn, component: RestaurantLogInComponent},
   {path: Routex.restaurantSignUp, component: RestaurantSignUpComponent},
-  {path: Routex.favorite, component: FavoriteComponent},
-  {path: Routex.profile, component: ProfileComponent},
-  {path: Routex.logout, component: LogoutComponent},
   {path: Routex.aboutUs, component: AboutUsComponent},
-  {path: Routex.events, component: EventsComponent},
   {path: Routex.logInOption, component: LoginOptionComponent},
   {path: Routex.signUpOption, component: RegistrationOptionComponent},
   {path: Routex.adminlogin, component: AdminLoginComponent},
-  {path: Routex.successPage, component: SuccessPageComponent},
+
+
+  {path: Routex.successPage, canActivate: [AuthorizedGuard], component: SuccessPageComponent},
+  {path: Routex.favorite, canActivate: [AuthorizedGuard], component: FavoriteComponent},
+  {path: Routex.profile, canActivate: [AuthorizedGuard], component: ProfileComponent},
+  {path: Routex.logout, canActivate: [AuthorizedGuard], component: LogoutComponent},
+  {path: Routex.events, canActivate: [AuthorizedGuard], component: EventsComponent},
   {
-    path: Routex.reservationsOfUser, component: ReservationsOfUserComponent,
+    path: Routex.reservationsOfUser,
+    canActivate: [AuthorizedGuard],
+    component: ReservationsOfUserComponent,
     resolve: {
       [ResolverResponse.reservationsOfUser]: ReservationsResolverOfUser,
     }
   },
   {
-    path: Routex.userDashboard, component: UserDashboardComponent,
+    path: Routex.userDashboard,
+    canActivate: [AuthorizedGuard],
+    component: UserDashboardComponent,
     resolve: {
       [ResolverResponse.restaurants]: RestaurantsResolver,
       [ResolverResponse.mostlyReservedRestaurants]: MostlyReservedRestaurantsResolver,
@@ -69,6 +76,7 @@ const routes: Routes = [
   {path: Routex.reservationForm, component: ReservationFormComponent},
   {
     path: Routex.user,
+    canActivateChild: [AuthorizedGuard],
     children: [
       {
         path: Routex.restaurant, component: RestaurantComponent,
@@ -80,7 +88,9 @@ const routes: Routes = [
     ]
   },
   {
-    path: Routex.reservationsOfUser, component: ReservationsOfUserComponent,
+    path: Routex.reservationsOfUser,
+    canActivate: [AuthorizedGuard],
+    component: ReservationsOfUserComponent,
     resolve: {
       [ResolverResponse.reservationsOfUser]: ReservationsResolverOfUser,
     }
@@ -98,6 +108,7 @@ const routes: Routes = [
   },
   {
     path: Routex.admins,
+    canActivateChild: [AuthorizedGuard],
     children: [
       {
         path: Routex.singleUser, component: SingleUserComponent,
@@ -108,7 +119,9 @@ const routes: Routes = [
     ]
   },
   {
-    path: Routex.adminDashboard, component: AdminDashboardComponent,
+    path: Routex.adminDashboard,
+    canActivate: [AuthorizedGuard],
+    component: AdminDashboardComponent,
     resolve: {
       [ResolverResponse.admins]: AdminsResolver,
       [ResolverResponse.notAccepted]: RestaurantsNotAcceptedResolver,
@@ -116,6 +129,7 @@ const routes: Routes = [
   },
   {
     path: Routex.restaurantDashboard,
+    canActivateChild: [AuthorizedGuard],
     children:[
       {
       path: Routex.empty,
@@ -129,6 +143,7 @@ const routes: Routes = [
   },
   {
     path: Routex.userProfile,
+    canActivateChild: [AuthorizedGuard],
     children:[
       {
         path: Routex.empty,
@@ -142,6 +157,7 @@ const routes: Routes = [
   },
   {
     path: Routex.restaurantProfile,
+    canActivateChild: [AuthorizedGuard],
     children:[
       {
         path: Routex.empty,

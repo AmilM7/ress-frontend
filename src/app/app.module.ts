@@ -46,6 +46,9 @@ import { ReservationFormComponent } from './reservation-form/reservation-form.co
 import { ReservationsOfUserComponent } from './reservations-of-user/reservations-of-user.component';
 import { SuccessPageComponent } from './success-page/success-page.component';
 import {FilterPipe} from "./pipes/filter.pipe";
+import {AuthorizedGuard} from "./guards/authorized.guard";
+import {AuthService} from "./services/auth.services";
+import {provideAuthorizationInterceptor} from "./interceptors/authorization.interceptors";
 
 
 @NgModule({
@@ -95,6 +98,7 @@ import {FilterPipe} from "./pipes/filter.pipe";
     FormsModule,
   ],
   providers: [
+    provideAuthorizationInterceptor(),
     RestaurantServices,
     RestaurantsResolver,
 
@@ -105,7 +109,10 @@ import {FilterPipe} from "./pipes/filter.pipe";
     AdminsResolver,
 
     ReservationServices,
-    ReservationsResolver
+    ReservationsResolver,
+
+    AuthorizedGuard,
+    AuthService,
 
   ],
   bootstrap: [AppComponent]

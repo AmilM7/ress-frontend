@@ -101,7 +101,7 @@
 }
 
 .info{
-  background-image: url("../../assets/restaurant4.jpg");
+  /*background-image: url("../../assets/restaurant4.jpg");*/
   background-size: cover;
   background-attachment: fixed;
   padding: 150px;
