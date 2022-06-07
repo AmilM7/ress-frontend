@@ -1,88 +1,101 @@
-*{
-  margin: 0;
-}
-
-.firstOne{
-  padding: 20px;
-  width: 100%;
-  height: 206px;
+.introductionwrap{
+  display: flex;
+  justify-content: center;
   background-image: linear-gradient(#e7c6ab,#F0B67F);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
-.firstOne div{
-  width: 400px;
-  margin: 20px 0 20px 18px;
-}
-.firstOne h2{
-  color: white;
-  margin-left: 20px;
-}
-.secondh2{
-  font-size: 20px;
 
+.introduction{
+  padding: 20px;
+  width: 1300px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.searchbar{
+  width: 400px;
+  margin: 20px 0;
+}
+
+.introduction h2{
+  color: white;
+}
+
+.description{
+  font-size: 20px;
 }
 
 ul{
-  width: 395px;
-  margin-left: 20px;
+  width: 400px;
   border-radius: 0 0 10px 10px;
-  border: thin solid #e7c6ab;
   position: absolute;
-
+  top: 250px;
+  color: #395B7E;
 }
 
 .searchInput:hover ul{
-display: block;
+  display: block;
 }
 
-
-h2{
-  color: #395B7E;
-
-}
-.secondOne{
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  height: 350px;
-}
-
-.secondOne div {
-  width: 30%;
-  height: 330px;
-  background: #FFFFFF;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
-  border-radius: 25px;
-}
-
-.secondOne h4{
-  font-weight: bold;
-  color: #395B7E;
-  padding: 30px;
-}
-
-.secondOne button{
-  width: 137px;
-  height: 59px;
-  background: #395B7E;
-  border-radius: 15px;
+.input-group span{
+  background-color: #395B7E;
   color: white;
+  border: none;
 }
 
-.thirdOne{
-  margin: 0 auto;
-  width: 70%;
-  height: 450px;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
-  border-radius: 25px;
+.maincontantwrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
 }
 
-.secondH2{
-  text-align: center;
+.maincontent{
+  width: 1300px;
 }
-.thirdOne h4{
-  font-weight: bold;
+
+.maincontent h2{
   color: #395B7E;
-  padding: 30px;
-  font-size: 40px;
+}
+
+.bestthree{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.card{
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 20px;
+}
+
+.ressspotlight{
+    margin: 100px 0;
+}
+
+.ressspotlight h2{
+  margin-bottom: 20px;
+}
+
+.restaurantslistwrap{
+  width: 1300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listbuttons{
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-between;
 }
