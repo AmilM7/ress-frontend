@@ -24,7 +24,10 @@ export class Routex {
   public static restaurantDashboard = 'restaurantDashboard';
   public static adminlogin = 'amarirfanamilmirza';
   public static userProfile = 'userProfile';
-  public static restaurantProfile = 'restaurantProfile'
-  public static reservationsOfUser = "userReservations"
+  public static restaurantProfile = 'restaurantProfile';
+  public static reservationsOfUser = "userReservations";
+  public static userView = 'userView';
+  public static restaurantView = 'restaurantView';
+
 
 }

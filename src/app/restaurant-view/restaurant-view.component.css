@@ -1,0 +1,98 @@
+.restaurantprofile {
+  background-image: linear-gradient(#5381b9,#395B7E);
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  height: 250px;
+}
+
+.wrap{
+  position: absolute;
+  top: 200px;
+}
+
+.restaurantwrap{
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  justify-content: space-between;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+}
+
+.top-description{
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrap .profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile img{
+  margin-bottom: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.profile .name{
+  display: flex;
+  color: #395B7E;
+}
+
+.restaurantwrap p{
+  margin-bottom: 30px;
+  text-align: right;
+  color: gray;
+}
+
+.bottom-description p{
+  text-align: center;
+  color: #395B7E;
+}
+
+.bottom-description{
+  margin-top: 10px;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: rgba(57, 91, 126, 0.2);
+}
+
+.reservations-group{
+  padding: 20px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.reservation-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+.reservation-block{
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  width: 700px;
+  justify-content: space-between;
+  color: #395B7E;
+}
+
+.reservation-block span{
+  font-weight: bold;
+}
+
+.confirmation{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

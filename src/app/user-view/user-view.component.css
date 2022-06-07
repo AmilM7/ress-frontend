@@ -1,0 +1,83 @@
+.userprofile {
+  background-image: linear-gradient(#e7c6ab,#F0B67F);
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  height: 250px;
+}
+
+.wrap{
+  position: absolute;
+  top: 200px;
+}
+
+.userwrap{
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 20px;
+  display: flex;
+  width: 800px;
+  justify-content: space-between;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+}
+
+.wrap .profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile img{
+  margin-bottom: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.profile .name{
+  display: flex;
+  color: #395B7E;
+}
+
+.wrap .info{
+  color: gray;
+}
+
+.wrap .info p{
+  margin-bottom: 30px;
+  text-align: right;
+}
+
+.reservations-group{
+  padding: 20px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.reservation-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+.reservation-block{
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  width: 700px;
+  justify-content: space-between;
+  color: #395B7E;
+}
+
+.reservation-block span{
+  font-weight: bold;
+}
+
+.confirmation{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

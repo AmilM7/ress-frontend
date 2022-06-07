@@ -28,7 +28,7 @@
         <div *ngIf="reservation.approval=='pending'" class="reservation-block">
           <div class="user-profile">
             <img src="../../assets/amar.jpg" alt="amar">
-            <button class="custom-button-2">View user profie</button>
+            <button class="custom-button-2" routerLink="/userView">View user profie</button>
           </div>
           <div>
             <p> <span>UserID:</span> {{reservation.user.id}}</p>

@@ -48,6 +48,8 @@ import {FilterPipe} from "./pipes/filter.pipe";
 import {AuthorizedGuard} from "./guards/authorized.guard";
 import {AuthService} from "./services/auth.services";
 import {provideAuthorizationInterceptor} from "./interceptors/authorization.interceptors";
+import { UserViewComponent } from './user-view/user-view.component';
+import { RestaurantViewComponent } from './restaurant-view/restaurant-view.component';
 
 
 @NgModule({
@@ -83,7 +85,9 @@ import {provideAuthorizationInterceptor} from "./interceptors/authorization.inte
     ReservationFormComponent,
     ReservationsOfUserComponent,
     SuccessPageComponent,
-    FilterPipe
+    FilterPipe,
+    UserViewComponent,
+    RestaurantViewComponent
 
   ],
   imports: [
