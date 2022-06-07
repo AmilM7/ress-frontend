@@ -14,5 +14,4 @@ export interface RestaurantInterface{
   contactManager: string;
   type: Type;
   password: string;
-
 }

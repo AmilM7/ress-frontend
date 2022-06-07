@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {Reservation} from "../models/reservation";
 
 
+
 @Injectable()
 export class ReservationServices {
   private readonly baseUrl:string  = 'http://localhost:8080/reservations';
@@ -31,6 +32,10 @@ export class ReservationServices {
 
   public updateReservationDenied(reservation: Reservation, id: string): Observable<Reservation>{
     return this.http.put<Reservation>(`${this.baseUrl}/update2/${id}`,reservation);
+  }
+
+  public create(reservation:Reservation): Observable<Reservation>{
+    return this.http.post<Reservation>(`${this.baseUrl}`, reservation);
   }
 
 }
