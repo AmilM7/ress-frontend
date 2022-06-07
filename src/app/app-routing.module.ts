@@ -137,7 +137,6 @@ const routes: Routes = [
   },
   {
     path: Routex.adminDashboard,
-    canActivate: [AuthorizedGuard],
     component: AdminDashboardComponent,
     resolve: {
       [ResolverResponse.admins]: AdminsResolver,
