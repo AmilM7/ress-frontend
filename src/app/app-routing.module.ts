@@ -120,7 +120,6 @@ const routes: Routes = [
   },
   {
     path: Routex.adminDashboard,
-    canActivate: [AuthorizedGuard],
     component: AdminDashboardComponent,
     resolve: {
       [ResolverResponse.admins]: AdminsResolver,
@@ -129,7 +128,6 @@ const routes: Routes = [
   },
   {
     path: Routex.restaurantDashboard,
-    canActivateChild: [AuthorizedGuard],
     children:[
       {
       path: Routex.empty,
