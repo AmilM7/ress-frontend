@@ -37,6 +37,8 @@ import {SuccessPageComponent} from "./success-page/success-page.component";
 import {MostlyReservedRestaurantsResolver} from "./resolvers/mostlyReservedRestaurants.resolver";
 import {SuggestedRestaurantsResolver} from "./resolvers/suggestedRestaurants.resolver.";
 import {AuthorizedGuard} from "./guards/authorized.guard";
+import {UserViewComponent} from "./user-view/user-view.component";
+import {RestaurantViewComponent} from "./restaurant-view/restaurant-view.component";
 
 const routes: Routes = [
   {path: Routex.empty, component: MainComponent},
@@ -156,12 +158,40 @@ const routes: Routes = [
     ]
   },
   {
+    path: Routex.userView,
+    canActivateChild: [AuthorizedGuard],
+    children:[
+      {
+        path: Routex.empty,
+        component: UserViewComponent,
+        resolve: {
+          [ResolverResponse.reservations]: ReservationsResolver,
+          [ResolverResponse.admins]: AdminsResolver,
+        }
+      }
+    ]
+  },
+  {
     path: Routex.restaurantProfile,
     canActivateChild: [AuthorizedGuard],
     children:[
       {
         path: Routex.empty,
         component: RestaurantProfileComponent,
+        resolve: {
+          [ResolverResponse.reservations]: ReservationsResolver,
+          [ResolverResponse.restaurants]: RestaurantsResolver,
+        }
+      }
+    ]
+  },
+  {
+    path: Routex.restaurantView,
+    canActivateChild: [AuthorizedGuard],
+    children:[
+      {
+        path: Routex.empty,
+        component: RestaurantViewComponent,
         resolve: {
           [ResolverResponse.reservations]: ReservationsResolver,
           [ResolverResponse.restaurants]: RestaurantsResolver,
