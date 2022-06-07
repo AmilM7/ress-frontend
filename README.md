@@ -27,6 +27,11 @@ In order to install Angular CLI, run the following command: npm install -g @angu
  For easier debugging in development mode, import the following file: import 'zone.js/plugins/zone-error'.\
  This import should be commented out in production mode because it will have a negative impact on performance if an error is thrown.\
  
+ **Deployment**
+ 
+ Find this application deployed on Netlify : https://ress-application.netlify.app
+
+ **Other requirements**
  
  In order to run application, the Bootstrap is required.
 
