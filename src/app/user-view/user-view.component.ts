@@ -12,16 +12,13 @@ import {ResolverResponse} from "../constants/resolver-response.constants";
 })
 export class UserViewComponent implements OnInit {
 
-  public reservations: Reservation[] = [];
-  public admins: Person[] = [];
+  public person: Person | undefined;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
-      this.reservations = response[ResolverResponse.reservations];
-      this.admins = response[ResolverResponse.admins]
+      this.person = response[ResolverResponse.singleUser]
     });
   }
-
 }

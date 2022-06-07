@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
 import {Routex} from "../constants/constants";
 import {AuthResponse} from "../models/auth/auth-response.interface";
 import {SignInForm} from "../models/auth/sign-in-form.interface";
+import {Person} from "../models/person";
 
 
 @Injectable()
@@ -15,6 +16,7 @@ export class AuthService {
   private readonly baseUrl: string = `${environment.backendUrl}/authenticate`;
 
   private jwt: string | null = null;
+
 
   constructor(
     private http: HttpClient,

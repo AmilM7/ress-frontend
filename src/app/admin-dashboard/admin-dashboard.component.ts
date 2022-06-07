@@ -29,7 +29,6 @@ export class AdminDashboardComponent implements OnInit {
     this.activatedRoute.data.subscribe((response: any) => {
       this.admins = response[ResolverResponse.admins];
     });
-
   }
 
   doApprove(restaurant:Restaurant):void {
