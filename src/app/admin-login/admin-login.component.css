@@ -38,7 +38,7 @@
   width: 800px;
   height: auto;
   border-radius: 20px;
-  box-shadow: 10px 10px 50px #000;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   font-size: 20px;
   color: rgb(57, 91, 126);
   display: flex;
