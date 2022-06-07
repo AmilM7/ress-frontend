@@ -23,7 +23,7 @@
           <label class="form-label text-center">Time</label>
           <div class="input-group mb-3">
             <span class="input-group-text" ><i class="bi bi-clock"></i></span>
-            <input formControlName="time" type="text" class="form-control text-center" id="24h" placeholder="Mandatory format: HH-MM" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"
+            <input formControlName="time" type="time" class="form-control text-center" id="24h" placeholder="Mandatory format: HH-MM"
                    [ngClass]="{'is-invalid' : time && time.invalid && time.touched}" aria-describedby="basic-addon1" >
           </div>
         </div>

@@ -1,51 +1,46 @@
 <app-header-user-dashboard></app-header-user-dashboard>
 
-<div *ngFor="let admin of admins">
-<div class="userprofile" *ngIf="admin.id=='1'">
+<div>
+<div class="userprofile" *ngIf="person">
   <div class="wrap" >
     <div class="userwrap">
       <div class="profile">
         <img src="../../assets/amil.jpg" alt="user-image">
         <div class="name">
-          <h3>{{admin.firstName}} {{admin.lastName}}</h3>
+          <h3>{{person.firstName}} {{person.lastName}}</h3>
         </div>
       </div>
       <div class="info">
         <p>Basic contact information:</p>
         <hr>
-        <p>E-mail: {{admin.email}}</p>
-        <p>Contact number: {{admin.phone}}</p>
+        <p>E-mail: {{person.email}}</p>
+        <p>Contact number: {{person.phone}}</p>
       </div>
     </div>
 
     <div class="update-profile">
       <h5>Make changes to your profile</h5>
-      <div class="form-text" style="color: red">Email and password must be enterd every time!</div>
+      <div class="form-text" style="color: red">Email must be enterd every time!</div>
       <hr>
-      <form [formGroup]="form" (ngSubmit)="submit(admin.id)">
+      <form [formGroup]="form" (ngSubmit)="submit(person.id)">
         <div class="mustinput">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">E-mail address:</label>
-            <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" [ngClass]="{'is-invalid' : emailupdate && emailupdate.invalid && emailupdate.touched}" aria-describedby="basic-addon1" placeholder="{{admin.email}}">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password:</label>
-            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" [ngClass]="{'is-invalid' : passwordupdate && passwordupdate.invalid && passwordupdate.touched}" aria-describedby="basic-addon1">
-            <div id="emailHelp" class="form-text" style="color: #F0B67F;">At least one lowercase, capital letter and number (more than 8 characters)</div>
+            <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" [ngClass]="{'is-invalid' : emailupdate && emailupdate.invalid && emailupdate.touched}" aria-describedby="basic-addon1" placeholder="{{person.email}}">
           </div>
         </div>
         <div class="inputvalues">
           <div class="mb-3">
             <label for="exampleInputFname" class="form-label">First name:</label>
-            <input formControlName="fname" type="fname" class="form-control" id="exampleInputFname" placeholder="{{admin.firstName}}">
+            <input  formControlName="firstName"   type="text" class="form-control" id="exampleInputFname" placeholder="{{person.firstName}}">
           </div>
           <div class="mb-3">
             <label for="exampleInputLname" class="form-label">Last name:</label>
-            <input formControlName="lname" type="lname" class="form-control" id="exampleInputLname" placeholder="{{admin.lastName}}">
+            <input formControlName="lastName" type="text" class="form-control" id="exampleInputLname" placeholder="{{person.lastName}}">
           </div>
           <div class="mb-3">
             <label for="exampleInputContact" class="form-label">Contact number:</label>
-            <input formControlName="phone" type="phone" class="form-control" id="exampleInputContact" placeholder="{{admin.phone}}">
+            <input formControlName="phone" type="phone" class="form-control" id="exampleInputContact" placeholder="{{person.phone}}">
           </div>
           <button [disabled]="form.invalid" type="submit" class="btn btn-success">Update profile</button>
         </div>
@@ -58,10 +53,10 @@
         <h5 style="color: #395B7E">Previous Reservations </h5>
         <hr>
         <div *ngFor="let reservation of reservations" class="reservation-wrap">
-          <div *ngIf="reservation.approval=='approved'" class="reservation-block">
+          <div  class="reservation-block">
             <div>
-              <p> <span>UserID:</span> {{reservation.user}}</p>
-              <p> <span>RestaurantID:</span> {{reservation.restaurant}}</p>
+              <p> <span>UserID:</span> {{reservation.user.id}}</p>
+              <p> <span>RestaurantID:</span> {{reservation.restaurant.id}}</p>
               <p> <span>Time:</span> {{reservation.time}}</p>
               <p> <span>Date:</span> {{reservation.date}}</p>
               <p> <span>Number of guests:</span> {{reservation.numberOfGuests}}</p>

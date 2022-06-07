@@ -16,7 +16,7 @@ export class ReservationServices {
     return this.http.get<Reservation[]>(this.baseUrl);
   }
 
-  public getReservationsByUser(id: number): Observable<Reservation[]>{
+  public getReservationsByUser(id: string | undefined): Observable<Reservation[]>{
     return this.http.get<Reservation[]>(`${this.baseUrl}/userID/${id}`)
   }
 

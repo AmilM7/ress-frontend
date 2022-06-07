@@ -4,6 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {ResolverResponse} from "../constants/resolver-response.constants";
 import {Person} from "../models/person";
 import {PersonDto} from "../models/dtos/person.dto";
+import {ProfileService} from "../services/profile.services";
 
 @Component({
   selector: 'app-user-dashboard',
@@ -21,7 +22,8 @@ export class UserDashboardComponent implements OnInit {
   public searchText: string = "";
   public person: Person | undefined;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute,
+              private profileService: ProfileService,) {
   }
 
   ngOnInit(): void {
@@ -37,9 +39,7 @@ export class UserDashboardComponent implements OnInit {
       this.suggestedRestaurants = response[ResolverResponse.suggestedRestaurants];
     });
 
-    this.activatedRoute.data.subscribe((response: any) => {
-      this.person = response[ResolverResponse.uniqueUser];
-    });
+    this.person = this.profileService.getProfile();
 
     for (let i = 0; i < this.allRestaurants.length; i++) {
       this.namesOfRestaurants.push(this.allRestaurants[i].name)

@@ -5,6 +5,7 @@ import {ResolverResponse} from "../constants/resolver-response.constants";
 import {Person} from "../models/person";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AdminService} from "../services/admin.service";
+import {PersonDto} from "../models/dtos/person.dto";
 
 @Component({
   selector: 'app-user-profile',
@@ -14,25 +15,25 @@ import {AdminService} from "../services/admin.service";
 export class UserProfileComponent implements OnInit {
 
   public reservations: Reservation[] = [];
-  public admins: Person[] = [];
 
   public form!: FormGroup;
-  person: Person | undefined;
+  public person: Person | undefined;
 
   constructor(private activatedRoute: ActivatedRoute, private formBuilder : FormBuilder, public adminsSrvice: AdminService) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
-      this.reservations = response[ResolverResponse.reservations];
-      this.admins = response[ResolverResponse.admins]
+      this.reservations = response[ResolverResponse.reservationsOfUser];
+      this.person = response[ResolverResponse.uniqueUser];
     });
+
 
     this.form = this.formBuilder.group({
       email: [this.person?.email || '', [Validators.required, Validators.email]],
       password: [this.person?.password || '', [Validators.required, Validators.pattern("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")]],
-      fname: [this.person?.firstName],
-      lname: [this.person?.lastName],
-      phone: [this.person?.phone]
+      firstName: [this.person?.firstName],
+      lastName: [this.person?.lastName],
+      phone: [this.person?.phone],
     })
   }
 
@@ -40,16 +41,12 @@ export class UserProfileComponent implements OnInit {
     return this.form.get('email');
   }
 
-  get passwordupdate(){
-    return this.form.get('password');
+  get firstname(){
+    return this.form.get('firstName');
   }
 
-  get fname(){
-    return this.form.get('fname');
-  }
-
-  get lname(){
-    return this.form.get('lname');
+  get lastname(){
+    return this.form.get('lastName');
   }
 
   get phone(){
@@ -57,20 +54,11 @@ export class UserProfileComponent implements OnInit {
   }
 
   submit(id: string): void {
-    for (let user of this.admins){
-      if (id == user.id) {
-        user.email = this.emailupdate?.value;
-        user.password = this.passwordupdate?.value;
-        if (this.fname?.value!=null)user.firstName = this.fname?.value;
-        if (this.lname?.value!=null)user.lastName = this.lname?.value;
-        if (this.phone?.value!=null)user.phone = this.phone?.value;
-        this.adminsSrvice.updateUser(user, id).subscribe(value => {
-
-        });
-      }
-    }
+    const user: Person = this.form.value;
+    this.adminsSrvice.updateUser(user, id).subscribe(value => {
+      console.log(user);
+    });
 
     this.form.reset();
-  }
-
+    }
 }

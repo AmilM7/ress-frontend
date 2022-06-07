@@ -73,7 +73,24 @@ const routes: Routes = [
       [ResolverResponse.uniqueUser]: PersonUniqueResolver,
     }
   },
-  {path: Routex.reservationForm, component: ReservationFormComponent},
+
+
+  {path: Routex.reservationForm,
+    canActivateChild: [AuthorizedGuard],
+    children:[
+      {
+        path:Routex.restaurant,
+        component: ReservationFormComponent,
+        resolve: {
+          [ResolverResponse.restaurant]: RestaurantResolver,
+          [ResolverResponse.uniqueUser]: PersonUniqueResolver,
+
+        }
+      }
+    ]
+  },
+
+
   {
     path: Routex.user,
     canActivateChild: [AuthorizedGuard],
@@ -129,7 +146,6 @@ const routes: Routes = [
   },
   {
     path: Routex.restaurantDashboard,
-    canActivateChild: [AuthorizedGuard],
     children:[
       {
       path: Routex.empty,
@@ -146,11 +162,11 @@ const routes: Routes = [
     canActivateChild: [AuthorizedGuard],
     children:[
       {
-        path:  Routex.singleUser,
+        path:  Routex.empty,
         component: UserProfileComponent,
         resolve: {
-          [ResolverResponse.reservations]: ReservationsResolver,
-          [ResolverResponse.admins]: AdminsResolver,
+          [ResolverResponse.reservationsOfUser]: ReservationsResolverOfUser,
+          [ResolverResponse.uniqueUser]: PersonUniqueResolver,
         }
       }
     ]
@@ -200,7 +216,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    [RouterModule.forRoot(routes)]
+    [RouterModule.forRoot(routes,{useHash:true})]
   ],
   exports: [RouterModule]
 })

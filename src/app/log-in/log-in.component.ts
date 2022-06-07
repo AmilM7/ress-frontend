@@ -4,6 +4,7 @@ import {Person} from "../models/person";
 import {AuthService} from "../services/auth.services";
 import {Router} from "@angular/router";
 import {Routex} from "../constants/constants";
+import {ProfileService} from "../services/profile.services";
 
 
 @Component({
@@ -17,7 +18,8 @@ export class LogInComponent implements OnInit {
 
   constructor(private formBuilder : FormBuilder,
               private authService: AuthService,
-              private router: Router,) { }
+              private router: Router,
+              private profileService: ProfileService,) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -37,7 +39,9 @@ export class LogInComponent implements OnInit {
   submit(): void {
     if (this.form!.valid) {
       this.authService.logIn({ ...this.form!.value }).subscribe(() => {
-        this.router.navigate([Routex.userDashboard]);
+        this.profileService.fetchProfile().subscribe(()=>{
+          this.router.navigate([Routex.userDashboard]);
+        })
 
       });
     }
