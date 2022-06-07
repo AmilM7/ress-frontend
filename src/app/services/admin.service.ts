@@ -16,11 +16,11 @@ export class AdminService {
     return this.http.get<Person[]>(this.baseUrl);
   }
 
-  getUser(id:string): Observable<Person>{
+  public getUser(id:string): Observable<Person>{
     return this.http.get<Person>(`${this.baseUrl}/${id}`);
   }
 
-  create(user: PersonDto): Observable<PersonDto> {
+  public create(user: PersonDto): Observable<PersonDto> {
     return this.http.post<PersonDto>(`${this.baseUrl}`, user);
   }
 
