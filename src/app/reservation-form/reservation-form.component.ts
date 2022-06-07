@@ -6,6 +6,8 @@ import {RestaurantDto} from "../models/dtos/restaurant.dto";
 import {Routex} from "../constants/constants";
 import {ReservationServices} from "../services/reservation.service";
 import {Person} from "../models/person";
+import {ResolverResponse} from "../constants/resolver-response.constants";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-reservation-form',
@@ -17,17 +19,20 @@ export class ReservationFormComponent implements OnInit {
   public form!: FormGroup;
   reservation: Reservation | undefined;
   restaurant: Restaurant | undefined;
-  person: { firstName: string; lastName: string; phone: string; email: string } = {
-    "firstName": "Amar",
-    "lastName": "Sose",
-    "email": "amar@gmail.com",
-    "phone": "067366363",
-  } ;
+  person: Person | undefined;
+
 
   constructor(private formBuilder : FormBuilder,
-              private reservationService: ReservationServices) { }
+              private reservationService: ReservationServices,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    this.activatedRoute.data.subscribe((response: any) => {
+      this.person = response[ResolverResponse.uniqueUser];
+      this.restaurant = response[ResolverResponse.restaurant];
+    });
+
 
     this.form = this.formBuilder.group({
       numberOfGuests: [this.reservation?.numberOfGuests || '', [Validators.required, Validators.max(50)]],
@@ -55,37 +60,18 @@ export class ReservationFormComponent implements OnInit {
 
   submit(): void {
     const reservation: Reservation = this.form.value;
+    if (this.restaurant) {
+      reservation.restaurant = this.restaurant;
+    }
+    if (this.person) {
+      reservation.user = this.person;
+    }
     this.reservationService.create(reservation).subscribe(value => {
     })
     this.form.reset();
-    console.log(reservation);
     }
   }
 
 
 
 
-
-/*submit(): void {
-  const restaurant: Restaurant = this.form.value;
-const facility: RestaurantDto = {
-  name: restaurant.name,
-  location: restaurant.location,
-  numOfAvailGuests: restaurant.numOfAvailGuests,
-  confirmPassword: restaurant.confirmPassword,
-  numOfAvailTables: restaurant.numOfAvailTables,
-  ressDescription: restaurant.ressDescription,
-  contactNum: restaurant.contactNum,
-  startHour: restaurant.startHour,
-  endHour: restaurant.endHour,
-  email: restaurant.email,
-  contactManager: restaurant.contactManager,
-  type: restaurant.type,
-  password: restaurant.password,
-}
-
-this.restaurantService.create(facility).subscribe(value => {
-  this.router.navigate([Routex.restaurantLogIn]);
-})
-this.form.reset();
-}*/

@@ -5,18 +5,22 @@ import {Reservation} from "../models/reservation";
 import {ReservationServices} from "../services/reservation.service";
 import {Restaurant} from "../models/restaurant";
 import {Routex} from "../constants/constants";
+import {Person} from "../models/person";
+import {ProfileService} from "../services/profile.services";
 
 
 @Injectable({providedIn: 'root'})
 export class ReservationsResolverOfUser implements Resolve<Reservation[]> {
 
-  constructor(private reservationService:ReservationServices) {
+  constructor(private reservationService:ReservationServices,
+              private profileService: ProfileService,) {
   }
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):
     Observable<Reservation[]> | Promise<Reservation[]> | Reservation[]{
-    return this.reservationService.getReservationsByUser(1);   //number is one because we do not know which user until we do authorization
+    const id =  this.profileService.getProfile()?.id;
+    return this.reservationService.getReservationsByUser(id);   //number is one because we do not know which user until we do authorization
   }
 }
 

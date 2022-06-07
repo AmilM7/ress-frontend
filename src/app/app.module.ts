@@ -48,6 +48,7 @@ import {AuthService} from "./services/auth.services";
 import {provideAuthorizationInterceptor} from "./interceptors/authorization.interceptors";
 import { UserViewComponent } from './user-view/user-view.component';
 import { RestaurantViewComponent } from './restaurant-view/restaurant-view.component';
+import {ProfileService} from "./services/profile.services";
 
 
 @NgModule({
@@ -111,6 +112,8 @@ import { RestaurantViewComponent } from './restaurant-view/restaurant-view.compo
 
     AuthorizedGuard,
     AuthService,
+
+    ProfileService,
 
   ],
   bootstrap: [AppComponent]

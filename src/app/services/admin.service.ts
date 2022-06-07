@@ -29,7 +29,7 @@ export class AdminService {
     return this.http.post<PersonDto>(`${this.baseUrl}`, user);
   }
 
-  public updateUser(user: Person, id: string): Observable<Person>{
+  public updateUser(user: { firstName: string; lastName: string; password: string; phone: string; email: string }, id: string): Observable<Person>{
     return this.http.put<Person>(`${this.baseUrl}/update/${id}`,user);
   }
 }
