@@ -190,11 +190,10 @@ const routes: Routes = [
     canActivateChild: [AuthorizedGuard],
     children:[
       {
-        path: Routex.empty,
+        path: Routex.restaurant,
         component: RestaurantViewComponent,
         resolve: {
-          [ResolverResponse.reservations]: ReservationsResolver,
-          [ResolverResponse.restaurants]: RestaurantsResolver,
+          [ResolverResponse.restaurant]: RestaurantResolver,
         }
       }
     ]
