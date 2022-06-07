@@ -1,16 +1,16 @@
 <app-header-restaurant-dashboard></app-header-restaurant-dashboard>
 
 <div class="wrap">
-  <div class="introwrap" *ngFor="let restaurant of restaurants">
+  <div class="introwrap" >
     <div class="intro">
       <img src="../../assets/restaurant1.jpg" alt="profile">
-      <div class="info" *ngIf="restaurant.email=='zacin@gmail.com'">
+      <div class="info" *ngIf="restaurants[0].email=='zacin@gmail.com'">
         <p><span>Account information</span></p>
         <hr>
-        <p><span>Object type:</span> {{restaurant.type}}</p>
-        <p><span>Name:</span> {{restaurant.name}}</p>
-        <p><span>Location:</span> {{restaurant.location}}</p>
-        <p><span>Contact:</span> {{restaurant.contactNum}}</p>
+        <p><span>Object type:</span> {{restaurants[0].type}}</p>
+        <p><span>Name:</span> {{restaurants[0].name}}</p>
+        <p><span>Location:</span> {{restaurants[0].location}}</p>
+        <p><span>Contact:</span> {{restaurants[0].contactNum}}</p>
       </div>
     </div>
     <button class="custom-button" routerLink="/restaurant-profile"><i class="bi bi-gear-fill"></i> Edit profile</button>
@@ -63,6 +63,8 @@
             <button class="custom-button-2">View user profie</button>
           </div>
           <div>
+            <p> <span>UserID:</span> {{reservation.user.id}}</p>
+            <p> <span>RestaurantID:</span> {{reservation.restaurant.id}}</p>
             <p> <span>Time:</span> {{reservation.time}}</p>
             <p> <span>Date:</span> {{reservation.date}}</p>
             <p> <span>Number of guests:</span> {{reservation.numberOfGuests}}</p>
@@ -92,10 +94,13 @@
             <button class="custom-button-2">View user profie</button>
           </div>
           <div>
+            <p> <span>UserID:</span> {{reservation.user.id}}</p>
+            <p> <span>RestaurantID:</span> {{reservation.restaurant.id}}</p>
             <p> <span>Time:</span> {{reservation.time}}</p>
             <p> <span>Date:</span> {{reservation.date}}</p>
             <p> <span>Number of guests:</span> {{reservation.numberOfGuests}}</p>
             <p> <span>Table ID:</span> {{reservation.tableId}}</p>
+            <p> <span>Description</span> {{reservation.description}}</p>
           </div>
           <div class="confirmation">
             <div style="width: 200px">
