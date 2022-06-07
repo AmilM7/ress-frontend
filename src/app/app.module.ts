@@ -10,7 +10,6 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MainComponent } from './main/main.component';
-import { HeaderUserComponent } from './header-user/header-user.component';
 import {MatIconModule} from "@angular/material/icon";
 import { FavoriteComponent } from './favorite/favorite.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -61,7 +60,6 @@ import {provideAuthorizationInterceptor} from "./interceptors/authorization.inte
     SignUpComponent,
     PageNotFoundComponent,
     MainComponent,
-    HeaderUserComponent,
     FavoriteComponent,
     ProfileComponent,
     LogoutComponent,
