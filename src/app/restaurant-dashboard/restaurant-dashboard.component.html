@@ -13,7 +13,7 @@
         <p><span>Contact:</span> {{restaurant.contactNum}}</p>
       </div>
     </div>
-    <button class="custom-button" routerLink="/restaurantProfile"><i class="bi bi-gear-fill"></i> Edit profile</button>
+    <button class="custom-button" routerLink="/restaurant-profile"><i class="bi bi-gear-fill"></i> Edit profile</button>
   </div>
 </div>
 
@@ -28,11 +28,11 @@
         <div *ngIf="reservation.approval=='pending'" class="reservation-block">
           <div class="user-profile">
             <img src="../../assets/amar.jpg" alt="amar">
-            <button class="custom-button-2" routerLink="/userView">View user profie</button>
+            <button class="custom-button-2" routerLink="/user-view">View user profie</button>
           </div>
           <div>
             <p> <span>UserID:</span> {{reservation.user.id}}</p>
-            <p> <span>RestaurantID:</span> {{reservation.restaurant}}</p>
+            <p> <span>RestaurantID:</span> {{reservation.restaurant.id}}</p>
             <p> <span>Time:</span> {{reservation.time}}</p>
             <p> <span>Date:</span> {{reservation.date}}</p>
             <p> <span>Number of guests:</span> {{reservation.numberOfGuests}}</p>

@@ -30,6 +30,7 @@
 ul{
   width: 400px;
   border-radius: 0 0 10px 10px;
+  border: lightgray 1px solid;
   position: absolute;
   top: 250px;
   color: #395B7E;
