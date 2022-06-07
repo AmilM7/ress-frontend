@@ -7,7 +7,7 @@ import {Routex} from "../constants/constants";
 import {ReservationServices} from "../services/reservation.service";
 import {Person} from "../models/person";
 import {ResolverResponse} from "../constants/resolver-response.constants";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-reservation-form',

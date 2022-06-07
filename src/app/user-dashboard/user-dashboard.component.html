@@ -2,7 +2,7 @@
 
 <div class="introductionwrap">
   <div class="introduction">
-    <h2>Welcome!</h2>
+    <h2 *ngIf="person">Welcome {{person.firstName}} {{person.lastName}}!</h2>
     <div class="searchbar">
       <div class="input-group flex-nowrap">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-search"></i></span>
@@ -31,8 +31,10 @@
             <h5 class="card-title" style="color: #395B7E; margin-bottom: 10px; font-size: 25px">{{restaurant.name}}</h5>
             <p class="card-text" style="color: gray; font-size: 15px">Email: {{restaurant.email}}</p>
             <p class="card-text" style="color: gray; font-size: 15px">Contact: {{restaurant.contactNum}}</p>
-            <a routerLink="/reservationForm/{{restaurant.id}}" class="btn btn-success">Reserve</a>
-            <a routerLink="/restaurantView/{{restaurant.id}}" class="btn btn-outline-primary">View More</a>
+            <div style="display: flex; justify-content: space-between; width: 100%">
+              <a routerLink="/reservation-form/{{restaurant.id}}" class="btn btn-success">Reserve</a>
+              <a routerLink="/restaurant-view/{{restaurant.id}}" class="btn btn-outline-primary">View More</a>
+            </div>
           </div>
         </div>
       </div>
@@ -49,8 +51,10 @@
             <p class="card-text" style="color: #395B7E">{{restaurant.ressDescription}}</p>
             <p class="card-text" style="color: gray; font-size: 15px">Email: {{restaurant.email}}</p>
             <p class="card-text" style="color: gray; font-size: 15px">Contact: {{restaurant.contactNum}}</p>
-            <a routerLink="/reservationForm/{{restaurant.id}}" class="btn btn-success">Reserve</a>
-            <a routerLink="/restaurantView/{{restaurant.id}}" class="btn btn-outline-primary">View More</a>
+            <div style="display: flex; justify-content: space-between; width: 100%">
+              <a routerLink="/reservation-form/{{restaurant.id}}" class="btn btn-success">Reserve</a>
+              <a routerLink="/restaurant-view/{{restaurant.id}}" class="btn btn-outline-primary">View More</a>
+            </div>
           </div>
         </div>
       </div>
@@ -69,8 +73,8 @@
         <p style="color: gray; font-size: 15px">Contact: {{restaurant.contactNum}}</p>
         </div>
         <div class="listbuttons">
-          <a routerLink="/restaurantView/{{restaurant.id}}" class="btn btn-outline-primary">View More</a>
-          <a routerLink="/reservationForm/{{restaurant.id}}" class="btn btn-success">Reserve</a>
+          <a routerLink="/restaurant-view/{{restaurant.id}}" class="btn btn-outline-primary">View More</a>
+          <a routerLink="/reservation-form/{{restaurant.id}}" class="btn btn-success">Reserve</a>
         </div>
       </div>
     </div>

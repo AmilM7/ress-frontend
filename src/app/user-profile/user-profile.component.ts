@@ -56,7 +56,7 @@ export class UserProfileComponent implements OnInit {
   submit(id: string): void {
     const user: Person = this.form.value;
     this.adminsSrvice.updateUser(user, id).subscribe(value => {
-      console.log(user);
+      this.person = user;
     });
 
     this.form.reset();

@@ -12,4 +12,7 @@ export class HeaderUserDashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout() {
+    window.location.reload();
+  }
 }

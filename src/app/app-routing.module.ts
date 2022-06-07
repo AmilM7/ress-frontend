@@ -75,7 +75,7 @@ const routes: Routes = [
   },
 
 
-  {path: Routex.reservationForm,
+  {path: Routex.reservationform,
     canActivateChild: [AuthorizedGuard],
     children:[
       {
