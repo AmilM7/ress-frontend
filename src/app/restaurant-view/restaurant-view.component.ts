@@ -11,15 +11,13 @@ import {ResolverResponse} from "../constants/resolver-response.constants";
 })
 export class RestaurantViewComponent implements OnInit {
 
-  public reservations: Reservation[] = [];
-  public restaurants: Restaurant[] = [];
+  public restaurant: Restaurant | undefined;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
-      this.reservations = response[ResolverResponse.reservations];
-      this.restaurants = response[ResolverResponse.restaurants];
+      this.restaurant = response[ResolverResponse.restaurant];
     });
   }
 
