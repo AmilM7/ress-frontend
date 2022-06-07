@@ -12,8 +12,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MainComponent } from './main/main.component';
 import {MatIconModule} from "@angular/material/icon";
 import { FavoriteComponent } from './favorite/favorite.component';
-import { ProfileComponent } from './profile/profile.component';
-import { LogoutComponent } from './logout/logout.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
@@ -63,8 +61,6 @@ import { RestaurantViewComponent } from './restaurant-view/restaurant-view.compo
     PageNotFoundComponent,
     MainComponent,
     FavoriteComponent,
-    ProfileComponent,
-    LogoutComponent,
     AboutUsComponent,
     UserDashboardComponent,
     RestaurantLogInComponent,

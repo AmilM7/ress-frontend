@@ -22,7 +22,7 @@
 
 <div class="maincontantwrap">
   <div class="maincontent">
-    <h2>Most reserved restaurants</h2>
+    <h2 *ngIf="person">Most reserved restaurants</h2>
     <div class="bestthree" >
       <div *ngFor="let restaurant of topThreeMosltyReservedRestaurants">
         <div class="card" style="width: 400px">

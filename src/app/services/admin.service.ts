@@ -9,6 +9,7 @@ import {Reservation} from "../models/reservation";
 @Injectable()
 export class AdminService {
   private readonly baseUrl:string  =  environment.backendUrl + '/admin';
+  private readonly baseUrl2:string  =  environment.backendUrl + '/profile';
 
   constructor(private http:HttpClient) {
   }
@@ -18,6 +19,10 @@ export class AdminService {
 
   public getUser(id:string): Observable<Person>{
     return this.http.get<Person>(`${this.baseUrl}/${id}`);
+  }
+
+  public getAuthenticatedUser(): Observable<Person>{
+    return this.http.get<Person>(this.baseUrl2);
   }
 
   public create(user: PersonDto): Observable<PersonDto> {

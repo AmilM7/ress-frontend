@@ -19,6 +19,7 @@ export class UserDashboardComponent implements OnInit {
   public suggestedRestaurants: Restaurant[] = [];
   public namesOfRestaurants: string[] = [];
   public searchText: string = "";
+  public person: Person | undefined;
 
   constructor(private activatedRoute: ActivatedRoute) {
   }
@@ -36,9 +37,14 @@ export class UserDashboardComponent implements OnInit {
       this.suggestedRestaurants = response[ResolverResponse.suggestedRestaurants];
     });
 
+    this.activatedRoute.data.subscribe((response: any) => {
+      this.person = response[ResolverResponse.uniqueUser];
+    });
+
     for (let i = 0; i < this.allRestaurants.length; i++) {
       this.namesOfRestaurants.push(this.allRestaurants[i].name)
     }
+
   }
 
 

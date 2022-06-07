@@ -6,8 +6,6 @@ import {LogInComponent} from "./log-in/log-in.component";
 import {MainComponent} from "./main/main.component";
 import {Routex} from "./constants/constants";
 import {FavoriteComponent} from "./favorite/favorite.component";
-import {ProfileComponent} from "./profile/profile.component";
-import {LogoutComponent} from "./logout/logout.component";
 import {AboutUsComponent} from "./about-us/about-us.component";
 import {UserDashboardComponent} from "./user-dashboard/user-dashboard.component";
 import {ResolverResponse} from "./constants/resolver-response.constants";
@@ -39,6 +37,7 @@ import {SuggestedRestaurantsResolver} from "./resolvers/suggestedRestaurants.res
 import {AuthorizedGuard} from "./guards/authorized.guard";
 import {UserViewComponent} from "./user-view/user-view.component";
 import {RestaurantViewComponent} from "./restaurant-view/restaurant-view.component";
+import {PersonUniqueResolver} from "./resolvers/personUnique.resolver";
 
 const routes: Routes = [
   {path: Routex.empty, component: MainComponent},
@@ -54,8 +53,6 @@ const routes: Routes = [
 
   {path: Routex.successPage, canActivate: [AuthorizedGuard], component: SuccessPageComponent},
   {path: Routex.favorite, canActivate: [AuthorizedGuard], component: FavoriteComponent},
-  {path: Routex.profile, canActivate: [AuthorizedGuard], component: ProfileComponent},
-  {path: Routex.logout, canActivate: [AuthorizedGuard], component: LogoutComponent},
   {path: Routex.events, canActivate: [AuthorizedGuard], component: EventsComponent},
   {
     path: Routex.reservationsOfUser,
@@ -73,6 +70,7 @@ const routes: Routes = [
       [ResolverResponse.restaurants]: RestaurantsResolver,
       [ResolverResponse.mostlyReservedRestaurants]: MostlyReservedRestaurantsResolver,
       [ResolverResponse.suggestedRestaurants]: SuggestedRestaurantsResolver,
+      [ResolverResponse.uniqueUser]: PersonUniqueResolver,
     }
   },
   {path: Routex.reservationForm, component: ReservationFormComponent},
@@ -148,7 +146,7 @@ const routes: Routes = [
     canActivateChild: [AuthorizedGuard],
     children:[
       {
-        path: Routex.empty,
+        path:  Routex.singleUser,
         component: UserProfileComponent,
         resolve: {
           [ResolverResponse.reservations]: ReservationsResolver,
@@ -165,8 +163,7 @@ const routes: Routes = [
         path: Routex.empty,
         component: UserViewComponent,
         resolve: {
-          [ResolverResponse.reservations]: ReservationsResolver,
-          [ResolverResponse.admins]: AdminsResolver,
+          [ResolverResponse.singleUser]: SingleUserResolver,
         }
       }
     ]
