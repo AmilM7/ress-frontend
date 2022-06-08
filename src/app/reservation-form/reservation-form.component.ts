@@ -24,7 +24,8 @@ export class ReservationFormComponent implements OnInit {
 
   constructor(private formBuilder : FormBuilder,
               private reservationService: ReservationServices,
-              private activatedRoute: ActivatedRoute) { }
+              private activatedRoute: ActivatedRoute,
+              private router: Router,) { }
 
   ngOnInit(): void {
 
@@ -59,6 +60,7 @@ export class ReservationFormComponent implements OnInit {
   }
 
   submit(): void {
+    console.log(this.form.value);
     const reservation: Reservation = this.form.value;
     if (this.restaurant) {
       reservation.restaurant = this.restaurant;
@@ -67,6 +69,7 @@ export class ReservationFormComponent implements OnInit {
       reservation.user = this.person;
     }
     this.reservationService.create(reservation).subscribe(value => {
+      this.router.navigate([Routex.successPage]);
     })
     this.form.reset();
     }

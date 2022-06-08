@@ -6,6 +6,7 @@ import {Person} from "../models/person";
 import {PersonDto} from "../models/dtos/person.dto";
 import {ProfileService} from "../services/profile.services";
 
+
 @Component({
   selector: 'app-user-dashboard',
   templateUrl: './user-dashboard.component.html',
@@ -45,6 +46,7 @@ export class UserDashboardComponent implements OnInit {
       this.namesOfRestaurants.push(this.allRestaurants[i].name)
     }
 
+    console.log(this.topThreeMosltyReservedRestaurants);
   }
 
 
