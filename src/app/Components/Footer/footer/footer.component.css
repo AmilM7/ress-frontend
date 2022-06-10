@@ -18,8 +18,8 @@ footer p{
   margin-top: 10px;
 }
 
- .links{
-   margin:20px 0px;
+.links{
+  margin:20px 0px;
   display: flex;
   align-items: center;
   width: 500px;
@@ -39,11 +39,11 @@ footer .links i:hover{
   color: #F0B67F;
 }
 
-
 i{
   font-size:30px;
   color: white;
 }
+
 img{
   width: 150px;
   height: auto;
@@ -51,6 +51,7 @@ img{
   filter: grayscale(100%);
   transition: 0.2s ease-in;
 }
+
 img:hover{
   filter: unset;
 }

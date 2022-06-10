@@ -10,13 +10,12 @@
 
 .picture{
   background-image: url(src/assets/Backgrounds/restaurant3.jpg);
-
   width:100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
+
 .card{
   display: inline-block;
   alignment: center;
@@ -36,6 +35,7 @@
   height: 250px;
   border-radius: 20px;
 }
+
 h2{
   text-align: center;
   color: #395B7E;
@@ -45,15 +45,18 @@ h2{
   display: flex;
   margin: 50px;
 }
+
 .ress p{
   text-align: justify;
   text-justify: inter-word;
   padding-right: 20px ;
 }
+
 .ress img{
   width: 50%;
   height: auto;
 }
+
 .buttons{
   padding: 40%;
   padding-top: 0;
@@ -73,8 +76,8 @@ h2{
   justify-content: space-between;
   align-items: center;
   width: 1300px;
-
 }
+
 .buttons{
   width: 500px;
   display: flex;
@@ -94,7 +97,6 @@ button{
   letter-spacing: 1px;
   font-size: 15px;
   box-shadow: 3px 2px rgba(0,0,0,0.1);
-
 }
 
 .about{
@@ -115,12 +117,12 @@ img{
 button:hover{
   background-color: #395B7E;
 }
+
 .title{
   color: #395B7E;
 }
 
 .wrap{
-
   display: flex;
   justify-content: center;
   align-items: center;

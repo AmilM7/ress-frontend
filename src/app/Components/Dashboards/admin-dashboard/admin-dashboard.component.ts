@@ -4,7 +4,6 @@ import {Person} from "../../../models/person";
 import {ResolverResponse} from "../../../Technical/constants/resolver-response.constants";
 import {Restaurant} from "../../../models/restaurant";
 import {RestaurantServices} from "../../../Technical/services/restaurant.services";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -14,7 +13,6 @@ import {Observable} from "rxjs";
 export class AdminDashboardComponent implements OnInit {
 
   public admins : Person[] = [];
-
   public restaurants: Restaurant[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -38,7 +36,6 @@ export class AdminDashboardComponent implements OnInit {
           this.restaurants.splice(index,1);
         }
     });
-
   }
 
   doDeny(email: string, restaurant:Restaurant): void {
@@ -49,5 +46,4 @@ export class AdminDashboardComponent implements OnInit {
       }
     });
   }
-
 }

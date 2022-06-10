@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Reservation} from "../../models/reservation";
 import {Restaurant} from "../../models/restaurant";
-import {RestaurantDto} from "../../models/dtos/restaurant.dto";
 import {Routex} from "../../Technical/constants/constants";
 import {ReservationServices} from "../../Technical/services/reservation.service";
 import {Person} from "../../models/person";
@@ -21,19 +20,16 @@ export class ReservationFormComponent implements OnInit {
   restaurant: Restaurant | undefined;
   person: Person | undefined;
 
-
   constructor(private formBuilder : FormBuilder,
               private reservationService: ReservationServices,
               private activatedRoute: ActivatedRoute,
               private router: Router,) { }
 
   ngOnInit(): void {
-
     this.activatedRoute.data.subscribe((response: any) => {
       this.person = response[ResolverResponse.uniqueUser];
       this.restaurant = response[ResolverResponse.restaurant];
     });
-
 
     this.form = this.formBuilder.group({
       numberOfGuests: [this.reservation?.numberOfGuests || '', [Validators.required, Validators.max(50)]],
@@ -60,14 +56,15 @@ export class ReservationFormComponent implements OnInit {
   }
 
   submit(): void {
-    console.log(this.form.value);
     const reservation: Reservation = this.form.value;
     if (this.restaurant) {
       reservation.restaurant = this.restaurant;
     }
+
     if (this.person) {
       reservation.user = this.person;
     }
+
     this.reservationService.create(reservation).subscribe(value => {
       this.router.navigate([Routex.successPage]);
     })

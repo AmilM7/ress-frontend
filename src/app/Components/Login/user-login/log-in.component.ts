@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, Validator, FormBuilder, Validators} from "@angular/forms";
+import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {Person} from "../../../models/person";
 import {AuthService} from "../../../Technical/services/auth.services";
 import {Router} from "@angular/router";
 import {Routex} from "../../../Technical/constants/constants";
 import {ProfileService} from "../../../Technical/services/profile.services";
-
 
 @Component({
   selector: 'app-log-in',
@@ -13,6 +12,7 @@ import {ProfileService} from "../../../Technical/services/profile.services";
   styleUrls: ['./log-in.component.css'],
 })
 export class LogInComponent implements OnInit {
+
   public form!: FormGroup;
   person: Person | undefined;
 

@@ -1,5 +1,3 @@
-import {PersonInterface} from "./interfaces/person.interface";
-import {RestaurantInterface} from "./interfaces/restaurant.interface";
 import {Restaurant} from "./restaurant";
 import {Person} from "./person";
 

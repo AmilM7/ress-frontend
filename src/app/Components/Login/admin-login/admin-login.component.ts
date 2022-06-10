@@ -8,6 +8,7 @@ import {Person} from "../../../models/person";
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
+
   public form!: FormGroup;
   person: Person | undefined;
 
@@ -19,14 +20,11 @@ export class AdminLoginComponent implements OnInit {
     })
   }
 
-
-
   get password(){
     return this.form.get('password')
   }
 
   submit(): void {
-    console.log(this.form.value.password);
     this.form.reset();
   }
 }

@@ -2,12 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormBuilder, Validator, Validators} from "@angular/forms";
 import {Person} from "../../../models/person";
 import {AdminService} from "../../../Technical/services/admin.service";
-import {Restaurant} from "../../../models/restaurant";
-import {Observable} from "rxjs";
 import {PersonDto} from "../../../models/dtos/person.dto";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {Routex} from "../../../Technical/constants/constants";
-
 
 @Component({
   selector: 'app-sign-up',
@@ -15,6 +12,7 @@ import {Routex} from "../../../Technical/constants/constants";
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
+
   public form!: FormGroup;
   person: Person | undefined;
   route: string = Routex.user + Routex.separator + Routex.restaurantDashboard;
@@ -77,7 +75,6 @@ export class SignUpComponent implements OnInit {
     });
     this.form.reset();
   }
-
 }
 
 

@@ -8,6 +8,7 @@ import {Restaurant} from "../../../models/restaurant";
   styleUrls: ['./restaurant-log-in.component.css']
 })
 export class RestaurantLogInComponent implements OnInit {
+
   public form!: FormGroup;
   restaurant: Restaurant | undefined;
 
@@ -19,6 +20,7 @@ export class RestaurantLogInComponent implements OnInit {
       password: [this.restaurant?.password || '', [Validators.required]]
     })
   }
+
   get email(){
     return this.form.get('email');
   }
@@ -28,8 +30,6 @@ export class RestaurantLogInComponent implements OnInit {
   }
 
   submit(): void {
-    console.log(this.form.value.email);
     this.form.reset();
   }
-
 }

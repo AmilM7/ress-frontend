@@ -2,13 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Restaurant} from "../../../models/restaurant";
 import {RestaurantServices} from "../../../Technical/services/restaurant.services";
-import {Person} from "../../../models/person";
-import {PersonDto} from "../../../models/dtos/person.dto";
 import {RestaurantDto} from "../../../models/dtos/restaurant.dto";
-import {Type} from "../../../models/type.enum";
 import {Routex} from "../../../Technical/constants/constants";
 import {Router} from "@angular/router";
-
 
 @Component({
   selector: 'app-restaurant-sign-up',
@@ -16,13 +12,13 @@ import {Router} from "@angular/router";
   styleUrls: ['./restaurant-sign-up.component.css']
 })
 export class RestaurantSignUpComponent implements OnInit {
+
   public form!: FormGroup;
   restaurant: Restaurant | undefined;
 
   constructor(private formBuilder: FormBuilder,
               private restaurantService: RestaurantServices,
               private router: Router,) {
-
   }
 
   ngOnInit(): void {
@@ -41,7 +37,6 @@ export class RestaurantSignUpComponent implements OnInit {
       password: [this.restaurant?.password || '', [Validators.required, Validators.pattern("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")]],
       confirmPassword: [this.restaurant?.confirmPassword || '', Validators.required],
       id:[]
-
     })
   }
 
@@ -101,7 +96,6 @@ export class RestaurantSignUpComponent implements OnInit {
     return this.form.value.password != this.form.value.confirmPassword;
   }
 
-
   submit(): void {
     const restaurant: Restaurant = this.form.value;
     const facility: RestaurantDto = {
@@ -125,5 +119,4 @@ export class RestaurantSignUpComponent implements OnInit {
     })
     this.form.reset();
   }
-
 }

@@ -5,7 +5,6 @@ import {Observable} from 'rxjs';
 import {RestaurantServices} from "../services/restaurant.services";
 import {Routex} from "../constants/constants";
 
-
 @Injectable({providedIn: 'root'})
 export class RestaurantResolver implements Resolve<Restaurant> {
 

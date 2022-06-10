@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Reservation} from "../../../models/reservation";
 import {Person} from "../../../models/person";
 import {ActivatedRoute} from "@angular/router";
 import {ResolverResponse} from "../../../Technical/constants/resolver-response.constants";
-
 
 @Component({
   selector: 'app-user-view',

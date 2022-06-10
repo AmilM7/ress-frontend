@@ -1,4 +1,5 @@
 <app-header-restaurant-dashboard></app-header-restaurant-dashboard>
+
 <div *ngFor="let restaurant of restaurants">
 <div class="restaurantprofile" *ngIf="restaurant.email=='zacin@gmail.com'">
   <div class="wrap">
@@ -89,7 +90,6 @@
             <label for="exampleInputdescription" class="form-label">Restaurant description:</label>
             <textarea formControlName="ressDescription" rows="10" cols="30" class="form-control" id="exampleInputdescription" placeholder="{{restaurant.ressDescription}}"></textarea>
           </div>
-
           <button [disabled]="form.invalid" type="submit" class="btn btn-success">Update profile</button>
         </div>
       </form>

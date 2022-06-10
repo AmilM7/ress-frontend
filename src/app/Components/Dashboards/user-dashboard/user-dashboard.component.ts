@@ -3,17 +3,13 @@ import {Restaurant} from "../../../models/restaurant";
 import {ActivatedRoute} from "@angular/router";
 import {ResolverResponse} from "../../../Technical/constants/resolver-response.constants";
 import {Person} from "../../../models/person";
-import {PersonDto} from "../../../models/dtos/person.dto";
 import {ProfileService} from "../../../Technical/services/profile.services";
-
 
 @Component({
   selector: 'app-user-dashboard',
   templateUrl: './user-dashboard.component.html',
   styleUrls: ['./user-dashboard.component.css']
 })
-
-
 export class UserDashboardComponent implements OnInit {
 
   public allRestaurants: Restaurant[] = [];
@@ -45,14 +41,9 @@ export class UserDashboardComponent implements OnInit {
     for (let i = 0; i < this.allRestaurants.length; i++) {
       this.namesOfRestaurants.push(this.allRestaurants[i].name)
     }
-
-    console.log(this.topThreeMosltyReservedRestaurants);
   }
-
 
   isChecked(): boolean {
     return this.searchText != "";
   };
-
-
 }

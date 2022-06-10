@@ -5,7 +5,6 @@ import {ResolverResponse} from "../../../Technical/constants/resolver-response.c
 import {Person} from "../../../models/person";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AdminService} from "../../../Technical/services/admin.service";
-import {PersonDto} from "../../../models/dtos/person.dto";
 
 @Component({
   selector: 'app-user-profile',
@@ -26,7 +25,6 @@ export class UserProfileComponent implements OnInit {
       this.reservations = response[ResolverResponse.reservationsOfUser];
       this.person = response[ResolverResponse.uniqueUser];
     });
-
 
     this.form = this.formBuilder.group({
       email: [this.person?.email || '', [Validators.required, Validators.email]],
@@ -58,7 +56,6 @@ export class UserProfileComponent implements OnInit {
     this.adminsSrvice.updateUser(user, id).subscribe(value => {
       this.person = user;
     });
-
     this.form.reset();
     }
 }

@@ -11,5 +11,4 @@ export class ResolverResponse {
   public static mostlyReservedRestaurants = 'mostlyReservedRestaurants';
   public static suggestedRestaurants = 'suggestedRestaurants'
   public static uniqueUser = 'uniqueUser'
-
 }

@@ -28,6 +28,4 @@ export class Routex {
   public static reservationsOfUser = "user-reservations";
   public static userView = 'user-view';
   public static restaurantView = 'restaurant-view';
-
-
 }

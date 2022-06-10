@@ -111,8 +111,6 @@ export class RestaurantProfileComponent implements OnInit {
         });
       }
     }
-
     this.form.reset();
   }
-
 }

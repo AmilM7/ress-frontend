@@ -4,7 +4,6 @@ import {Observable} from "rxjs";
 import {Event} from "../../models/event";
 import {EventServices} from "../services/event.services";
 
-
 @Injectable({providedIn: 'root'})
 export class EventsResolver implements Resolve<Event[]> {
 

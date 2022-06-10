@@ -82,6 +82,7 @@ button :hover{
   font-size: 15px;
   width: 300px;
 }
+
 .custom-select {
   position: relative;
 }
@@ -104,10 +105,12 @@ button :hover{
   border: 6px solid transparent;
   border-color: #fff transparent transparent transparent;
 }
+
 .select-selected.select-arrow-active:after {
   border-color: transparent transparent #fff transparent;
   top: 7px;
 }
+
 .select-items div,.select-selected {
   color: #ffffff;
   padding: 8px 16px;
@@ -115,6 +118,7 @@ button :hover{
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
 }
+
 .select-items {
   position: absolute;
   background-color: DodgerBlue;
@@ -123,9 +127,11 @@ button :hover{
   right: 0;
   z-index: 99;
 }
+
 .select-hide {
   display: none;
 }
+
 .select-items div:hover, .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }

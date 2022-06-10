@@ -5,7 +5,6 @@ import {Routex} from "../constants/constants";
 import {Person} from "../../models/person";
 import {AdminService} from "../services/admin.service";
 
-
 @Injectable({providedIn: 'root'})
 export class SingleUserResolver implements Resolve<Person> {
 

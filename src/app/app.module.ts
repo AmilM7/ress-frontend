@@ -50,7 +50,6 @@ import { UserViewComponent } from './Components/Profiles-and-views/user-view/use
 import { RestaurantViewComponent } from './Components/Profiles-and-views/restaurant-view/restaurant-view.component';
 import {ProfileService} from "./Technical/services/profile.services";
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +84,6 @@ import {ProfileService} from "./Technical/services/profile.services";
     FilterPipe,
     UserViewComponent,
     RestaurantViewComponent
-
   ],
   imports: [
     BrowserModule,
@@ -114,7 +112,6 @@ import {ProfileService} from "./Technical/services/profile.services";
     AuthService,
 
     ProfileService,
-
   ],
   bootstrap: [AppComponent]
 })

@@ -4,7 +4,6 @@ import {Restaurant} from "../../models/restaurant";
 import {Observable} from 'rxjs';
 import {RestaurantServices} from "../services/restaurant.services";
 
-
 @Injectable({providedIn: 'root'})
 export class MostlyReservedRestaurantsResolver implements Resolve<Restaurant[]> {
 

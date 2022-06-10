@@ -4,10 +4,9 @@ import {Observable} from "rxjs";
 import {Reservation} from "../../models/reservation";
 import {environment} from "../../../environments/environment";
 
-
-
 @Injectable()
 export class ReservationServices {
+
   private readonly baseUrl:string  =  environment.backendUrl + '/reservations';
 
   constructor(private http:HttpClient) {
@@ -21,11 +20,9 @@ export class ReservationServices {
     return this.http.get<Reservation[]>(`${this.baseUrl}/userID/${id}`)
   }
 
-
   public getReservationsByRestaurant(id: number): Observable<Reservation[]>{
     return this.http.get<Reservation[]>(`${this.baseUrl}/restaurantID/${id}`)
   }
-
 
   public updateReservationApproved(reservation: Reservation, id: string): Observable<Reservation>{
     return this.http.put<Reservation>(`${this.baseUrl}/update/${id}`,reservation);

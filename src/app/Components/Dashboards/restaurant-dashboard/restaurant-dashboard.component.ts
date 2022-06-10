@@ -5,7 +5,6 @@ import {ResolverResponse} from "../../../Technical/constants/resolver-response.c
 import {ReservationServices} from "../../../Technical/services/reservation.service";
 import {Restaurant} from "../../../models/restaurant";
 
-
 @Component({
   selector: 'app-restaurant-dashboard',
   templateUrl: './restaurant-dashboard.component.html',
@@ -45,6 +44,5 @@ export class RestaurantDashboardComponent implements OnInit {
         });
       }
     }
-
   }
 }

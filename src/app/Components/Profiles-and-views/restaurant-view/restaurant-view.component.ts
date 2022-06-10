@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Reservation} from "../../../models/reservation";
 import {Restaurant} from "../../../models/restaurant";
 import {ActivatedRoute} from "@angular/router";
 import {ResolverResponse} from "../../../Technical/constants/resolver-response.constants";
@@ -20,5 +19,4 @@ export class RestaurantViewComponent implements OnInit {
       this.restaurant = response[ResolverResponse.restaurant];
     });
   }
-
 }

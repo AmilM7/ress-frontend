@@ -7,6 +7,7 @@ import {RestaurantDto} from "../../models/dtos/restaurant.dto";
 
 @Injectable()
 export class RestaurantServices {
+
   private readonly baseUrl: string = environment.backendUrl + '/restaurants';
 
   constructor(private http: HttpClient) {
@@ -43,7 +44,6 @@ export class RestaurantServices {
   public deleteRestaurant(email: string): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/delete/${email}`)
   }
-
 }
 
 

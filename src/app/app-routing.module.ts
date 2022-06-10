@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Route, Router, RouterModule, Routes} from "@angular/router";
+import { RouterModule, Routes} from "@angular/router";
 import {PageNotFoundComponent} from "./Components/Pages/page-not-found/page-not-found.component";
 import {SignUpComponent} from "./Components/Signup/user-signup/sign-up.component";
 import {LogInComponent} from "./Components/Login/user-login/log-in.component";
@@ -49,8 +49,6 @@ const routes: Routes = [
   {path: Routex.logInOption, component: LoginOptionComponent},
   {path: Routex.signUpOption, component: RegistrationOptionComponent},
   {path: Routex.adminlogin, component: AdminLoginComponent},
-
-
   {path: Routex.successPage, canActivate: [AuthorizedGuard], component: SuccessPageComponent},
   {path: Routex.favorite, canActivate: [AuthorizedGuard], component: FavoriteComponent},
   {path: Routex.events, canActivate: [AuthorizedGuard], component: EventsComponent},
@@ -73,8 +71,6 @@ const routes: Routes = [
       [ResolverResponse.uniqueUser]: PersonUniqueResolver,
     }
   },
-
-
   {path: Routex.reservationform,
     canActivateChild: [AuthorizedGuard],
     children:[
@@ -89,8 +85,6 @@ const routes: Routes = [
       }
     ]
   },
-
-
   {
     path: Routex.user,
     canActivateChild: [AuthorizedGuard],
@@ -101,7 +95,6 @@ const routes: Routes = [
           [ResolverResponse.restaurant]: RestaurantResolver,
         }
       },
-
     ]
   },
   {

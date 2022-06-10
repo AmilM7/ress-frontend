@@ -4,7 +4,6 @@ import {Observable} from 'rxjs';
 import {Person} from "../../models/person";
 import {AdminService} from "../services/admin.service";
 
-
 @Injectable({providedIn: 'root'})
 export class AdminsResolver implements Resolve<Person[]> {
 
