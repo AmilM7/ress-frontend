@@ -1,0 +1,22 @@
+<app-header-restaurant-dashboard></app-header-restaurant-dashboard>
+
+<div *ngIf="person">
+  <div class="userprofile" >
+    <div class="wrap" >
+      <div class="userwrap">
+        <div class="profile">
+          <img src="../../../../assets/Creators/irfan.jpg" alt="user-image">
+          <div class="name">
+            <h3>{{person.firstName}} {{person.lastName}}</h3>
+          </div>
+        </div>
+        <div class="info">
+          <p>Basic contact information:</p>
+          <hr>
+          <p>E-mail: {{person.email}}</p>
+          <p>Contact number: {{person.phone}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

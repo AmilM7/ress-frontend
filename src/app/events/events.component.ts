@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Event} from "../models/event";
 import {ActivatedRoute} from "@angular/router";
-import {ResolverResponse} from "../constants/resolver-response.constants";
+import {ResolverResponse} from "../Technical/constants/resolver-response.constants";
 
 @Component({
   selector: 'app-events',

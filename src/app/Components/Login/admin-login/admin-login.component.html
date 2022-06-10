@@ -1,0 +1,20 @@
+<div class="login">
+  <div class="picturewrap">
+    <img src="../../../../assets/Logos/logo2blue.png" alt="Logo">
+  </div>
+  <div class="center">
+    <div class="wrapper">
+      <form [formGroup]="form" (ngSubmit)="submit()" class="text-center">
+        <div class="mb-3">
+          <h1>Admin</h1>
+          <label class="form-label text-center">Password</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" ><i class="bi bi-lock-fill"></i></span>
+            <input formControlName="password" type="password" class="form-control text-center" [ngClass]="{'is-invalid' : password && password.invalid && password.touched}" aria-describedby="basic-addon1" >
+          </div>
+        </div>
+        <button [disabled]="form.invalid" type="submit" class="btn btn-success btn-lg">LOG IN</button>
+      </form>
+    </div>
+  </div>
+</div>

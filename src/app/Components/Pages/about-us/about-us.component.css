@@ -1,0 +1,134 @@
+.center{
+  margin: auto;
+  position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 500px;
+}
+
+.picture{
+  background-image: url(src/assets/Backgrounds/restaurant3.jpg);
+
+  width:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.card{
+  display: inline-block;
+  alignment: center;
+  margin: 15px;
+  width: 22%;
+  height: 400px;
+  border-radius: 20px;
+}
+
+.text-center{
+  text-align: center;
+  color: #395B7E;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  border-radius: 20px;
+}
+h2{
+  text-align: center;
+  color: #395B7E;
+}
+
+.ress{
+  display: flex;
+  margin: 50px;
+}
+.ress p{
+  text-align: justify;
+  text-justify: inter-word;
+  padding-right: 20px ;
+}
+.ress img{
+  width: 50%;
+  height: auto;
+}
+.buttons{
+  padding: 40%;
+  padding-top: 0;
+}
+
+.bottom{
+  background-image: linear-gradient(transparent, lightgray);
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1300px;
+
+}
+.buttons{
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button{
+  border: none;
+  border-radius: 20px;
+  padding: 5px 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  width: 150px;
+  letter-spacing: 1px;
+  font-size: 15px;
+  box-shadow: 3px 2px rgba(0,0,0,0.1);
+
+}
+
+.about{
+  background-color: white;
+  color: #395B7E;
+  transition: 0.2s ease-in;
+}
+
+.about:hover{
+  color: white;
+}
+
+img{
+  width: 100px;
+  height: auto;
+}
+
+button:hover{
+  background-color: #395B7E;
+}
+.title{
+  color: #395B7E;
+}
+
+.wrap{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ress{
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  padding: 20px;
+  width: 1200px;
+}
