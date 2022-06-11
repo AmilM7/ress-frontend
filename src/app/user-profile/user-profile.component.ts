@@ -6,6 +6,7 @@ import {Person} from "../models/person";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AdminService} from "../services/admin.service";
 import {PersonDto} from "../models/dtos/person.dto";
+import {ProfileService} from "../services/profile.services";
 
 @Component({
   selector: 'app-user-profile',
@@ -19,14 +20,14 @@ export class UserProfileComponent implements OnInit {
   public form!: FormGroup;
   public person: Person | undefined;
 
-  constructor(private activatedRoute: ActivatedRoute, private formBuilder : FormBuilder, public adminsSrvice: AdminService) { }
+  constructor(private activatedRoute: ActivatedRoute, private formBuilder : FormBuilder, public adminsSrvice: AdminService, private profileService: ProfileService,) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
       this.reservations = response[ResolverResponse.reservationsOfUser];
-      this.person = response[ResolverResponse.uniqueUser];
     });
 
+    this.person = this.profileService.getProfile();
 
     this.form = this.formBuilder.group({
       email: [this.person?.email || '', [Validators.required, Validators.email]],
