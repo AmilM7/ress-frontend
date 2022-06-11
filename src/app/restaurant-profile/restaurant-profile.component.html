@@ -31,18 +31,13 @@
 
     <div class="update-profile">
       <h5>Make changes to your profile</h5>
-      <div class="form-text" style="color: red">Email and password must be enterd every time!</div>
+      <div class="form-text" style="color: red">Email must be enterd every time!</div>
       <hr>
       <form [formGroup]="form" (ngSubmit)="submit(restaurant.email)">
         <div class="mustinput">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">E-mail address:</label>
             <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" [ngClass]="{'is-invalid' : email && email.invalid && email.touched}" aria-describedby="basic-addon1" placeholder="{{restaurant.email}}">
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password:</label>
-            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" [ngClass]="{'is-invalid' : password && password.invalid && password.touched}" aria-describedby="basic-addon1">
-            <div id="emailHelp" class="form-text" style="color: #395B7E;">At least one lowercase, capital letter and number (more than 8 characters)</div>
           </div>
         </div>
         <div class="inputvalues">

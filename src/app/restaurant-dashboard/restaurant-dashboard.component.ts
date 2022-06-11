@@ -4,6 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {ResolverResponse} from "../constants/resolver-response.constants";
 import {ReservationServices} from "../services/reservation.service";
 import {Restaurant} from "../models/restaurant";
+import {Person} from "../models/person";
 
 
 @Component({
@@ -15,6 +16,7 @@ export class RestaurantDashboardComponent implements OnInit {
 
   public reservations: Reservation[] = [];
   public restaurants: Restaurant[] = [];
+  public person: Person | undefined;
 
   constructor(private activatedRoute: ActivatedRoute, public reservationServices: ReservationServices) { }
 

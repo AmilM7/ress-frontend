@@ -28,7 +28,7 @@
         <div *ngIf="reservation.approval=='pending'" class="reservation-block">
           <div class="user-profile">
             <img src="../../assets/amar.jpg" alt="amar">
-            <button class="custom-button-2" routerLink="/user-view">View user profie</button>
+            <button class="custom-button-2" routerLink="/user-view/{{reservation.user.id}}">View user profie</button>
           </div>
           <div>
             <p> <span>UserID:</span> {{reservation.user.id}}</p>
@@ -60,7 +60,7 @@
         <div *ngIf="reservation.approval=='approved'" class="reservation-block">
           <div class="user-profile">
             <img src="../../assets/amil.jpg" alt="amil">
-            <button class="custom-button-2">View user profie</button>
+            <button class="custom-button-2" routerLink="/user-view/{{reservation.user.id}}">View user profie</button>
           </div>
           <div>
             <p> <span>UserID:</span> {{reservation.user.id}}</p>
@@ -91,7 +91,7 @@
         <div *ngIf="reservation.approval=='denied'" class="reservation-block">
           <div class="user-profile">
             <img src="../../assets/amar.jpg" alt="amar">
-            <button class="custom-button-2">View user profie</button>
+            <button class="custom-button-2" routerLink="/user-view/{{reservation.user.id}}">View user profie</button>
           </div>
           <div>
             <p> <span>UserID:</span> {{reservation.user.id}}</p>
