@@ -8,15 +8,12 @@ export class Routex {
   public static aboutUs = 'about-us';
   public static profile = 'profile';
   public static successPage = 'success-page';
-  public static favorite = 'favorite';
   public static logout = 'logout';
   public static separator = "/";
   public static user = 'user';
   public static userDashboard = 'user-dashboard';
   public static restaurantLogIn = 'restaurant-login';
   public static restaurantSignUp = 'restaurant-signup';
-  public static eventDashboard = 'event-dashboard';
-  public static events = 'events';
   public static admins = 'admins';
   public static adminDashboard = 'admin-dashboard';
   public static restaurant = ':id';

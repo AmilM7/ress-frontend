@@ -5,7 +5,6 @@ import {SignUpComponent} from "./Components/Signup/user-signup/sign-up.component
 import {LogInComponent} from "./Components/Login/user-login/log-in.component";
 import {MainComponent} from "./Components/Pages/main/main.component";
 import {Routex} from "./Technical/constants/constants";
-import {FavoriteComponent} from "./favorite/favorite.component";
 import {AboutUsComponent} from "./Components/Pages/about-us/about-us.component";
 import {UserDashboardComponent} from "./Components/Dashboards/user-dashboard/user-dashboard.component";
 import {ResolverResponse} from "./Technical/constants/resolver-response.constants";
@@ -14,8 +13,6 @@ import {RestaurantLogInComponent} from "./Components/Login/restaurant-login/rest
 import {RestaurantSignUpComponent} from "./Components/Signup/restaurant-signup/restaurant-sign-up.component";
 import {RestaurantComponent} from "./restaurant/restaurant.component";
 import {RestaurantResolver} from "./Technical/resolvers/restaurant.resolver";
-import {EventsComponent} from "./events/events.component";
-import {EventsResolver} from "./Technical/resolvers/events.resolver";
 import {AdminDashboardComponent} from "./Components/Dashboards/admin-dashboard/admin-dashboard.component";
 import {AdminsResolver} from "./Technical/resolvers/admins.resolver";
 import {SingleUserComponent} from "./single-user/single-user.component";
@@ -50,8 +47,6 @@ const routes: Routes = [
   {path: Routex.signUpOption, component: RegistrationOptionComponent},
   {path: Routex.adminlogin, component: AdminLoginComponent},
   {path: Routex.successPage, canActivate: [AuthorizedGuard], component: SuccessPageComponent},
-  {path: Routex.favorite, canActivate: [AuthorizedGuard], component: FavoriteComponent},
-  {path: Routex.events, canActivate: [AuthorizedGuard], component: EventsComponent},
   {
     path: Routex.reservationsOfUser,
     canActivate: [AuthorizedGuard],
@@ -104,17 +99,6 @@ const routes: Routes = [
     resolve: {
       [ResolverResponse.reservationsOfUser]: ReservationsResolverOfUser,
     }
-  },
-  {
-    path: Routex.events,
-    children: [
-      {
-        path: Routex.eventDashboard, component: EventsComponent,
-        resolve: {
-          [ResolverResponse.events]: EventsResolver,
-        }
-      },
-    ]
   },
   {
     path: Routex.admins,

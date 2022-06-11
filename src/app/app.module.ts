@@ -11,7 +11,6 @@ import { SignUpComponent } from './Components/Signup/user-signup/sign-up.compone
 import { PageNotFoundComponent } from './Components/Pages/page-not-found/page-not-found.component';
 import { MainComponent } from './Components/Pages/main/main.component';
 import {MatIconModule} from "@angular/material/icon";
-import { FavoriteComponent } from './favorite/favorite.component';
 import { AboutUsComponent } from './Components/Pages/about-us/about-us.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UserDashboardComponent } from './Components/Dashboards/user-dashboard/user-dashboard.component';
@@ -24,9 +23,6 @@ import { RestaurantLogInComponent } from './Components/Login/restaurant-login/re
 import { RestaurantSignUpComponent } from './Components/Signup/restaurant-signup/restaurant-sign-up.component';
 import { HeaderUserDashboardComponent } from './Components/Headers/header-user-dashboard/header-user-dashboard.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
-import { EventsComponent } from './events/events.component';
-import {EventServices} from "./Technical/services/event.services";
-import {EventsResolver} from "./Technical/resolvers/events.resolver";
 import {AdminDashboardComponent} from "./Components/Dashboards/admin-dashboard/admin-dashboard.component";
 import {SingleUserComponent} from "./single-user/single-user.component";
 import { LoginOptionComponent } from './Components/Login/login-option/login-option.component';
@@ -60,7 +56,6 @@ import {ProfileService} from "./Technical/services/profile.services";
     SignUpComponent,
     PageNotFoundComponent,
     MainComponent,
-    FavoriteComponent,
     AboutUsComponent,
     UserDashboardComponent,
     RestaurantLogInComponent,
@@ -69,7 +64,6 @@ import {ProfileService} from "./Technical/services/profile.services";
     RestaurantComponent,
     RestaurantDashboardComponent,
     HeaderRestaurantDashboardComponent,
-    EventsComponent,
     AdminDashboardComponent,
     SingleUserComponent,
     LoginOptionComponent,
@@ -98,9 +92,6 @@ import {ProfileService} from "./Technical/services/profile.services";
     provideAuthorizationInterceptor(),
     RestaurantServices,
     RestaurantsResolver,
-
-    EventServices,
-    EventsResolver,
 
     AdminService,
     AdminsResolver,
