@@ -7,9 +7,9 @@ export class ResolverResponse {
   public static reservations = 'reservations';
   public static adminlogin = 'adminlogin';
   public static notAccepted = "notAccepted";
+  public static accepted = "accepted";
   public static reservationsOfUser = "reservationsOfuser";
   public static mostlyReservedRestaurants = 'mostlyReservedRestaurants';
   public static suggestedRestaurants = 'suggestedRestaurants'
   public static uniqueUser = 'uniqueUser'
-
 }

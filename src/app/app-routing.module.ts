@@ -37,7 +37,7 @@ import {SuggestedRestaurantsResolver} from "./resolvers/suggestedRestaurants.res
 import {AuthorizedGuard} from "./guards/authorized.guard";
 import {UserViewComponent} from "./user-view/user-view.component";
 import {RestaurantViewComponent} from "./restaurant-view/restaurant-view.component";
-import {PersonUniqueResolver} from "./resolvers/personUnique.resolver";
+import {RestaurantsAcceptedResolver} from "./resolvers/restaurants-accepted";
 
 const routes: Routes = [
   {path: Routex.empty, component: MainComponent},
@@ -67,10 +67,9 @@ const routes: Routes = [
     canActivate: [AuthorizedGuard],
     component: UserDashboardComponent,
     resolve: {
-      [ResolverResponse.restaurants]: RestaurantsResolver,
+      [ResolverResponse.accepted]: RestaurantsAcceptedResolver,
       [ResolverResponse.mostlyReservedRestaurants]: MostlyReservedRestaurantsResolver,
       [ResolverResponse.suggestedRestaurants]: SuggestedRestaurantsResolver,
-      [ResolverResponse.uniqueUser]: PersonUniqueResolver,
     }
   },
 
@@ -83,8 +82,6 @@ const routes: Routes = [
         component: ReservationFormComponent,
         resolve: {
           [ResolverResponse.restaurant]: RestaurantResolver,
-          [ResolverResponse.uniqueUser]: PersonUniqueResolver,
-
         }
       }
     ]
@@ -165,7 +162,6 @@ const routes: Routes = [
         component: UserProfileComponent,
         resolve: {
           [ResolverResponse.reservationsOfUser]: ReservationsResolverOfUser,
-          [ResolverResponse.uniqueUser]: PersonUniqueResolver,
         }
       }
     ]

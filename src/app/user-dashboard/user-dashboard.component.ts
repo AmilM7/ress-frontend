@@ -1,10 +1,11 @@
 import {Component, OnInit, Pipe, PipeTransform} from '@angular/core';
 import {Restaurant} from "../models/restaurant";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ResolverResponse} from "../constants/resolver-response.constants";
 import {Person} from "../models/person";
 import {PersonDto} from "../models/dtos/person.dto";
 import {ProfileService} from "../services/profile.services";
+import {Routex} from "../constants/constants";
 
 
 @Component({
@@ -22,14 +23,16 @@ export class UserDashboardComponent implements OnInit {
   public namesOfRestaurants: string[] = [];
   public searchText: string = "";
   public person: Person | undefined;
+  public name: string | undefined;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private profileService: ProfileService,) {
+              private profileService: ProfileService,
+              private router: Router,) {
   }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
-      this.allRestaurants = response[ResolverResponse.restaurants];
+      this.allRestaurants = response[ResolverResponse.accepted];
     });
 
     this.activatedRoute.data.subscribe((response: any) => {
@@ -46,7 +49,6 @@ export class UserDashboardComponent implements OnInit {
       this.namesOfRestaurants.push(this.allRestaurants[i].name)
     }
 
-    console.log(this.topThreeMosltyReservedRestaurants);
   }
 
 
@@ -55,4 +57,12 @@ export class UserDashboardComponent implements OnInit {
   };
 
 
+  public onEnter() {
+    for(let restaurant of this.allRestaurants){
+      if(restaurant.name===this.searchText){
+        this.router.navigate([Routex.restaurantView + "/" + restaurant.id]);
+      }
+    }
+
+  }
 }
