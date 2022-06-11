@@ -181,7 +181,6 @@ const routes: Routes = [
   },
   {
     path: Routex.restaurantProfile,
-    canActivateChild: [AuthorizedGuard],
     children:[
       {
         path: Routex.empty,
