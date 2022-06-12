@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Reservation} from "../../../models/reservation";
 import {ActivatedRoute} from "@angular/router";
-import {ResolverResponse} from "../../../Technical/constants/resolver-response.constants";
-import {ReservationServices} from "../../../Technical/services/reservation.service";
 import {Restaurant} from "../../../models/restaurant";
+import {Person} from "../../../models/person";
+import {ReservationServices} from "../../../Technical/services/reservation.service";
+import {ResolverResponse} from "../../../Technical/constants/resolver-response.constants";
 
 @Component({
   selector: 'app-restaurant-dashboard',
@@ -14,8 +15,10 @@ export class RestaurantDashboardComponent implements OnInit {
 
   public reservations: Reservation[] = [];
   public restaurants: Restaurant[] = [];
+  public person: Person | undefined;
 
-  constructor(private activatedRoute: ActivatedRoute, public reservationServices: ReservationServices) { }
+  constructor(private activatedRoute: ActivatedRoute, public reservationServices: ReservationServices) {
+  }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
@@ -24,8 +27,8 @@ export class RestaurantDashboardComponent implements OnInit {
     });
   }
 
-  doApprove(id: string):void {
-    for (let reservation of this.reservations){
+  doApprove(id: string): void {
+    for (let reservation of this.reservations) {
       if (id == reservation.id) {
         reservation.approval = 'approved';
         this.reservationServices.updateReservationApproved(reservation, id).subscribe(value => {

@@ -5,9 +5,10 @@
     <h2 *ngIf="person">Welcome {{person.firstName}} {{person.lastName}}!</h2>
     <div class="searchbar">
       <div class="input-group flex-nowrap">
-      <span class="input-group-text" id="addon-wrapping"><i class="bi bi-search"></i></span>
-      <input type="text" class="form-control searchInput" placeholder="Desired restaurant"
-             aria-label="Username" aria-describedby="addon-wrapping" [(ngModel)]="searchText" >
+      <button class="input-group-text" id="addon-wrapping" ><i (click)="onEnter()" class="bi bi-search"></i></button>
+      <input type="text" class="form-control searchInput"
+             aria-label="Username" aria-describedby="addon-wrapping" name="name" [(ngModel)]="searchText">
+
       </div>
           <ul  *ngIf="isChecked()" class="list-group list-group-flush">
             <li class="list-group-item" *ngFor="let restaurantName of namesOfRestaurants | appFilter: searchText">

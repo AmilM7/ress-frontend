@@ -7,6 +7,7 @@ import {ReservationServices} from "../../Technical/services/reservation.service"
 import {Person} from "../../models/person";
 import {ResolverResponse} from "../../Technical/constants/resolver-response.constants";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ProfileService} from "../../Technical/services/profile.services";
 
 @Component({
   selector: 'app-reservation-form',
@@ -23,14 +24,15 @@ export class ReservationFormComponent implements OnInit {
   constructor(private formBuilder : FormBuilder,
               private reservationService: ReservationServices,
               private activatedRoute: ActivatedRoute,
-              private router: Router,) { }
+              private router: Router,
+              private profileService: ProfileService,) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
-      this.person = response[ResolverResponse.uniqueUser];
       this.restaurant = response[ResolverResponse.restaurant];
     });
 
+    this.person = this.profileService.getProfile();
     this.form = this.formBuilder.group({
       numberOfGuests: [this.reservation?.numberOfGuests || '', [Validators.required, Validators.max(50)]],
       date: [this.reservation?.date || '', [Validators.required]],

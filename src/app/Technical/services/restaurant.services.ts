@@ -25,6 +25,10 @@ export class RestaurantServices {
     return this.http.get<Restaurant[]>(this.baseUrl + "/notAccepted");
   }
 
+  public getRestaurantsAccepted(): Observable<Restaurant[]> {
+    return this.http.get<Restaurant[]>(this.baseUrl + "/accepted");
+  }
+
   public getMostlyReserved(): Observable<Restaurant[]> {
     return this.http.get<Restaurant[]>(this.baseUrl + "/mostlyReserved");
   }

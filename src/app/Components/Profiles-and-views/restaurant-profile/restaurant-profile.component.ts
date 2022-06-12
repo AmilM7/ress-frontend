@@ -39,7 +39,6 @@ export class RestaurantProfileComponent implements OnInit {
       email: [this.restaurant?.email || '', [Validators.required, Validators.email]],
       contactManager: [this.restaurant?.contactManager],
       type: [this.restaurant?.type],
-      password: [this.restaurant?.password || '', [Validators.required, Validators.pattern("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")]],
     })
   }
 
@@ -71,10 +70,6 @@ export class RestaurantProfileComponent implements OnInit {
     return this.form.get('email');
   }
 
-  get password() {
-    return this.form.get('password');
-  }
-
   get type(){
     return this.form.get('type');
   }
@@ -95,7 +90,6 @@ export class RestaurantProfileComponent implements OnInit {
     for (let restaurant of this.restaurants){
       if (email == restaurant.email) {
         restaurant.email = this.email?.value;
-        restaurant.password = this.password?.value;
         if (this.name?.value!=null)restaurant.name = this.name?.value;
         if (this.location?.value!=null)restaurant.location = this.location?.value;
         if (this.contactNum?.value!=null)restaurant.contactNum = this.contactNum?.value;

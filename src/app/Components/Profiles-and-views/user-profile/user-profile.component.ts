@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Reservation} from "../../../models/reservation";
 import {ActivatedRoute} from "@angular/router";
 import {ResolverResponse} from "../../../Technical/constants/resolver-response.constants";
 import {Person} from "../../../models/person";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AdminService} from "../../../Technical/services/admin.service";
+import {ProfileService} from "../../../Technical/services/profile.services";
+
 
 @Component({
   selector: 'app-user-profile',
@@ -18,13 +20,16 @@ export class UserProfileComponent implements OnInit {
   public form!: FormGroup;
   public person: Person | undefined;
 
-  constructor(private activatedRoute: ActivatedRoute, private formBuilder : FormBuilder, public adminsSrvice: AdminService) { }
+  constructor(private activatedRoute: ActivatedRoute, private formBuilder: FormBuilder, public adminsSrvice: AdminService, private profileService: ProfileService,) {
+  }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
       this.reservations = response[ResolverResponse.reservationsOfUser];
-      this.person = response[ResolverResponse.uniqueUser];
     });
+
+    this.person = this.profileService.getProfile();
+
 
     this.form = this.formBuilder.group({
       email: [this.person?.email || '', [Validators.required, Validators.email]],
@@ -35,19 +40,19 @@ export class UserProfileComponent implements OnInit {
     })
   }
 
-  get emailupdate(){
+  get emailupdate() {
     return this.form.get('email');
   }
 
-  get firstname(){
+  get firstname() {
     return this.form.get('firstName');
   }
 
-  get lastname(){
+  get lastname() {
     return this.form.get('lastName');
   }
 
-  get phone(){
+  get phone() {
     return this.form.get('phone');
   }
 
@@ -57,5 +62,5 @@ export class UserProfileComponent implements OnInit {
       this.person = user;
     });
     this.form.reset();
-    }
+  }
 }
