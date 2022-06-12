@@ -1,5 +1,5 @@
 .reserve{
-  background-image: url("/src/assets/Backgrounds/restaurant4.jpg");
+  background-image: url("src/assets/Backgrounds/restaurant4.jpg");
   height: 100%;
   position:fixed;
   width:100%;

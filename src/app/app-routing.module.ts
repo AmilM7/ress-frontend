@@ -11,12 +11,10 @@ import {ResolverResponse} from "./Technical/constants/resolver-response.constant
 import {RestaurantsResolver} from "./Technical/resolvers/restaurants.resolver";
 import {RestaurantLogInComponent} from "./Components/Login/restaurant-login/restaurant-log-in.component";
 import {RestaurantSignUpComponent} from "./Components/Signup/restaurant-signup/restaurant-sign-up.component";
-import {RestaurantComponent} from "./restaurant/restaurant.component";
 import {RestaurantResolver} from "./Technical/resolvers/restaurant.resolver";
 import {AdminDashboardComponent} from "./Components/Dashboards/admin-dashboard/admin-dashboard.component";
 import {AdminsResolver} from "./Technical/resolvers/admins.resolver";
-import {SingleUserComponent} from "./single-user/single-user.component";
-import { SingleUserResolver} from "./Technical/resolvers/singleUser.resolver";
+import {SingleUserResolver} from "./Technical/resolvers/singleUser.resolver";
 import {LoginOptionComponent} from "./Components/Login/login-option/login-option.component";
 import {RegistrationOptionComponent} from "./Components/Signup/registration-option/registration-option.component";
 import {ReservationsResolver} from "./Technical/resolvers/reservations.resolver";
@@ -26,7 +24,6 @@ import {RestaurantsNotAcceptedResolver} from "./Technical/resolvers/restaurantsN
 import {UserProfileComponent} from "./Components/Profiles-and-views/user-profile/user-profile.component";
 import {RestaurantProfileComponent} from "./Components/Profiles-and-views/restaurant-profile/restaurant-profile.component";
 import {ReservationFormComponent} from "./Components/reservation-form/reservation-form.component";
-import {ReservationsOfUserComponent} from "./reservations-of-user/reservations-of-user.component";
 import {ReservationsResolverOfUser} from "./Technical/resolvers/reservation-of-user.resolver";
 import {SuccessPageComponent} from "./Components/Pages/success-page/success-page.component";
 import {MostlyReservedRestaurantsResolver} from "./Technical/resolvers/mostlyReservedRestaurants.resolver";
@@ -48,14 +45,6 @@ const routes: Routes = [
   {path: Routex.adminlogin, component: AdminLoginComponent},
   {path: Routex.successPage, canActivate: [AuthorizedGuard], component: SuccessPageComponent},
   {
-    path: Routex.reservationsOfUser,
-    canActivate: [AuthorizedGuard],
-    component: ReservationsOfUserComponent,
-    resolve: {
-      [ResolverResponse.reservationsOfUser]: ReservationsResolverOfUser,
-    }
-  },
-  {
     path: Routex.userDashboard,
     canActivate: [AuthorizedGuard],
     component: UserDashboardComponent,
@@ -76,38 +65,6 @@ const routes: Routes = [
           [ResolverResponse.restaurant]: RestaurantResolver,
           [ResolverResponse.uniqueUser]: PersonUniqueResolver,
 
-        }
-      }
-    ]
-  },
-  {
-    path: Routex.user,
-    canActivateChild: [AuthorizedGuard],
-    children: [
-      {
-        path: Routex.restaurant, component: RestaurantComponent,
-        resolve: {
-          [ResolverResponse.restaurant]: RestaurantResolver,
-        }
-      },
-    ]
-  },
-  {
-    path: Routex.reservationsOfUser,
-    canActivate: [AuthorizedGuard],
-    component: ReservationsOfUserComponent,
-    resolve: {
-      [ResolverResponse.reservationsOfUser]: ReservationsResolverOfUser,
-    }
-  },
-  {
-    path: Routex.admins,
-    canActivateChild: [AuthorizedGuard],
-    children: [
-      {
-        path: Routex.singleUser, component: SingleUserComponent,
-        resolve: {
-          [ResolverResponse.singleUser]: SingleUserResolver,
         }
       }
     ]

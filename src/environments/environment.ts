@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  backendUrl: "https://ress-project.herokuapp.com",
+  backendUrl: "http://localhost:8080",
 };
 
 /*
