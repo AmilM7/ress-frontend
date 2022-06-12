@@ -4,13 +4,13 @@
   <div class="introwrap" >
     <div class="intro">
       <img src="../../../../assets/Backgrounds/restaurant1.jpg" alt="profile">
-      <div class="info" *ngIf="restaurants[1].email=='zacin@gmail.com'">
+      <div class="info" *ngIf="restaurants[0].email=='zacin@gmail.com'">
         <p><span>Account information</span></p>
         <hr>
-        <p><span>Object type:</span> {{restaurants[1].type}}</p>
-        <p><span>Name:</span> {{restaurants[1].name}}</p>
-        <p><span>Location:</span> {{restaurants[1].location}}</p>
-        <p><span>Contact:</span> {{restaurants[1].contactNum}}</p>
+        <p><span>Object type:</span> {{restaurants[0].type}}</p>
+        <p><span>Name:</span> {{restaurants[0].name}}</p>
+        <p><span>Location:</span> {{restaurants[0].location}}</p>
+        <p><span>Contact:</span> {{restaurants[0].contactNum}}</p>
       </div>
     </div>
     <button class="custom-button" routerLink="/restaurant-profile"><i class="bi bi-gear-fill"></i> Edit profile</button>
